@@ -9,3 +9,6 @@
 position = Vector2(412, 341)
 texture = ExtResource("1_wtcfe")
 script = ExtResource("2_0e48y")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=628841303]
+position_smoothing_enabled = true
