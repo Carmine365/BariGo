@@ -3,12 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://dc7hjakanc3oh" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://dp4d44gutaej8" path="res://sprite_2d.gd" id="2_0e48y"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtcfe"]
+
 [node name="Node2D" type="Node2D" unique_id=1316681437]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=108874906]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=859980205]
 position = Vector2(412, 341)
-texture = ExtResource("1_wtcfe")
 script = ExtResource("2_0e48y")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=628841303]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=628841303]
 position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=516318110]
+shape = SubResource("CircleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=569640955]
+texture = ExtResource("1_wtcfe")

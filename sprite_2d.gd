@@ -1,25 +1,17 @@
-extends Sprite2D
+extends CharacterBody2D
 
-# Velocità del robot in pixel al secondo
-var speed = 400 
+var speed = 400
 
-# Questa funzione viene chiamata ogni fotogramma (frame) del gioco
-func _process(delta):
-	var velocity = Vector2.ZERO # Inizialmente il robot è fermo
+func _physics_process(delta):
+	# Otteniamo la direzione dagli input (frecce o WASD)
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	if direction:
+		# Se c'è un input, impostiamo la velocità
+		velocity = direction * speed
+	else:
+		# Altrimenti, freniamo dolcemente
+		velocity = velocity.move_toward(Vector2.ZERO, speed)
 
-	# Controlliamo gli input
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
-
-	# Se ci stiamo muovendo, normalizziamo la velocità (evita che sia più veloce in diagonale)
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-
-	# Applichiamo il movimento alla posizione dello Sprite
-	position += velocity * delta
+	# Questa funzione magica gestisce le collisioni automaticamente!
+	move_and_slide()
