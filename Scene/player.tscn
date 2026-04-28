@@ -83,6 +83,9 @@ autoplay = "fermo"
 frame_progress = 0.30860043
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36782290]
-position = Vector2(-64, -16)
+position = Vector2(-64, -12)
 scale = Vector2(1.0833334, 1.1)
 shape = SubResource("CircleShape2D_c31lq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1002998818]
+zoom = Vector2(2, 2)
