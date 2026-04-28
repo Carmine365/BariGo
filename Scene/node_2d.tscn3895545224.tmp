@@ -4743,10 +4743,8 @@ theme_override_font_sizes/font_size = 32
 text = "Monete: 0"
 
 [node name="BarraXP" type="TextureProgressBar" parent="Player/HUD/UI_Manager/VBoxContainer" unique_id=1832048442]
-custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 value = 50.0
-nine_patch_stretch = true
 texture_under = ExtResource("10_rd0ta")
 texture_progress = ExtResource("11_77btt")
 

@@ -1,40 +1,41 @@
 extends CharacterBody2D
 
-const LUNGHEZZA_RAGGIO = 50.0 # Quanto è lungo il "braccio" con cui interagisci
+const LUNGHEZZA_RAGGIO = 50.0 
 const SPEED = 200.0
 
-# Prende il riferimento al nodo RayCast2D appena il gioco parte
 @onready var raggio = $RayCast2D
+@onready var anim = $AnimatedSprite2D 
 
 func _ready():
 	global.player = self
 
 func _physics_process(_delta: float) -> void:
-	# Input.get_vector calcola in automatico la direzione in base alle 4 frecce premute
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	# Se premiamo qualcosa, applica la velocità in quella direzione
-	if direction:
+	if direction != Vector2.ZERO:
 		velocity = direction * SPEED
 		
-		# --- LA MAGIA DEL RAYCAST ---
-		# Quando ci muoviamo, diciamo al raggio di puntare nella stessa direzione
-		# Moltiplichiamo la direzione (che vale 1) per la lunghezza che vogliamo
+		# --- GESTIONE ANIMAZIONI (Nomi sincronizzati con la tua foto) ---
+		if abs(direction.x) > abs(direction.y):
+			if direction.x > 0:
+				anim.play("CamminataDX")
+			else:
+				anim.play("CamminataSX")
+		else:
+			if direction.y > 0:
+				anim.play("CamminataGiù")
+			else:
+				anim.play("CamminataSU")
+		
 		raggio.target_position = direction * LUNGHEZZA_RAGGIO
 		
-	# Se non premiamo nulla, fermati
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		# Il tuo omino fermo si chiama "fermo"
+		anim.play("fermo")
 
-	# Applica il movimento (e gestisce gli urti contro i bordi azzurri del marciapiede)
 	move_and_slide()
 
-# Variabile per tenere il conto
-var monete = 0
-
-# Funzione che verrà chiamata dalla moneta quando la tocchiamo
 func raccogli_moneta():
-	monete += 1
-	# Aggiorniamo il testo dell'etichetta sullo schermo
-	$CanvasLayer/CoinCounter.text = "Monete: " + str(monete)
+	global.coin += 1
+	print("Focaccia raccolta! Totale: ", global.coin)
