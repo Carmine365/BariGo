@@ -1,30 +1,5 @@
 extends CharacterBody2D
 
-"""
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"""
-
 const SPEED = 200.0
 
 func _physics_process(_delta: float) -> void:
@@ -41,3 +16,12 @@ func _physics_process(_delta: float) -> void:
 
 	# Applica il movimento (e gestisce gli urti contro i bordi azzurri del marciapiede)
 	move_and_slide()
+
+# Variabile per tenere il conto
+var monete = 0
+
+# Funzione che verrà chiamata dalla moneta quando la tocchiamo
+func raccogli_moneta():
+	monete += 1
+	# Aggiorniamo il testo dell'etichetta sullo schermo
+	$CanvasLayer/CoinCounter.text = "Monete: " + str(monete)

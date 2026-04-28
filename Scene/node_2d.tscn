@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dyq7kxwsm33vt" path="res://assets/city block tile set/cityBlockTileSetRoads.png" id="5_blrne"]
 [ext_resource type="Texture2D" uid="uid://cgym1gjkw60ds" path="res://assets/RMMV/tf_beach_tileB.png" id="5_xvxua"]
 [ext_resource type="Texture2D" uid="uid://c84ssshgjgxhe" path="res://assets/RMMV/tf_beach_tileA1.png" id="6_blrne"]
+[ext_resource type="PackedScene" uid="uid://dcelp5kk760ln" path="res://Scene/coin.tscn" id="8_blrne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("2_60wmb")
@@ -4707,3 +4708,19 @@ position = Vector2(7, 35)
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=926396803]
 position = Vector2(9, -11)
 zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=330332075]
+
+[node name="CoinCounter" type="Label" parent="Player/CanvasLayer" unique_id=901081286]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Monete: 0"
+
+[node name="Coin" parent="." unique_id=882900200 instance=ExtResource("8_blrne")]
+position = Vector2(177, 33)
+
+[node name="Coin2" parent="." unique_id=1534970164 instance=ExtResource("8_blrne")]
+position = Vector2(172, 169)
+
+[node name="Coin3" parent="." unique_id=750062983 instance=ExtResource("8_blrne")]
+position = Vector2(123, 12)
