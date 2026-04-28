@@ -7,7 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dyq7kxwsm33vt" path="res://assets/city block tile set/cityBlockTileSetRoads.png" id="5_blrne"]
 [ext_resource type="Texture2D" uid="uid://cgym1gjkw60ds" path="res://assets/RMMV/tf_beach_tileB.png" id="5_xvxua"]
 [ext_resource type="Texture2D" uid="uid://c84ssshgjgxhe" path="res://assets/RMMV/tf_beach_tileA1.png" id="6_blrne"]
+[ext_resource type="FontFile" uid="uid://62373nc15cni" path="res://assets/fonts/pixel_font/04B_30__.TTF" id="8_a84m2"]
 [ext_resource type="PackedScene" uid="uid://dcelp5kk760ln" path="res://Scene/coin.tscn" id="8_blrne"]
+[ext_resource type="Texture2D" uid="uid://dnjyv5kvtcj4t" path="res://assets/background.png" id="9_3opw3"]
+[ext_resource type="PackedScene" uid="uid://x8l8fqsfvvkq" path="res://Scene/quest_item.tscn" id="11_4qn2c"]
+[ext_resource type="Texture2D" uid="uid://conrb30oafph0" path="res://assets/icons/paper_icon.png" id="12_cjhdi"]
+[ext_resource type="PackedScene" uid="uid://bxgib7hvys12h" path="res://Scene/npc.tscn" id="13_eufn3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("2_60wmb")
@@ -4706,6 +4711,7 @@ layer_0/tile_data = PackedInt32Array(-65540, 1179650, 0, -65541, 1179650, 0, -65
 position = Vector2(7, 35)
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=926396803]
+visible = false
 position = Vector2(9, -11)
 zoom = Vector2(2, 2)
 
@@ -4714,6 +4720,8 @@ zoom = Vector2(2, 2)
 [node name="CoinCounter" type="Label" parent="Player/CanvasLayer" unique_id=901081286]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_a84m2")
+theme_override_font_sizes/font_size = 32
 text = "Monete: 0"
 
 [node name="Coin" parent="." unique_id=882900200 instance=ExtResource("8_blrne")]
@@ -4724,3 +4732,29 @@ position = Vector2(172, 169)
 
 [node name="Coin3" parent="." unique_id=750062983 instance=ExtResource("8_blrne")]
 position = Vector2(123, 12)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=200804450]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1312781265]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1019075697]
+position = Vector2(45.20002, 31.5)
+texture = ExtResource("9_3opw3")
+
+[node name="Label" type="Label" parent="." unique_id=727814782]
+offset_left = -75.0
+offset_top = 28.0
+offset_right = 141.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("8_a84m2")
+theme_override_font_sizes/font_size = 8
+text = "Vai a scoprire la Bari Sopra troia"
+
+[node name="QuestItem" parent="." unique_id=99830309 instance=ExtResource("11_4qn2c")]
+position = Vector2(337, 27)
+item_icon = ExtResource("12_cjhdi")
+
+[node name="npc" parent="." unique_id=1150419374 instance=ExtResource("13_eufn3")]
+position = Vector2(236, -26)

@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
+const LUNGHEZZA_RAGGIO = 50.0 # Quanto è lungo il "braccio" con cui interagisci
 const SPEED = 200.0
+
+# Prende il riferimento al nodo RayCast2D appena il gioco parte
+@onready var raggio = $RayCast2D
+
+func _ready():
+	global.player = self
 
 func _physics_process(_delta: float) -> void:
 	# Input.get_vector calcola in automatico la direzione in base alle 4 frecce premute
@@ -9,6 +16,12 @@ func _physics_process(_delta: float) -> void:
 	# Se premiamo qualcosa, applica la velocità in quella direzione
 	if direction:
 		velocity = direction * SPEED
+		
+		# --- LA MAGIA DEL RAYCAST ---
+		# Quando ci muoviamo, diciamo al raggio di puntare nella stessa direzione
+		# Moltiplichiamo la direzione (che vale 1) per la lunghezza che vogliamo
+		raggio.target_position = direction * LUNGHEZZA_RAGGIO
+		
 	# Se non premiamo nulla, fermati
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

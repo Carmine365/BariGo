@@ -1,38 +1,38 @@
-[gd_scene format=3 uid="uid://d28y2tfc1k4w8"]
+[gd_scene format=3 uid="uid://bxgib7hvys12h"]
 
-[ext_resource type="Texture2D" uid="uid://blpb314cwaegp" path="res://pg/IDLE/idle_down.png" id="1_kelma"]
-[ext_resource type="Script" uid="uid://bbiddqjr3gwbc" path="res://Scripts/player.gd" id="1_y8w33"]
+[ext_resource type="Script" uid="uid://ji1k0t4k2xaw" path="res://Scripts/npc.gd" id="1_0j0y8"]
+[ext_resource type="Texture2D" uid="uid://blpb314cwaegp" path="res://pg/IDLE/idle_down.png" id="2_vute2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8w33"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(0, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa75v"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(96, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58ae2"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(192, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivevv"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(288, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6jsd"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(384, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(480, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sw5t"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(576, 0, 96, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij4jb"]
-atlas = ExtResource("1_kelma")
+atlas = ExtResource("2_vute2")
 region = Rect2(672, 0, 96, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c68nv"]
@@ -70,9 +70,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_c31lq"]
 radius = 7.3846154
 
-[node name="Player" type="CharacterBody2D" unique_id=1483402223]
+[node name="npc" type="CharacterBody2D" unique_id=1483402223 groups=["npc"]]
 position = Vector2(64, 0)
-script = ExtResource("1_y8w33")
+script = ExtResource("1_0j0y8")
+npc_id = "npc_1"
+npc_name = "Abbatista"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840888346]
 position = Vector2(-64, -24)
@@ -87,9 +89,11 @@ position = Vector2(-64, -12)
 scale = Vector2(1.0833334, 1.1)
 shape = SubResource("CircleShape2D_c31lq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1002998818]
-zoom = Vector2(2, 2)
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=89314749]
-position = Vector2(-64, -12)
-collide_with_areas = true
+[node name="Label" type="Label" parent="." unique_id=1322947534]
+offset_left = -67.0
+offset_top = -72.0
+offset_right = -60.0
+offset_bottom = -37.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "!"
