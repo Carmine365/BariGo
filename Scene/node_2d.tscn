@@ -4771,10 +4771,10 @@ position = Vector2(45.20002, 31.5)
 texture = ExtResource("9_3opw3")
 
 [node name="Label" type="Label" parent="." unique_id=727814782]
-offset_left = -107.0
-offset_top = 77.0
-offset_right = 109.0
-offset_bottom = 100.0
+offset_left = -106.0
+offset_top = 94.0
+offset_right = 110.0
+offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("8_a84m2")
 theme_override_font_sizes/font_size = 8
 text = "Vai a scoprire la Bari Sopra troia"

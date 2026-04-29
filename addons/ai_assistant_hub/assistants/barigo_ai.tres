@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://dggfn78x66fvf"]
+
+[ext_resource type="Resource" uid="uid://c0xq2vafep0gu" path="res://addons/ai_assistant_hub/llm_providers/ollama.tres" id="1_3bvkd"]
+[ext_resource type="Script" uid="uid://cdblvhc504qpq" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="2_mlcuk"]
+[ext_resource type="Script" uid="uid://ccmeekwgpk2hp" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="3_bivgx"]
+
+[resource]
+script = ExtResource("3_bivgx")
+type_name = "BariGo AI"
+ai_model = "codellama:latest"
+llm_provider = ExtResource("1_3bvkd")
+ai_description = "Sei un esperto programmatore di Godot 4 e GDScript. Il tuo compito è aiutare il Gruppo 69 a sviluppare il gioco \"BariGo\". Fornisci sempre codice pulito, spiegazioni concise e aiuta a risolvere i bug del debugger. Quando scrivi codice, usa sempre la sintassi di Godot 4."
