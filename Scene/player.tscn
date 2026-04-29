@@ -283,7 +283,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"CamminataSX",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fermo",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c31lq"]
@@ -326,8 +326,9 @@ script = ExtResource("1_y8w33")
 position = Vector2(-64, -24)
 scale = Vector2(1.0833334, 1.1)
 sprite_frames = SubResource("SpriteFrames_c68nv")
-animation = &"CamminataSU"
+animation = &"fermo"
 autoplay = "fermo"
+frame_progress = 0.4518989
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36782290]
 position = Vector2(-64, -12)
