@@ -86,6 +86,14 @@
 [ext_resource type="Texture2D" uid="uid://bowcf8qvrnjgp" path="res://assets (2)/minigame/Tile_108.png" id="82_oc47q"]
 [ext_resource type="Texture2D" uid="uid://rb2h4v1k7ll8" path="res://assets (2)/minigame/Tile_109.png" id="83_va7f7"]
 [ext_resource type="Texture2D" uid="uid://dv7aftu0putsu" path="res://assets (2)/minigame/Tile_16.png" id="84_42oco"]
+[ext_resource type="Script" uid="uid://doa337wmrwtea" path="res://Scenes/quest_manager.gd" id="87_3nyl3"]
+[ext_resource type="PackedScene" uid="uid://c8v7wk1eevmrn" path="res://Scenes/Collezionabile.tscn" id="88_r56hp"]
+[ext_resource type="Texture2D" uid="uid://b6q0anjssr8pf" path="res://assets (2)/petruzzelli/frammento2.png" id="89_v7lqt"]
+[ext_resource type="Texture2D" uid="uid://bthcfcva50ncr" path="res://assets (2)/petruzzelli/frammento1.png" id="90_reotp"]
+[ext_resource type="Texture2D" uid="uid://cievhsc5f0y1c" path="res://assets (2)/petruzzelli/frammento3.png" id="91_bla8r"]
+[ext_resource type="Script" uid="uid://dc73745bshmg8" path="res://Scenes/camera_2d.gd" id="92_v7lqt"]
+[ext_resource type="Script" uid="uid://byvse07evqri4" path="res://Scenes/fire_barrier.gd" id="93_reotp"]
+[ext_resource type="Texture2D" uid="uid://ddqk0islo0qb0" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_yee2e8yee2e8yee2-removebg-preview.png" id="94_bla8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4v1a"]
 size = Vector2(16, 30)
@@ -637,16 +645,141 @@ sources/80 = SubResource("TileSetAtlasSource_6seed")
 sources/81 = SubResource("TileSetAtlasSource_872cn")
 sources/82 = SubResource("TileSetAtlasSource_8p06t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r56hp"]
+size = Vector2(36, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7lqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reotp"]
+size = Vector2(68, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bla8r"]
+size = Vector2(20, 370)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfcb2"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(83, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq1y0"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(166, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u61e"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(249, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jothy"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(332, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2xop"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(415, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpjbn"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(498, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkeqf"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(581, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjjeq"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(0, 0, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6gsu"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(0, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwhrs"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(83, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj7xw"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(166, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77jmu"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(249, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6popq"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(332, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo6i3"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(415, 186, 83, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f38d5"]
+atlas = ExtResource("94_bla8r")
+region = Rect2(498, 186, 83, 186)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc2ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfcb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq1y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u61e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jothy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2xop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpjbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkeqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjjeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6gsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwhrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj7xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77jmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6popq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo6i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f38d5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbt6b"]
+size = Vector2(9.5, 370)
+
 [node name="Livello_Petruzzelli" type="Node2D" unique_id=300763918]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1431443135]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1431443135 groups=["Player"]]
 script = ExtResource("1_f24m4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2097240951]
 position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_p4v1a")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1943037717]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1135154727]
 sprite_frames = SubResource("SpriteFrames_8n15u")
@@ -682,3 +815,97 @@ autoplay = "corsa"
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1697309002]
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_iwcis")
+
+[node name="QuestManager" type="Node" parent="." unique_id=1170475830]
+script = ExtResource("87_3nyl3")
+has_time_limit = true
+
+[node name="Timer" type="Timer" parent="QuestManager" unique_id=1845431715]
+
+[node name="Collezionabile" parent="." unique_id=1680869481 groups=["Collectibles"] instance=ExtResource("88_r56hp")]
+position = Vector2(336, -64)
+item_name = "Frammento"
+
+[node name="Sprite2D" parent="Collezionabile" index="0" unique_id=803842112]
+position = Vector2(7.6293945e-06, 0)
+scale = Vector2(0.29999998, 0.3)
+texture = ExtResource("89_v7lqt")
+
+[node name="CollisionShape2D" parent="Collezionabile" index="1" unique_id=582211855]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_r56hp")
+
+[node name="Collezionabile2" parent="." unique_id=1150700393 groups=["Collectibles"] instance=ExtResource("88_r56hp")]
+position = Vector2(877, 33)
+item_name = "Frammento"
+
+[node name="Sprite2D" parent="Collezionabile2" index="0" unique_id=803842112]
+position = Vector2(1.6212463e-05, 1.1368684e-13)
+scale = Vector2(0.32089552, 0.32089552)
+texture = ExtResource("90_reotp")
+
+[node name="CollisionShape2D" parent="Collezionabile2" index="1" unique_id=582211855]
+shape = SubResource("RectangleShape2D_v7lqt")
+
+[node name="Collezionabile3" parent="." unique_id=1655443067 groups=["Collectibles"] instance=ExtResource("88_r56hp")]
+position = Vector2(1675, -180)
+item_name = "Frammento"
+
+[node name="Sprite2D" parent="Collezionabile3" index="0" unique_id=803842112]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.46721298, 0.46721298)
+texture = ExtResource("91_bla8r")
+
+[node name="CollisionShape2D" parent="Collezionabile3" index="1" unique_id=582211855]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_reotp")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1512710388]
+
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=532026711]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1943037717]
+zoom = Vector2(1.75, 1.75)
+script = ExtResource("92_v7lqt")
+
+[node name="FireBarrier" type="Area2D" parent="Camera2D" unique_id=1157680600]
+position = Vector2(-286, -11)
+script = ExtResource("93_reotp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/FireBarrier" unique_id=124985157]
+position = Vector2(-35, 8)
+shape = SubResource("RectangleShape2D_bla8r")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Camera2D/FireBarrier" unique_id=69179888]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/FireBarrier" unique_id=72016401]
+position = Vector2(-14.000008, 24)
+scale = Vector2(0.813253, 2.2096775)
+sprite_frames = SubResource("SpriteFrames_rc2ev")
+autoplay = "default"
+frame = 13
+frame_progress = 0.8508062
+
+[node name="MuroSx" type="StaticBody2D" parent="Camera2D" unique_id=2028747084]
+position = Vector2(-338, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/MuroSx" unique_id=60231233]
+shape = SubResource("RectangleShape2D_tbt6b")
+
+[node name="MuroDx" type="StaticBody2D" parent="Camera2D" unique_id=555738082]
+position = Vector2(334, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/MuroDx" unique_id=36883746]
+shape = SubResource("RectangleShape2D_tbt6b")
+
+[editable path="Collezionabile"]
+[editable path="Collezionabile2"]
+[editable path="Collezionabile3"]

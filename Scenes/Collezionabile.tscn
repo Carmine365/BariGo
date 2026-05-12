@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c8v7wk1eevmrn"]
+
+[ext_resource type="Script" uid="uid://0h4l4b37cysg" path="res://Scenes/collezionabile.gd" id="1_wetcm"]
+
+[node name="Collezionabile" type="Area2D" unique_id=1680869481]
+script = ExtResource("1_wetcm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803842112]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582211855]
