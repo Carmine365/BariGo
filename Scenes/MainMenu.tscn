@@ -88,7 +88,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
 text = "Exit"
 script = ExtResource("4_xim88")
 
-[node name="Logo" type="Sprite2D" parent="." unique_id=2004567007]
+[node name="Logo" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=2004567007]
 position = Vector2(575.00006, 119)
 scale = Vector2(0.53994083, 0.600271)
 texture = ExtResource("7_xim88")
