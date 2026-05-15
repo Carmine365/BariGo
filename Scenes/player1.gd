@@ -29,15 +29,15 @@ func _physics_process(delta: float) -> void:
 		# GESTIONE ORIENTAMENTO:
 		# Se direction è -1 (sinistra), flip_h diventa true. 
 		# Se direction è 1 (destra), flip_h diventa false.
-		_animated_sprite.flip_h = (direction < 0)
+		_animated_sprite.flip_h = true#(direction < 0)
 		
 		# RIPRODUCI ANIMAZIONE CORSA
-		_animated_sprite.play("run")
+		_animated_sprite.play("corsa sx")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		# RIPRODUCI ANIMAZIONE FERMO (IDLE)
-		_animated_sprite.play("idle")
+		#_animated_sprite.play("idle")
 
 	# 4. IL MOTORE
 	move_and_slide()
