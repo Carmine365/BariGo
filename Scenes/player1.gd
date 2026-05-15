@@ -9,6 +9,9 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var _animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return # Se è morto, ignora tutto il resto del codice di movimento
+	
 	# 1. GRAVITÀ
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -38,3 +41,26 @@ func _physics_process(delta: float) -> void:
 
 	# 4. IL MOTORE
 	move_and_slide()
+
+# Variabile per bloccare gli input e la fisica
+var is_dead: bool = false
+
+func die() -> void:
+	if is_dead:
+		return # Evita di morire due volte nello stesso frame
+		
+	is_dead = true
+	
+	# 1. Ferma ogni movimento
+	velocity = Vector2.ZERO
+	
+	# 2. Disabilita la fisica e gli input per questo nodo
+	set_physics_process(false)
+	set_process_input(false)
+	
+	# 3. Opzionale: fai sparire il personaggio o avvia un'animazione
+	# $AnimatedSprite2D.play("death") 
+	visible = false # Nasconde il giocatore temporaneamente
+	
+	# 4. Disabilita la collisione per non triggerare altri eventi
+	$CollisionShape2D.set_deferred("disabled", true)

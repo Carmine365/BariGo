@@ -94,6 +94,7 @@
 [ext_resource type="Script" uid="uid://dc73745bshmg8" path="res://Scenes/camera_2d.gd" id="92_v7lqt"]
 [ext_resource type="Script" uid="uid://byvse07evqri4" path="res://Scenes/fire_barrier.gd" id="93_reotp"]
 [ext_resource type="Texture2D" uid="uid://ddqk0islo0qb0" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_yee2e8yee2e8yee2-removebg-preview.png" id="94_bla8r"]
+[ext_resource type="Script" uid="uid://b8vl1s66sfnh7" path="res://Scenes/death_zone.gd" id="95_wfcb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4v1a"]
 size = Vector2(16, 30)
@@ -772,25 +773,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbt6b"]
 size = Vector2(9.5, 370)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq1y0"]
+size = Vector2(707, 21)
+
 [node name="Livello_Petruzzelli" type="Node2D" unique_id=300763918]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1431443135 groups=["Player"]]
+[node name="player1" type="CharacterBody2D" parent="." unique_id=1431443135 groups=["Player"]]
 script = ExtResource("1_f24m4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2097240951]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=2097240951]
 position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_p4v1a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1135154727]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1" unique_id=1135154727]
 sprite_frames = SubResource("SpriteFrames_8n15u")
 animation = &"corsa sx"
 autoplay = "corsa"
-
-[node name="Muro_di_Fuoco" type="Area2D" parent="." unique_id=447387333]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Muro_di_Fuoco" unique_id=647463467]
-
-[node name="Sprite2D" type="Sprite2D" parent="Muro_di_Fuoco/CollisionShape2D" unique_id=430791723]
 
 [node name="Frammenti" type="Node2D" parent="." unique_id=2021101148]
 
@@ -872,11 +870,28 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=210102879]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -11.5
+offset_right = 35.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Gay Over"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1943037717]
 zoom = Vector2(1.75, 1.75)
 script = ExtResource("92_v7lqt")
 
-[node name="FireBarrier" type="Area2D" parent="Camera2D" unique_id=1157680600]
+[node name="FireBarrier" type="Area2D" parent="Camera2D" unique_id=1157680600 groups=["FireBarrierGroup"]]
 position = Vector2(-286, -11)
 script = ExtResource("93_reotp")
 
@@ -905,6 +920,14 @@ position = Vector2(334, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/MuroDx" unique_id=36883746]
 shape = SubResource("RectangleShape2D_tbt6b")
+
+[node name="DeathZone" type="Area2D" parent="Camera2D" unique_id=412028911]
+position = Vector2(1, 201)
+script = ExtResource("95_wfcb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/DeathZone" unique_id=794305906]
+position = Vector2(-2.5, 0.5)
+shape = SubResource("RectangleShape2D_jq1y0")
 
 [editable path="Collezionabile"]
 [editable path="Collezionabile2"]

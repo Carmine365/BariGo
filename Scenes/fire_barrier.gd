@@ -7,6 +7,10 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
-	# Se il player tocca questa zona, muore
+	# 1. Controlliamo se il nodo è nel gruppo giusto
 	if body.is_in_group("Player"):
+		# 2. Controlliamo se il nodo ha lo script con la funzione die()
+		if body.has_method("die"):
+			body.die()
+			
 		player_burned.emit()
