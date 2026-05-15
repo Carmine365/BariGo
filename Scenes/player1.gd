@@ -64,3 +64,7 @@ func die() -> void:
 	
 	# 4. Disabilita la collisione per non triggerare altri eventi
 	$CollisionShape2D.set_deferred("disabled", true)
+
+
+func _on_bandierina_vittoria_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
