@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" format=3 uid="uid://1akjlbtkix5b"]
-
-[ext_resource type="Texture2D" uid="uid://c08lnhw7tv7jm" path="res://assets/XPbar.png" id="1_q1uxg"]
-
-[resource]
-atlas = ExtResource("1_q1uxg")
-region = Rect2(49, 31, 48, 22)
