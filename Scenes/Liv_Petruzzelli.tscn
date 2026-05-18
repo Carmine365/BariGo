@@ -781,14 +781,14 @@ size = Vector2(707, 21)
 
 [node name="Livello_Petruzzelli" type="Node2D" unique_id=300763918]
 
-[node name="player1" type="CharacterBody2D" parent="." unique_id=1431443135 groups=["Player"]]
+[node name="player1" type="CharacterBody2D" parent="." unique_id=1418432364 groups=["Player"]]
 script = ExtResource("1_f24m4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=2097240951]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=482121422]
 position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_p4v1a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1" unique_id=1135154727]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1" unique_id=1629249636]
 sprite_frames = SubResource("SpriteFrames_8n15u")
 animation = &"corsa sx"
 autoplay = "corsa"
@@ -953,8 +953,6 @@ offset_right = 934.0
 offset_bottom = -296.0
 text = "         Vittoria
 Livello Completato!"
-
-[connection signal="body_entered" from="BandierinaVittoria" to="player1" method="_on_bandierina_vittoria_body_entered"]
 
 [editable path="Collezionabile"]
 [editable path="Collezionabile2"]
