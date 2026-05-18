@@ -1,7 +1,7 @@
 extends Camera2D
 
 # Velocità di scorrimento verso sinistra (pixel al secondo)
-@export var scroll_speed: float = 100.0
+@export var scroll_speed: float = 200.0
 var active: bool = false
 
 func _ready() -> void:

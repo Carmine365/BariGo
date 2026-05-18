@@ -13,5 +13,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Controlla che a collidere sia il giocatore tramite i Gruppi
 	if body.is_in_group("Player"):
+		# Usa l'Autoload per emettere il segnale a tutto il gioco
+		EventBus.item_collected.emit(item_name)
 		item_collected.emit()
 		queue_free() # Rimuove l'oggetto dalla scena

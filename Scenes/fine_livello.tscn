@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3df58j4xkl50"]
+
+[ext_resource type="Script" uid="uid://cy4yoamdnnhl7" path="res://Scenes/bandierina_vittoria.gd" id="1_iujq2"]
+[ext_resource type="Texture2D" uid="uid://cvc8esmg38wcj" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_vdzgqbvdzgqbvdzg.png" id="2_upio8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u61e"]
+size = Vector2(47, 58)
+
+[node name="BandierinaVittoria" type="Area2D" unique_id=2015148093 node_paths=PackedStringArray("nodo_manager")]
+process_mode = 3
+script = ExtResource("1_iujq2")
+nodo_manager = NodePath("")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829623782]
+position = Vector2(2762, -54)
+scale = Vector2(0.20448644, 0.22154467)
+texture = ExtResource("2_upio8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=759322298]
+position = Vector2(2762.5, -56)
+shape = SubResource("RectangleShape2D_7u61e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

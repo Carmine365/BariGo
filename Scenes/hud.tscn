@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b10nfhxia2dod"]
+
+[ext_resource type="Script" uid="uid://bvwyx8faboeoy" path="res://Scenes/counter.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2039722738]
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1237060884]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1396559960]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -11.5
+offset_right = 35.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Gay Over"
+
+[node name="Label" type="Label" parent="." unique_id=238199030]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_e0onf")

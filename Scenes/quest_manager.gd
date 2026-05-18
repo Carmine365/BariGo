@@ -3,7 +3,8 @@ extends Node
 @export var items_to_collect: int = 3
 @export var has_time_limit: bool = false
 @export var time_limit_seconds: float = 30.0
-
+@export var next_level: PackedScene
+@export var counter_label: Label
 # Aggiungi il riferimento alla nuova Label
 @onready var game_over_label: Label = %GameOverLabel
 

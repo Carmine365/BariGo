@@ -87,16 +87,17 @@
 [ext_resource type="Texture2D" uid="uid://rb2h4v1k7ll8" path="res://assets (2)/minigame/Tile_109.png" id="83_va7f7"]
 [ext_resource type="Texture2D" uid="uid://dv7aftu0putsu" path="res://assets (2)/minigame/Tile_16.png" id="84_42oco"]
 [ext_resource type="Script" uid="uid://doa337wmrwtea" path="res://Scenes/quest_manager.gd" id="87_3nyl3"]
+[ext_resource type="PackedScene" uid="uid://cysa8tfj2kipv" path="res://Scenes/Game.tscn" id="88_jothy"]
 [ext_resource type="PackedScene" uid="uid://c8v7wk1eevmrn" path="res://Scenes/Collezionabile.tscn" id="88_r56hp"]
 [ext_resource type="Texture2D" uid="uid://b6q0anjssr8pf" path="res://assets (2)/petruzzelli/frammento2.png" id="89_v7lqt"]
 [ext_resource type="Texture2D" uid="uid://bthcfcva50ncr" path="res://assets (2)/petruzzelli/frammento1.png" id="90_reotp"]
 [ext_resource type="Texture2D" uid="uid://cievhsc5f0y1c" path="res://assets (2)/petruzzelli/frammento3.png" id="91_bla8r"]
+[ext_resource type="Script" uid="uid://bvwyx8faboeoy" path="res://Scenes/counter.gd" id="92_7u61e"]
 [ext_resource type="Script" uid="uid://dc73745bshmg8" path="res://Scenes/camera_2d.gd" id="92_v7lqt"]
 [ext_resource type="Script" uid="uid://byvse07evqri4" path="res://Scenes/fire_barrier.gd" id="93_reotp"]
 [ext_resource type="Texture2D" uid="uid://ddqk0islo0qb0" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_yee2e8yee2e8yee2-removebg-preview.png" id="94_bla8r"]
 [ext_resource type="Script" uid="uid://b8vl1s66sfnh7" path="res://Scenes/death_zone.gd" id="95_wfcb2"]
-[ext_resource type="Script" uid="uid://cy4yoamdnnhl7" path="res://Scenes/bandierina_vittoria.gd" id="96_7u61e"]
-[ext_resource type="Texture2D" uid="uid://cvc8esmg38wcj" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_vdzgqbvdzgqbvdzg.png" id="96_jq1y0"]
+[ext_resource type="PackedScene" uid="uid://3df58j4xkl50" path="res://Scenes/fine_livello.tscn" id="97_7u61e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4v1a"]
 size = Vector2(16, 30)
@@ -778,9 +779,6 @@ size = Vector2(9.5, 370)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq1y0"]
 size = Vector2(707, 21)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u61e"]
-size = Vector2(47, 58)
-
 [node name="Livello_Petruzzelli" type="Node2D" unique_id=300763918]
 
 [node name="player1" type="CharacterBody2D" parent="." unique_id=1431443135 groups=["Player"]]
@@ -821,8 +819,10 @@ autoplay = "corsa"
 tile_map_data = PackedByteArray("AAD+/wEAFQAAAAAAAAD//wEAFQAAAAAAAAAAAAEAFQAAAAAAAAABAAEAFQAAAAAAAAACAAEAFQAAAAAAAAADAAEAFQAAAAAAAAAEAAEAFgAAAAAAAAAFAAEAFQAAAAAAAAAGAAEAFQAAAAAAAAAHAAEAFQAAAAAAAAAIAAEAFgAAAAAAAAAJAAEAFQAAAAAAAAAKAAEAFQAAAAAAAAALAAEAFQAAAAAAAAAMAAEAFQAAAAAAAAANAAEAFQAAAAAAAAAOAAEAFQAAAAAAAAAPAAEAFQAAAAAAAAAQAAEAFgAAAAAAAAARAAEAFQAAAAAAAAASAAEAFQAAAAAAAAATAAEAFQAAAAAAAAAUAAEAFQAAAAAAAAAVAAEAFQAAAAAAAAAWAAEAFQAAAAAAAAAXAAEAFQAAAAAAAAAYAAEAFQAAAAAAAAAQAP3/HQAAAAAAAAARAP3/FQAAAAAAAAASAP3/FQAAAAAAAAATAP3/FQAAAAAAAAAUAP3/FgAAAAAAAAAVAP3/FQAAAAAAAAAWAP3/FgAAAAAAAAAXAP3/FQAAAAAAAAAYAP3/FQAAAAAAAAAZAP3/HgAAAAAAAAASAP7/FQAAAAAAAAATAP7/FQAAAAAAAAAUAP7/FgAAAAAAAAAVAP7/FQAAAAAAAAAWAP7/FgAAAAAAAAAXAP7/FQAAAAAAAAAZAAEAFQAAAAAAAAAaAAEAFQAAAAAAAAAbAAEAFQAAAAAAAAAcAAEAFQAAAAAAAAAdAAEAFQAAAAAAAAAeAAEAFQAAAAAAAAAfAAEAFQAAAAAAAAAgAAEAFQAAAAAAAAAhAAEAFQAAAAAAAAAiAAEAFQAAAAAAAAAjAAEAFQAAAAAAAAAkAAEAFQAAAAAAAAAlAAEAFQAAAAAAAAAmAAEAFQAAAAAAAAAnAAEAFQAAAAAAAAAoAAEAFQAAAAAAAAApAAEAFQAAAAAAAAAqAAEAFQAAAAAAAAArAAEAFQAAAAAAAAAsAAEAFQAAAAAAAAAtAAEAFQAAAAAAAAAuAAEAFQAAAAAAAAAvAAEAFQAAAAAAAAAwAAEAFQAAAAAAAAAyAAMAFQAAAAAAAAAzAAMAFQAAAAAAAAA0AAMAFQAAAAAAAAA1AAMAFQAAAAAAAAA2AAMAFQAAAAAAAAA3AAMAFQAAAAAAAAA4AAMAFQAAAAAAAAA5AAMAFQAAAAAAAAA6AAMAFQAAAAAAAAA8AAEAFQAAAAAAAAA9AAEAFQAAAAAAAAA+AAEAFQAAAAAAAAA/AAEAFQAAAAAAAABAAAEAFQAAAAAAAABBAAEAFQAAAAAAAABCAAEAFQAAAAAAAABDAAEAFQAAAAAAAABEAAEAFQAAAAAAAABFAAEAFQAAAAAAAABGAAEAFQAAAAAAAABHAAEAFQAAAAAAAABIAAEAFQAAAAAAAABJAAEAFQAAAAAAAABGAAAAFQAAAAAAAABHAAAAFQAAAAAAAABIAAAAFQAAAAAAAABJAAAAFQAAAAAAAABIAP//FQAAAAAAAABJAP//FQAAAAAAAABKAP//FQAAAAAAAABKAAAAFQAAAAAAAABKAP7/FQAAAAAAAABLAP7/FQAAAAAAAABMAP7/FQAAAAAAAABLAP//FQAAAAAAAABMAP//FQAAAAAAAABLAAAAFQAAAAAAAABKAAEAFQAAAAAAAABLAAEAFQAAAAAAAABMAAEAFQAAAAAAAABMAAAAFQAAAAAAAABMAP3/FQAAAAAAAABNAP3/FQAAAAAAAABOAP3/FQAAAAAAAABOAP7/FQAAAAAAAABNAP7/FQAAAAAAAABNAP//FQAAAAAAAABNAAAAFQAAAAAAAABNAAEAFQAAAAAAAABOAAEAFQAAAAAAAABOAAAAFQAAAAAAAABOAP//FQAAAAAAAABOAPz/FQAAAAAAAABPAPz/FQAAAAAAAABQAPz/FQAAAAAAAABQAP3/FQAAAAAAAABPAP3/FQAAAAAAAABPAP7/FQAAAAAAAABQAP7/FQAAAAAAAABPAP//FQAAAAAAAABPAAAAFQAAAAAAAABPAAEAFQAAAAAAAABQAAEAFQAAAAAAAABQAAAAFQAAAAAAAABQAP//FQAAAAAAAABRAPz/FQAAAAAAAABSAPz/FQAAAAAAAABSAP3/FQAAAAAAAABRAP3/FQAAAAAAAABRAP7/FQAAAAAAAABRAP//FQAAAAAAAABRAAAAFQAAAAAAAABRAAEAFQAAAAAAAABSAAEAFQAAAAAAAABSAAAAFQAAAAAAAABSAP//FQAAAAAAAABSAP7/FQAAAAAAAABdAAEAFQAAAAAAAABeAAEAFQAAAAAAAABfAAEAFQAAAAAAAABgAAEAFQAAAAAAAABhAAEAFQAAAAAAAABiAAEAFQAAAAAAAABjAAEAFQAAAAAAAABkAAEAFQAAAAAAAABlAAEAFQAAAAAAAABmAAEAFQAAAAAAAABnAAEAFQAAAAAAAABoAAEAFQAAAAAAAABpAAEAFQAAAAAAAABqAAEAFQAAAAAAAABrAAEAFQAAAAAAAABsAAEAFQAAAAAAAABtAAEAFQAAAAAAAABuAAEAFQAAAAAAAABvAAEAFQAAAAAAAABwAAEAFQAAAAAAAABxAAEAFQAAAAAAAAByAAEAFQAAAAAAAABzAAEAFQAAAAAAAAB0AAEAFQAAAAAAAAB1AAEAFQAAAAAAAAB2AAEAFQAAAAAAAAB3AAEAFQAAAAAAAAB4AAEAFQAAAAAAAAB5AAEAFQAAAAAAAAB6AAEAFQAAAAAAAAB7AAEAFQAAAAAAAAB8AAEAFQAAAAAAAAB9AAEAFQAAAAAAAAB+AAEAFQAAAAAAAAB/AAEAFQAAAAAAAACAAAEAFQAAAAAAAACBAAEAFQAAAAAAAACCAAEAFgAAAAAAAACDAAEAFQAAAAAAAACEAAEAFQAAAAAAAACFAAEAFQAAAAAAAACGAAEAFgAAAAAAAAB5AAAAFQAAAAAAAAB6AAAAFgAAAAAAAAB7AAAAFQAAAAAAAAB8AAAAFQAAAAAAAAB5AP//FQAAAAAAAAB6AP//FQAAAAAAAAB7AP//FgAAAAAAAAB8AP//FgAAAAAAAAB9AAAAFQAAAAAAAAB5AP3/FQAAAAAAAAB5AP7/FQAAAAAAAAB6AP3/FQAAAAAAAAB6AP7/FQAAAAAAAAB7AP3/FQAAAAAAAAB7AP7/FgAAAAAAAAB8AP3/FQAAAAAAAAB8AP7/FgAAAAAAAAB9AP7/FQAAAAAAAAB9AP//FQAAAAAAAAB9AP3/FQAAAAAAAACCAPn/FQAAAAAAAACDAPn/FgAAAAAAAACEAPn/FgAAAAAAAACFAPn/FgAAAAAAAACGAPn/FgAAAAAAAACHAPn/FQAAAAAAAACHAAEAFQAAAAAAAACIAAEAFQAAAAAAAACJAAEAFgAAAAAAAACKAAEAFQAAAAAAAACLAAEAFQAAAAAAAACMAAEAFQAAAAAAAACNAAEAFgAAAAAAAACOAAEAFQAAAAAAAACXAAEAFQAAAAAAAACYAAEAFgAAAAAAAACZAAEAFgAAAAAAAACaAAEAFQAAAAAAAACbAAEAFQAAAAAAAACcAAEAFQAAAAAAAACdAAEAFgAAAAAAAACeAAEAFQAAAAAAAACgAAEAFQAAAAAAAACfAAEAFQAAAAAAAAChAAEAFQAAAAAAAACiAAEAFQAAAAAAAACMAAAAFQAAAAAAAACNAAAAFQAAAAAAAACOAAAAFgAAAAAAAACNAP//FQAAAAAAAACOAP//FgAAAAAAAACOAP7/FQAAAAAAAACWAAEAFQAAAAAAAACXAAAAFgAAAAAAAACWAAAAFQAAAAAAAACYAAAAFQAAAAAAAACjAAEAFQAAAAAAAACkAAEAFQAAAAAAAAClAAEAFQAAAAAAAAClAAAAFQAAAAAAAACmAAAAFQAAAAAAAACnAAAAFQAAAAAAAACnAAEAFQAAAAAAAACoAAEAFQAAAAAAAACpAAEAFQAAAAAAAACmAAEAFQAAAAAAAACqAAEAFQAAAAAAAACrAAEAFQAAAAAAAACsAAEAFQAAAAAAAACoAAAAFQAAAAAAAACpAAAAFQAAAAAAAACqAAAAFQAAAAAAAACrAAAAFQAAAAAAAACsAAAAFQAAAAAAAACsAP//FQAAAAAAAACsAP7/FQAAAAAAAACrAP7/FQAAAAAAAACqAP//FQAAAAAAAACrAP//FQAAAAAAAACpAP//FQAAAAAAAACqAP7/FQAAAAAAAABVAPv/FQAAAAAAAABWAPv/FQAAAAAAAABXAPv/FQAAAAAAAABYAPv/FQAAAAAAAABZAPv/FQAAAAAAAABaAPv/FQAAAAAAAABbAPv/FQAAAAAAAAA=")
 tile_set = SubResource("TileSet_iwcis")
 
-[node name="QuestManager" type="Node" parent="." unique_id=1170475830]
+[node name="QuestManager" type="Node" parent="." unique_id=1170475830 node_paths=PackedStringArray("counter_label")]
 script = ExtResource("87_3nyl3")
+next_level = ExtResource("88_jothy")
+counter_label = NodePath("../HUD/Counter")
 
 [node name="Timer" type="Timer" parent="QuestManager" unique_id=1845431715]
 
@@ -864,9 +864,9 @@ texture = ExtResource("91_bla8r")
 position = Vector2(-33, 27)
 shape = SubResource("RectangleShape2D_reotp")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1512710388]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2039722738]
 
-[node name="TimeLabel" type="Label" parent="HUD" unique_id=532026711]
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=1237060884]
 unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
@@ -876,7 +876,7 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="GameOverLabel" type="Label" parent="HUD" unique_id=210102879]
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=1396559960]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 8
@@ -892,6 +892,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "Gay Over"
+
+[node name="Counter" type="Label" parent="HUD" unique_id=238199030]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("92_7u61e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1943037717]
 zoom = Vector2(1.75, 1.75)
@@ -935,19 +940,8 @@ script = ExtResource("95_wfcb2")
 position = Vector2(-2.5, 0.5)
 shape = SubResource("RectangleShape2D_jq1y0")
 
-[node name="BandierinaVittoria" type="Area2D" parent="." unique_id=990335596 node_paths=PackedStringArray("nodo_manager")]
-process_mode = 3
-script = ExtResource("96_7u61e")
+[node name="BandierinaVittoria" parent="." unique_id=2015148093 node_paths=PackedStringArray("nodo_manager") instance=ExtResource("97_7u61e")]
 nodo_manager = NodePath("../QuestManager")
-
-[node name="Sprite2D" type="Sprite2D" parent="BandierinaVittoria" unique_id=1421766829]
-position = Vector2(2762, -54)
-scale = Vector2(0.20448644, 0.22154467)
-texture = ExtResource("96_jq1y0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BandierinaVittoria" unique_id=150451231]
-position = Vector2(2762.5, -56)
-shape = SubResource("RectangleShape2D_7u61e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1237954781]
 
@@ -961,8 +955,8 @@ text = "         Vittoria
 Livello Completato!"
 
 [connection signal="body_entered" from="BandierinaVittoria" to="player1" method="_on_bandierina_vittoria_body_entered"]
-[connection signal="body_entered" from="BandierinaVittoria" to="BandierinaVittoria" method="_on_body_entered"]
 
 [editable path="Collezionabile"]
 [editable path="Collezionabile2"]
 [editable path="Collezionabile3"]
+[editable path="BandierinaVittoria"]
