@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhaa7y7r17o17"
-path="res://.godot/imported/deco_12_1.png-efd870298c937a001789aa3ecd318180.ctex"
+uid="uid://c304buihn2t3q"
+path="res://.godot/imported/Bush1.png-b263ee80163d6c5e4245376ef487ecd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/city assets/City Assets Pack - Basic/deco_12_1.png"
-dest_files=["res://.godot/imported/deco_12_1.png-efd870298c937a001789aa3ecd318180.ctex"]
+source_file="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Bush1.png"
+dest_files=["res://.godot/imported/Bush1.png-b263ee80163d6c5e4245376ef487ecd2.ctex"]
 
 [params]
 
