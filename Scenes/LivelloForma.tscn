@@ -422,10 +422,9 @@ shape = SubResource("RectangleShape2D_s6jan")
 zoom = Vector2(2, 2)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player1" unique_id=198144663]
-position = Vector2(25.999998, 11.02)
+position = Vector2(26.999998, 11.02)
 scale = Vector2(0.79314727, 0.82519037)
 texture = SubResource("GradientTexture2D_g6488")
-texture_scale = 1.97
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=720635491]
 color = Color(0, 0, 0.22745098, 1)

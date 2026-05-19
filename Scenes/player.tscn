@@ -315,27 +315,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c31lq"]
-radius = 7.3846154
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
+size = Vector2(20, 38.181816)
 
 [node name="Player" type="CharacterBody2D" unique_id=1483402223]
 position = Vector2(64, 0)
 script = ExtResource("1_y8w33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840888346]
-position = Vector2(-64, -24)
-scale = Vector2(1.0833334, 1.1)
+position = Vector2(-63.000004, -33.000004)
+scale = Vector2(1.3125, 1.3625001)
 sprite_frames = SubResource("SpriteFrames_c68nv")
 animation = &"CamminataSU"
 autoplay = "fermo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36782290]
-position = Vector2(-64, -12)
+position = Vector2(-64, -29)
 scale = Vector2(1.0833334, 1.1)
-shape = SubResource("CircleShape2D_c31lq")
+shape = SubResource("RectangleShape2D_x3wgy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1002998818]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.25, 1.25)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=89314749]
 position = Vector2(-64, -12)

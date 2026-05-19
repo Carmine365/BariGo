@@ -15,5 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		# Usa l'Autoload per emettere il segnale a tutto il gioco
 		EventBus.item_collected.emit(item_name)
+		body.aumenta_raggio_luce()
 		item_collected.emit()
 		queue_free() # Rimuove l'oggetto dalla scena
