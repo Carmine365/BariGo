@@ -13,8 +13,16 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Controlla che a collidere sia il giocatore tramite i Gruppi
 	if body.is_in_group("Player"):
-		# Usa l'Autoload per emettere il segnale a tutto il gioco
+		
+		# --- MODIFICA QUI ---
+		# Prima di chiamare la funzione, verifichiamo che esista davvero
+		if body.has_method("aumenta_raggio_luce"):
+			body.aumenta_raggio_luce()
+		else:
+			# Se non esiste, stampiamo un avviso amichevole e non crashiamo
+			print("Questo giocatore non ha la funzione aumenta_raggio_luce, salto il comando.")
+		# --------------------
+		
 		EventBus.item_collected.emit(item_name)
-		body.aumenta_raggio_luce()
 		item_collected.emit()
-		queue_free() # Rimuove l'oggetto dalla scena
+		queue_free()
