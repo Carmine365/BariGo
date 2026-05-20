@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b51461y7khudv"
-path="res://.godot/imported/teatro forma.png-a7e5e505ec183ce1d72f5907f3376d3c.ctex"
+uid="uid://bunor0jy5hvck"
+path="res://.godot/imported/stazione.png-7650ec1e3376517a2faa9e3443fbee1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/sprite teatri/teatro forma.png"
-dest_files=["res://.godot/imported/teatro forma.png-a7e5e505ec183ce1d72f5907f3376d3c.ctex"]
+source_file="res://assets (2)/city assets/city block tile set/stazione.png"
+dest_files=["res://.godot/imported/stazione.png-7650ec1e3376517a2faa9e3443fbee1b.ctex"]
 
 [params]
 

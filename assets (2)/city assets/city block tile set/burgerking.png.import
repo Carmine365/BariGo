@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b51461y7khudv"
-path="res://.godot/imported/teatro forma.png-a7e5e505ec183ce1d72f5907f3376d3c.ctex"
+uid="uid://b7c4gi0o7xjx7"
+path="res://.godot/imported/burgerking.png-c29b08b3c045a14096a568c818d2baa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/sprite teatri/teatro forma.png"
-dest_files=["res://.godot/imported/teatro forma.png-a7e5e505ec183ce1d72f5907f3376d3c.ctex"]
+source_file="res://assets (2)/city assets/city block tile set/burgerking.png"
+dest_files=["res://.godot/imported/burgerking.png-c29b08b3c045a14096a568c818d2baa5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv6cqrhptbuhm"
-path="res://.godot/imported/teatro margherita.jpeg-59aea6879d190ec7835c292b075baff2.ctex"
+uid="uid://cf12p2jebcfx2"
+path="res://.godot/imported/teatro_piccinni.png-0fb7d0ef657de62dfb972cdf39201689.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/sprite teatri/teatro margherita.jpeg"
-dest_files=["res://.godot/imported/teatro margherita.jpeg-59aea6879d190ec7835c292b075baff2.ctex"]
+source_file="res://assets (2)/sprite teatri/teatro_piccinni.png"
+dest_files=["res://.godot/imported/teatro_piccinni.png-0fb7d0ef657de62dfb972cdf39201689.ctex"]
 
 [params]
 

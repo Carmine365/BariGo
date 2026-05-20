@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byog4c0arscgv"
-path="res://.godot/imported/teatro kismet.png-acfc61582e3d49e1c463214e1dba3df6.ctex"
+uid="uid://cli6dd00cilb5"
+path="res://.godot/imported/kismet.png-55b7135ad739c25d4f4389fcdd8902b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/sprite teatri/teatro kismet.png"
-dest_files=["res://.godot/imported/teatro kismet.png-acfc61582e3d49e1c463214e1dba3df6.ctex"]
+source_file="res://assets (2)/sprite teatri/kismet.png"
+dest_files=["res://.godot/imported/kismet.png-55b7135ad739c25d4f4389fcdd8902b0.ctex"]
 
 [params]
 
