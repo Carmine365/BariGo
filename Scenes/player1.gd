@@ -1,16 +1,15 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 220.0
 var JUMP_VELOCITY = -400.0
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Usiamo una variabile onready per accedere velocemente al nodo delle animazioni
 @onready var _animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
-		return # Se è morto, ignora tutto il resto del codice di movimento
+		return 
 	
 	# 1. GRAVITÀ
 	if not is_on_floor():
@@ -26,18 +25,19 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		velocity.x = direction * SPEED
 		
-		# GESTIONE ORIENTAMENTO:
-		# Se direction è -1 (sinistra), flip_h diventa true. 
-		# Se direction è 1 (destra), flip_h diventa false.
-		_animated_sprite.flip_h = true#(direction < 0)
-		
-		# RIPRODUCI ANIMAZIONE CORSA
-		_animated_sprite.play("corsa sx")
+		# GESTIONE ANIMAZIONI SEPARATE
+		if direction > 0:
+			# Stiamo andando a destra
+			_animated_sprite.play("corsa")
+		else:
+			# Stiamo andando a sinistra (direction < 0)
+			_animated_sprite.play("corsa sx")
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		# RIPRODUCI ANIMAZIONE FERMO (IDLE)
-		#_animated_sprite.play("idle")
+		_animated_sprite.play("idle")
 
 	# 4. IL MOTORE
 	move_and_slide()
@@ -47,24 +47,14 @@ var is_dead: bool = false
 
 func die() -> void:
 	if is_dead:
-		return # Evita di morire due volte nello stesso frame
+		return 
 		
 	is_dead = true
-	
-	# 1. Ferma ogni movimento
 	velocity = Vector2.ZERO
-	
-	# 2. Disabilita la fisica e gli input per questo nodo
 	set_physics_process(false)
 	set_process_input(false)
-	
-	# 3. Opzionale: fai sparire il personaggio o avvia un'animazione
-	# $AnimatedSprite2D.play("death") 
-	visible = false # Nasconde il giocatore temporaneamente
-	
-	# 4. Disabilita la collisione per non triggerare altri eventi
+	visible = false 
 	$CollisionShape2D.set_deferred("disabled", true)
 
-
-func _on_bandierina_vittoria_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_bandierina_vittoria_body_entered(_body: Node2D) -> void:
+	pass

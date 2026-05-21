@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cq8osaf1230ll" path="res://assets (2)/minigame/Tile_03.png" id="2_iunau"]
 [ext_resource type="Texture2D" uid="uid://btjsv3p6g5b7u" path="res://assets (2)/minigame/Tile_04.png" id="3_f24m4"]
 [ext_resource type="Texture2D" uid="uid://bxrgiblbdfudb" path="res://pg/RUN/run_left.png" id="3_ma7ph"]
+[ext_resource type="Texture2D" uid="uid://b0xy18m1u05cm" path="res://pg/IDLE/idle_right.png" id="4_gpjbn"]
 [ext_resource type="Texture2D" uid="uid://b5r04rg4ndh1v" path="res://assets (2)/minigame/Tile_17.png" id="4_ma7ph"]
 [ext_resource type="Texture2D" uid="uid://dqr40wy6bqaua" path="res://assets (2)/minigame/Tile_19.png" id="5_3nyl3"]
 [ext_resource type="Texture2D" uid="uid://d2fv1gpmmq1v7" path="res://assets (2)/minigame/Tile_20.png" id="6_m5yl0"]
@@ -98,6 +99,7 @@
 [ext_resource type="Texture2D" uid="uid://ddqk0islo0qb0" path="res://assets (2)/petruzzelli/Gemini_Generated_Image_yee2e8yee2e8yee2-removebg-preview.png" id="94_bla8r"]
 [ext_resource type="Script" uid="uid://b8vl1s66sfnh7" path="res://Scenes/death_zone.gd" id="95_wfcb2"]
 [ext_resource type="PackedScene" uid="uid://3df58j4xkl50" path="res://Scenes/fine_livello.tscn" id="97_7u61e"]
+[ext_resource type="Texture2D" uid="uid://bqob8ck80g4je" path="res://Sfondo petruzzell.png" id="99_m2xop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4v1a"]
 size = Vector2(16, 30)
@@ -166,6 +168,38 @@ region = Rect2(576, 0, 96, 80)
 atlas = ExtResource("3_ma7ph")
 region = Rect2(672, 0, 96, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc2ev"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbt6b"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w2eh"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vsut"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4o8m"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejvs2"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8abe"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1otu"]
+atlas = ExtResource("4_gpjbn")
+region = Rect2(672, 0, 96, 80)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8n15u"]
 animations = [{
 "frames": [{
@@ -224,6 +258,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"corsa sx",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc2ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbt6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w2eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vsut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4o8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejvs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8abe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1otu")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -790,7 +853,7 @@ shape = SubResource("RectangleShape2D_p4v1a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1" unique_id=1629249636]
 sprite_frames = SubResource("SpriteFrames_8n15u")
-animation = &"corsa sx"
+animation = &"idle"
 autoplay = "corsa"
 
 [node name="Frammenti" type="Node2D" parent="." unique_id=2021101148]
@@ -953,6 +1016,15 @@ offset_right = 934.0
 offset_bottom = -296.0
 text = "         Vittoria
 Livello Completato!"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1780476117]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1152, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2135408618]
+z_index = -100
+position = Vector2(742, 4)
+texture = ExtResource("99_m2xop")
 
 [editable path="Collezionabile"]
 [editable path="Collezionabile2"]

@@ -10,12 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dcgcifdg4suyc" path="res://assets (2)/margherita/Bandierina Margherita.png" id="8_m0hcj"]
 [ext_resource type="Script" uid="uid://cet0fhpxgsuoo" path="res://Scenes/Margherita/area_2d.gd" id="8_rmsfn"]
 [ext_resource type="Texture2D" uid="uid://b8s6c7ac2c2e1" path="res://assets (2)/margherita/cartellosx.png" id="10_lith7"]
-[ext_resource type="Script" uid="uid://jrwvp6gr6lkg" path="res://Scenes/Margherita/cadein_acqua.gd" id="11_ulnon"]
-[ext_resource type="Texture2D" uid="uid://pwa2sxj3hr8" path="res://assets (2)/margherita/sfondoMargherita.png" id="12_0baol"]
-[ext_resource type="Script" uid="uid://dwpuffpcj8rrn" path="res://Scenes/Margherita/messaggio.gd" id="13_q7tam"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lith7"]
-size = Vector2(1152, 79)
+[ext_resource type="Script" uid="uid://5l1pmhm20g2w" path="res://Scenes/Margherita/mortein_acqua.gd" id="11_ulnon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0baol"]
 size = Vector2(1152, 79)
@@ -39,7 +34,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxyqe"]
@@ -265,17 +260,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsfn"]
 size = Vector2(78.5, 105)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7tam"]
+size = Vector2(1148, 156.5)
+
 [node name="LivelloMargherita" type="Node2D" unique_id=1931720369]
 
 [node name="RisingWater" type="Area2D" parent="." unique_id=1814678818]
 script = ExtResource("1_cxbrq")
-
-[node name="CadeinAcqua" type="Area2D" parent="RisingWater" unique_id=429361167]
-script = ExtResource("11_ulnon")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RisingWater/CadeinAcqua" unique_id=245336154]
-position = Vector2(1, 333.5)
-shape = SubResource("RectangleShape2D_lith7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RisingWater" unique_id=1609648166]
 position = Vector2(0, 351.5)
@@ -321,10 +312,8 @@ sprite_frames = SubResource("SpriteFrames_8n15u")
 animation = &"corsa"
 autoplay = "corsa"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=245134789 node_paths=PackedStringArray("label_messaggio", "riferimento_acqua")]
+[node name="Area2D" type="Area2D" parent="." unique_id=245134789]
 script = ExtResource("8_rmsfn")
-label_messaggio = NodePath("../UI/Messaggio")
-riferimento_acqua = NodePath("../RisingWater")
 
 [node name="BandierinaMargherita" type="Sprite2D" parent="Area2D" unique_id=89652957]
 position = Vector2(141.25, -1144.8751)
@@ -341,34 +330,12 @@ position = Vector2(-68.999985, -17)
 scale = Vector2(0.13330078, 0.12744147)
 texture = ExtResource("10_lith7")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1066423632]
+[node name="MorteinAcqua" type="Area2D" parent="." unique_id=51636792]
+script = ExtResource("11_ulnon")
 
-[node name="SfondoMargherita" type="Sprite2D" parent="Parallax2D" unique_id=245247564]
-z_index = -100
-position = Vector2(31.000004, -663.00006)
-scale = Vector2(0.98828125, 0.91315407)
-texture = ExtResource("12_0baol")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MorteinAcqua" unique_id=368902282]
+position = Vector2(-2, 372.25)
+shape = SubResource("RectangleShape2D_q7tam")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1497230600]
-
-[node name="Messaggio" type="Label" parent="UI" unique_id=1952119689]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -21.0
-offset_right = 36.0
-offset_bottom = 21.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
-text = "Ciao"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("13_q7tam")
-
-[connection signal="body_entered" from="RisingWater/CadeinAcqua" to="RisingWater/CadeinAcqua" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="MorteinAcqua" to="Area2D" method="_on_mortein_acqua_body_entered"]
