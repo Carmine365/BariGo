@@ -843,6 +843,7 @@ size = Vector2(9.5, 370)
 size = Vector2(707, 21)
 
 [node name="Livello_Petruzzelli" type="Node2D" unique_id=300763918]
+position = Vector2(18, 0)
 
 [node name="player1" type="CharacterBody2D" parent="." unique_id=1418432364 groups=["Player"]]
 script = ExtResource("1_f24m4")
