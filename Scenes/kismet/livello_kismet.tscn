@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://byvur4qum6lxq"]
+
+[ext_resource type="Script" uid="uid://dvywlr4f8t4b0" path="res://Scenes/kismet/livello_kismet.gd" id="1_js38d"]
+[ext_resource type="PackedScene" uid="uid://d28y2tfc1k4w8" path="res://Scenes/player.tscn" id="2_22rmg"]
+
+[node name="livello kismet" type="Node2D" unique_id=303832567]
+script = ExtResource("1_js38d")
+
+[node name="Kismet manager" type="Node" parent="." unique_id=251805893]
+
+[node name="SfondiLivello" type="Node2D" parent="." unique_id=1234347286]
+
+[node name="Fabbrica" type="Node2D" parent="SfondiLivello" unique_id=1679957272]
+
+[node name="Teatro" type="Node2D" parent="SfondiLivello" unique_id=1290728154]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1025104923]
+format = 2
+
+[node name="Lettere" type="Node2D" parent="." unique_id=1065263860]
+
+[node name="Player1" parent="." unique_id=1483402223 instance=ExtResource("2_22rmg")]
