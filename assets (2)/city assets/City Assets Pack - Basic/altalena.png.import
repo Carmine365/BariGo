@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8opq5yg6iv05"
-path="res://.godot/imported/calcio.png-332234434909d04b6fa529763492ed8d.ctex"
+uid="uid://jc4w8ijyj4ai"
+path="res://.godot/imported/altalena.png-37628df8d8fb0a33f491b26dd3c5dad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/city assets/City Assets Pack - Basic/calcio.png"
-dest_files=["res://.godot/imported/calcio.png-332234434909d04b6fa529763492ed8d.ctex"]
+source_file="res://assets (2)/city assets/City Assets Pack - Basic/altalena.png"
+dest_files=["res://.godot/imported/altalena.png-37628df8d8fb0a33f491b26dd3c5dad8.ctex"]
 
 [params]
 
