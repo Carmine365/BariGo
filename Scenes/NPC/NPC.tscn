@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1qiqgxdwch4c"]
+
+[ext_resource type="Script" uid="uid://ep7dsqbylfqd" path="res://Scenes/NPC/npc.gd" id="1_ri8vb"]
+[ext_resource type="PackedScene" uid="uid://7xlcj56v2jk" path="res://Scenes/NPC/dialogue/Actionable.tscn" id="2_u75bn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri8vb"]
+size = Vector2(14, 14)
+
+[node name="Npc" type="Area2D" unique_id=259017654]
+script = ExtResource("1_ri8vb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427694430]
+z_index = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1958155273]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=55711590]
+shape = SubResource("RectangleShape2D_ri8vb")
+
+[node name="Actionable" parent="." unique_id=443781918 instance=ExtResource("2_u75bn")]

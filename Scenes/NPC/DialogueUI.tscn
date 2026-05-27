@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b7ssw63pwlg0f"]
+
+[ext_resource type="Script" uid="uid://dr6kjo5xokwhh" path="res://Scenes/NPC/DialogueUI.gd" id="1_1kp0e"]
+
+[node name="DialogueUi" type="CanvasLayer" unique_id=258654251 node_paths=PackedStringArray("dialogue_box", "text_label", "name_label")]
+process_mode = 3
+script = ExtResource("1_1kp0e")
+dialogue_box = NodePath("Panel")
+text_label = NodePath("Panel/TextLabel")
+name_label = NodePath("Panel/NameLabel")
+
+[node name="Panel" type="Panel" parent="." unique_id=687037200]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextLabel" type="Label" parent="Panel" unique_id=2006606538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=1176392330]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 25.0

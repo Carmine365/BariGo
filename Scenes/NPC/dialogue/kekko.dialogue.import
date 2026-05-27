@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b2j1quqnwfmah"
+path="res://.godot/imported/kekko.dialogue-287ba4fb72fa6f0225f5eef41bff42a7.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/kekko.dialogue"
+dest_files=["res://.godot/imported/kekko.dialogue-287ba4fb72fa6f0225f5eef41bff42a7.tres"]
+
+[params]
+
+defaults=true

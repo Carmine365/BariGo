@@ -1,0 +1,12 @@
+~ start
+Kekko: [[We|Ciao|Carissimo]], sai chi è passato prima?.
+Kekko: Rispondi stronzo.
+- Chi?
+	Kekko: STOCAZZOOO.
+	Kekko: Ahahahaha, coglione.
+- Stocazzo
+	Kekko: Mi hai fregato.
+- Gay che non sei altro, ripeti. => start
+- Fanculo. => END
+Kekko: Alla prossima!
+=> END

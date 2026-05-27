@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://7xlcj56v2jk"]
+
+[ext_resource type="Script" uid="uid://dkxfo4v06aa3i" path="res://Scenes/NPC/dialogue/actionable.gd" id="1_rqd7b"]
+
+[node name="Actionable" type="Area2D" unique_id=443781918]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_rqd7b")

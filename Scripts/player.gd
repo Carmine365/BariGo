@@ -5,14 +5,30 @@ const SPEED = 200.0
 
 @onready var raggio = $RayCast2D
 @onready var anim = $AnimatedSprite2D 
+@onready var direction_pivot: Marker2D = $Direction
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
+
+# Introduciamo la variabile di stato
+var is_in_dialogue: bool = false
 
 func _ready():
 	global.player = self
+	
+	# Manteniamo l'ascolto sul segnale di chiusura
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	# Se siamo in un dialogo, uccidiamo la velocità e interrompiamo il calcolo fisico
+	if is_in_dialogue:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	if direction != Vector2.ZERO:
+		# Usa il metodo nativo per calcolare l'angolo del vettore in radianti
+		direction_pivot.rotation = direction.angle()
 		velocity = direction * SPEED
 		
 		# --- GESTIONE ANIMAZIONI (Nomi sincronizzati con la tua foto) ---
@@ -39,3 +55,32 @@ func _physics_process(_delta: float) -> void:
 func raccogli_moneta():
 	global.coin += 1
 	print("Focaccia raccolta! Totale: ", global.coin)
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Impediamo di premere "F" o interagire se stiamo già parlando
+	if is_in_dialogue:
+		return
+		
+	if event.is_action_pressed("interact"):
+		# Estraiamo un array di tutte le Area2D che si sovrappongono al nostro radar
+		var actionables = actionable_finder.get_overlapping_areas()
+		
+		if actionables.size() > 0:
+			# Prendiamo il primo elemento trovato
+			var target = actionables[0]
+			
+			# Programmazione difensiva: verifichiamo che sia un oggetto valido
+			if target is Actionable:
+				# 1. Cambiamo lo stato invece di mettere in pausa il mondo
+				is_in_dialogue = true
+				
+				# 2. Lanciamo il dialogo
+				target.action()
+				
+				# 3. Consumiamo l'input
+				get_viewport().set_input_as_handled()
+
+# Questa funzione viene invocata automaticamente dal plugin quando il dialogo si chiude
+func _on_dialogue_ended(_resource: DialogueResource) -> void:
+	# Liberiamo il giocatore
+	is_in_dialogue = false
