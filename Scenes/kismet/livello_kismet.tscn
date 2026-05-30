@@ -10,26 +10,28 @@
 [ext_resource type="Texture2D" uid="uid://dlmj6hdh1qm4u" path="res://Scenes/kismet/sprite-letter-T.png" id="7_soyk0"]
 [ext_resource type="Texture2D" uid="uid://b7kftpco3kog2" path="res://Scenes/kismet/sprite-letter-S.png" id="8_3oao0"]
 [ext_resource type="Texture2D" uid="uid://dl221d81c3kba" path="res://Scenes/kismet/teatro-stage-5.png" id="9_pymat"]
+[ext_resource type="Texture2D" uid="uid://mn7mqtrswu7l" path="res://Scenes/kismet/teatro-stage-6.png" id="9_rgjqi"]
 [ext_resource type="Texture2D" uid="uid://0hmycc4lvvn3" path="res://Scenes/kismet/teatro-stage-4.png" id="10_tsvgy"]
 [ext_resource type="Texture2D" uid="uid://bvi4yjputc2y" path="res://Scenes/kismet/teatro-stage-3.png" id="11_rgjqi"]
 [ext_resource type="Texture2D" uid="uid://cvtit5uiplrs1" path="res://Scenes/kismet/teatro-stage-2.png" id="12_pjk36"]
 [ext_resource type="Texture2D" uid="uid://uvug8vphs0me" path="res://Scenes/kismet/teatro-stage-1.png" id="13_ujwkn"]
 [ext_resource type="Texture2D" uid="uid://bf4hygwulo75n" path="res://assets (2)/minigame/Tile_27.png" id="14_hm1iq"]
 [ext_resource type="Texture2D" uid="uid://btjsv3p6g5b7u" path="res://assets (2)/minigame/Tile_04.png" id="15_bfigr"]
+[ext_resource type="Script" uid="uid://ceikgqqfmlpoj" path="res://Scenes/kismet/area_i.gd" id="15_gufui"]
 [ext_resource type="Texture2D" uid="uid://buqmxgxb6chvo" path="res://assets (2)/minigame/Tile_91.png" id="16_voxjo"]
+[ext_resource type="Script" uid="uid://chkcv15m6ac1b" path="res://Scenes/kismet/area_s.gd" id="17_1lhmt"]
 [ext_resource type="Texture2D" uid="uid://cl1feiq84pyo6" path="res://assets (2)/minigame/Tile_83.png" id="17_k2n7s"]
+[ext_resource type="Script" uid="uid://che36b7lsw6dj" path="res://Scenes/kismet/area_m.gd" id="19_3oao0"]
 [ext_resource type="Script" uid="uid://b83ndsw7rb1na" path="res://Scenes/kismet/kismetmanager.gd" id="19_wh761"]
 [ext_resource type="Script" uid="uid://bvg88bcfgcx4g" path="res://Scenes/player1.gd" id="20_1lhmt"]
 [ext_resource type="Texture2D" uid="uid://bhvtrb6o02svd" path="res://Scenes/kismet/image-removebg-preview.png" id="20_5wk1d"]
 [ext_resource type="Texture2D" uid="uid://bd5ymcil28383" path="res://pg/RUN/run_right.png" id="21_soyk0"]
 [ext_resource type="Texture2D" uid="uid://bxrgiblbdfudb" path="res://pg/RUN/run_left.png" id="22_3oao0"]
+[ext_resource type="Script" uid="uid://djwis74b46xuv" path="res://Scenes/kismet/area_e.gd" id="22_pjk36"]
 [ext_resource type="Texture2D" uid="uid://b0xy18m1u05cm" path="res://pg/IDLE/idle_right.png" id="23_pymat"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1lhmt"]
-radius = 398.6601
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_soyk0"]
-radius = 320.05273
+[ext_resource type="Script" uid="uid://bpyfs0viajmyw" path="res://Scenes/kismet/area_t.gd" id="24_ujwkn"]
+[ext_resource type="Script" uid="uid://b4l3nm5svl0yu" path="res://Scenes/kismet/area_bandierina.gd" id="30_hm1iq"]
+[ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="32_bfigr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkvuh"]
 texture = ExtResource("14_hm1iq")
@@ -55,6 +57,24 @@ sources/0 = SubResource("TileSetAtlasSource_bkvuh")
 sources/1 = SubResource("TileSetAtlasSource_5mlrk")
 sources/2 = SubResource("TileSetAtlasSource_esqu4")
 sources/3 = SubResource("TileSetAtlasSource_2ugdj")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lhmt"]
+radius = 327.42383
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjgsx"]
+radius = 15.033297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_soyk0"]
+radius = 15.297058
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pymat"]
+radius = 16.27882
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ujwkn"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hm1iq"]
+radius = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsvgy"]
 size = Vector2(16, 34.5)
@@ -245,8 +265,39 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfigr"]
+size = Vector2(52, 73)
+
+[sub_resource type="LabelSettings" id="LabelSettings_voxjo"]
+font = ExtResource("32_bfigr")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfigr"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_k2n7s"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_wh761"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkvuh"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_5mlrk"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_esqu4"]
+font_size = 25
+
 [node name="livello kismet" type="Node2D" unique_id=303832567]
 script = ExtResource("1_js38d")
+
+[node name="kismetmanager" type="Node2D" parent="." unique_id=749069264 node_paths=PackedStringArray("nodo_teatro", "scritta_vittoria", "lettere_ui")]
+script = ExtResource("19_wh761")
+nodo_teatro = NodePath("../Sfondi livello/Teatro")
+scritta_vittoria = NodePath("../UI_Vittoria/ScrittaVittoria")
+lettere_ui = [NodePath("../UI_Vittoria/HBoxContainer/K"), NodePath("../UI_Vittoria/HBoxContainer/I"), NodePath("../UI_Vittoria/HBoxContainer/S"), NodePath("../UI_Vittoria/HBoxContainer/M"), NodePath("../UI_Vittoria/HBoxContainer/E"), NodePath("../UI_Vittoria/HBoxContainer/T")]
 
 [node name="Sfondi livello" type="Node2D" parent="." unique_id=94046345]
 
@@ -260,96 +311,42 @@ offset = Vector2(0, 320)
 
 [node name="Teatro" type="Node2D" parent="Sfondi livello" unique_id=212953472]
 
-[node name="LetteraE" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=277848098]
-position = Vector2(424, 27)
-scale = Vector2(0.053710945, 0.050781265)
-texture = ExtResource("3_5wk1d")
-
-[node name="LetteraM" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=1091218079]
-position = Vector2(149, -248)
-scale = Vector2(0.070312515, 0.056152347)
-texture = ExtResource("4_gufui")
-
-[node name="AreaK" type="Area2D" parent="Sfondi livello/Teatro" unique_id=68065344]
-position = Vector2(676.5, -184.5)
-scale = Vector2(0.045898486, 0.049804706)
-script = ExtResource("5_soyk0")
-
-[node name="LetteraK" type="Sprite2D" parent="Sfondi livello/Teatro/AreaK" unique_id=2047560085]
-position = Vector2(817.02045, 50.19606)
-scale = Vector2(1, 0.99999994)
-texture = ExtResource("5_hjgsx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sfondi livello/Teatro/AreaK" unique_id=1973437689]
-position = Vector2(817.0204, 30.117634)
-shape = SubResource("CircleShape2D_1lhmt")
-
-[node name="AreaI" type="Area2D" parent="Sfondi livello/Teatro" unique_id=1152461356]
-position = Vector2(674.00006, -301.99997)
-scale = Vector2(0.043945327, 0.043457028)
-script = ExtResource("5_soyk0")
-
-[node name="LetteraI" type="Sprite2D" parent="Sfondi livello/Teatro/AreaI" unique_id=1602657690]
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("6_1lhmt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sfondi livello/Teatro/AreaI" unique_id=1025992666]
-shape = SubResource("CircleShape2D_soyk0")
-
-[node name="LetteraT" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=1179833035]
-position = Vector2(731, -5.999998)
-scale = Vector2(0.051757813, 0.05810547)
-texture = ExtResource("7_soyk0")
-
-[node name="LetteraS" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=1683571317]
-position = Vector2(332, -216)
-scale = Vector2(0.04638666, 0.04394532)
-texture = ExtResource("8_3oao0")
-
-[node name="Teatro6" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=782415053]
-visible = false
-position = Vector2(553.49994, -179.37502)
-scale = Vector2(0.8219477, 0.62076825)
-texture = ExtResource("9_pymat")
-
-[node name="Teatro5" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=149472511]
-visible = false
-position = Vector2(552, -179)
-scale = Vector2(0.82412785, 0.6276041)
-texture = ExtResource("10_tsvgy")
-
-[node name="Teatro4" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=387247963]
-visible = false
-position = Vector2(551, -181)
-scale = Vector2(0.82267445, 0.62760425)
-texture = ExtResource("11_rgjqi")
-
-[node name="Teatro3" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=1723141089]
-visible = false
-position = Vector2(554.00006, -180.25)
-scale = Vector2(0.8241279, 0.6230469)
-texture = ExtResource("11_rgjqi")
-
-[node name="Teatro2" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=419385774]
-visible = false
-position = Vector2(551.5, -181)
-scale = Vector2(0.8190407, 0.61718756)
-texture = ExtResource("12_pjk36")
-
 [node name="Teatro1" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=857510220]
-visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(554, -378)
 scale = Vector2(0.82412785, 0.62500006)
 texture = ExtResource("13_ujwkn")
 offset = Vector2(0, 320)
 
-[node name="Kismet manager" type="Node" parent="." unique_id=251805893]
+[node name="Teatro2" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=419385774]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(551.5, -181)
+scale = Vector2(0.8190407, 0.61718756)
+texture = ExtResource("12_pjk36")
 
-[node name="SfondiLivello" type="Node2D" parent="." unique_id=1234347286]
+[node name="Teatro3" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=1723141089]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(554.00006, -180.25)
+scale = Vector2(0.8241279, 0.6230469)
+texture = ExtResource("11_rgjqi")
 
-[node name="Fabbrica" type="Node2D" parent="SfondiLivello" unique_id=1679957272]
+[node name="Teatro4" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=387247963]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(551, -181)
+scale = Vector2(0.82267445, 0.62760425)
+texture = ExtResource("10_tsvgy")
 
-[node name="Teatro" type="Node2D" parent="SfondiLivello" unique_id=1290728154]
+[node name="Teatro5" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=149472511]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(552, -179)
+scale = Vector2(0.82412785, 0.6276041)
+texture = ExtResource("9_pymat")
+
+[node name="Teatro6" type="Sprite2D" parent="Sfondi livello/Teatro" unique_id=782415053]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(553.49994, -179.37502)
+scale = Vector2(0.8219477, 0.62076825)
+texture = ExtResource("9_rgjqi")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1025104923]
 tile_set = SubResource("TileSet_y13s2")
@@ -359,14 +356,79 @@ layer_0/tile_data = PackedInt32Array(-1, 0, 0, -65536, 0, 0, -65535, 3, 0, -6553
 
 [node name="Lettere" type="Node2D" parent="." unique_id=1065263860]
 
-[node name="kismetmanager" type="Node2D" parent="." unique_id=749069264 node_paths=PackedStringArray("nodo_teatro")]
-script = ExtResource("19_wh761")
-nodo_teatro = NodePath("../Sfondi livello/Teatro")
+[node name="AreaK" type="Area2D" parent="Lettere" unique_id=1898083847]
+position = Vector2(676.5, -184.5)
+scale = Vector2(0.045898486, 0.049804706)
+script = ExtResource("5_soyk0")
 
-[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2096200092]
-position = Vector2(1026, -77)
-scale = Vector2(0.13799986, 0.15450001)
-texture = ExtResource("20_5wk1d")
+[node name="LetteraK" type="Sprite2D" parent="Lettere/AreaK" unique_id=100243494]
+position = Vector2(817.02045, 50.19606)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("5_hjgsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaK" unique_id=1963944398]
+position = Vector2(817.0204, 30.117634)
+shape = SubResource("CircleShape2D_1lhmt")
+
+[node name="AreaI" type="Area2D" parent="Lettere" unique_id=1585821300]
+script = ExtResource("15_gufui")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lettere/AreaI" unique_id=794678661]
+position = Vector2(690, -289.00003)
+scale = Vector2(0.051757738, 0.045898438)
+texture = ExtResource("6_1lhmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaI" unique_id=1165038081]
+position = Vector2(690, -289)
+shape = SubResource("CircleShape2D_hjgsx")
+
+[node name="AreaS" type="Area2D" parent="Lettere" unique_id=1833023356]
+script = ExtResource("17_1lhmt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lettere/AreaS" unique_id=115675053]
+position = Vector2(491.00006, -264.00003)
+scale = Vector2(0.049804702, 0.04296875)
+texture = ExtResource("8_3oao0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaS" unique_id=1343818376]
+position = Vector2(490, -264)
+shape = SubResource("CircleShape2D_soyk0")
+
+[node name="AreaM" type="Area2D" parent="Lettere" unique_id=213414726]
+script = ExtResource("19_3oao0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lettere/AreaM" unique_id=57788508]
+position = Vector2(107.00006, -244)
+scale = Vector2(0.055542, 0.045165993)
+texture = ExtResource("4_gufui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaM" unique_id=881968854]
+position = Vector2(105, -244)
+shape = SubResource("CircleShape2D_pymat")
+
+[node name="AreaE" type="Area2D" parent="Lettere" unique_id=79513184]
+script = ExtResource("22_pjk36")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lettere/AreaE" unique_id=500702274]
+position = Vector2(422, 28)
+scale = Vector2(0.042236302, 0.038574215)
+texture = ExtResource("3_5wk1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaE" unique_id=610552332]
+position = Vector2(423, 27)
+shape = SubResource("CircleShape2D_ujwkn")
+
+[node name="AreaT" type="Area2D" parent="Lettere" unique_id=864347973]
+script = ExtResource("24_ujwkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lettere/AreaT" unique_id=203194900]
+position = Vector2(744, -3)
+scale = Vector2(0.04394532, 0.047607433)
+texture = ExtResource("7_soyk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lettere/AreaT" unique_id=760184601]
+position = Vector2(744, -3)
+shape = SubResource("CircleShape2D_hm1iq")
 
 [node name="player1" type="CharacterBody2D" parent="." unique_id=781959586 groups=["Player"]]
 script = ExtResource("20_1lhmt")
@@ -382,6 +444,83 @@ animation = &"idle"
 autoplay = "corsa"
 
 [node name="Camera2D" type="Camera2D" parent="player1" unique_id=1592330301]
+zoom = Vector2(2, 2)
+limit_left = -13
+limit_top = -420
+limit_right = 1118
+limit_bottom = 60
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
-[connection signal="body_entered" from="Sfondi livello/Teatro/AreaK" to="kismetmanager" method="_on_lettera_k_2_body_entered"]
-[connection signal="body_entered" from="Sfondi livello/Teatro/AreaI" to="kismetmanager" method="_on_area_ii_body_entered"]
+[node name="AreaBandierina" type="Area2D" parent="." unique_id=1583551263]
+script = ExtResource("30_hm1iq")
+
+[node name="ImageRemovebgPreview" type="Sprite2D" parent="AreaBandierina" unique_id=2096200092]
+position = Vector2(1026, -77)
+scale = Vector2(0.13799986, 0.15450001)
+texture = ExtResource("20_5wk1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBandierina" unique_id=867225665]
+position = Vector2(1025, -77.5)
+shape = SubResource("RectangleShape2D_bfigr")
+
+[node name="UI_Vittoria" type="CanvasLayer" parent="." unique_id=513157228]
+layer = 10
+
+[node name="ScrittaVittoria" type="Label" parent="UI_Vittoria" unique_id=2036796034]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.5
+offset_top = -31.0
+offset_right = 470.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "L'opificio è rinato in un bellissimo teatro!"
+label_settings = SubResource("LabelSettings_voxjo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Vittoria" unique_id=1153457693]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="K" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=494974353]
+layout_mode = 2
+text = "K"
+label_settings = SubResource("LabelSettings_bfigr")
+
+[node name="I" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=1859368318]
+layout_mode = 2
+text = "I"
+label_settings = SubResource("LabelSettings_k2n7s")
+
+[node name="S" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=2141493305]
+layout_mode = 2
+text = "S"
+label_settings = SubResource("LabelSettings_wh761")
+
+[node name="M" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=1062544450]
+layout_mode = 2
+text = "M"
+label_settings = SubResource("LabelSettings_bkvuh")
+
+[node name="E" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=1621437213]
+layout_mode = 2
+text = "E"
+label_settings = SubResource("LabelSettings_5mlrk")
+
+[node name="T" type="Label" parent="UI_Vittoria/HBoxContainer" unique_id=1436059791]
+layout_mode = 2
+text = "T"
+label_settings = SubResource("LabelSettings_esqu4")
+
+[connection signal="body_entered" from="Lettere/AreaK" to="Lettere/AreaK" method="_on_body_entered"]
+[connection signal="body_entered" from="Lettere/AreaI" to="Lettere/AreaI" method="_on_body_entered"]
+[connection signal="body_entered" from="Lettere/AreaS" to="Lettere/AreaS" method="_on_body_entered"]
+[connection signal="body_entered" from="Lettere/AreaM" to="Lettere/AreaM" method="_on_body_entered"]
+[connection signal="body_entered" from="Lettere/AreaE" to="Lettere/AreaE" method="_on_body_entered"]
+[connection signal="body_entered" from="Lettere/AreaT" to="Lettere/AreaT" method="_on_body_entered"]
+[connection signal="body_entered" from="AreaBandierina" to="AreaBandierina" method="_on_body_entered"]
