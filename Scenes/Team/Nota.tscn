@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bdwkcctno2i35"]
+
+[ext_resource type="Script" uid="uid://cy8bnm2or8iq7" path="res://Scenes/Team/nota.gd" id="1_dffhf"]
+[ext_resource type="Texture2D" uid="uid://cgbxlworgbi1i" path="res://Scenes/Team/sprite-nota-semicroma.png" id="2_66q4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66q4g"]
+size = Vector2(63, 79)
+
+[node name="Nota" type="Area2D" unique_id=1832420087 groups=["note"]]
+script = ExtResource("1_dffhf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634330208]
+position = Vector2(154, 236)
+scale = Vector2(0.13134766, 0.13574219)
+texture = ExtResource("2_66q4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1699829874]
+position = Vector2(151.5, 232.5)
+shape = SubResource("RectangleShape2D_66q4g")
