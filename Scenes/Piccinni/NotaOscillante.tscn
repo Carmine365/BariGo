@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bn0r87t8mkb5u"]
+
+[ext_resource type="Script" uid="uid://brfmlrnbvnti" path="res://Scenes/Piccinni/nota_oscillante.gd" id="1_6glil"]
+[ext_resource type="Texture2D" uid="uid://10f2sevmuk0a" path="res://Scenes/Piccinni/note-eighth-sprite.png" id="2_xmlf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmlf4"]
+size = Vector2(73, 93)
+
+[node name="NotaOscillante" type="Area2D" unique_id=332288438]
+script = ExtResource("1_6glil")
+
+[node name="Nota1" type="Sprite2D" parent="." unique_id=1217235477]
+position = Vector2(258, -27.000004)
+scale = Vector2(0.22558594, 0.24609375)
+texture = ExtResource("2_xmlf4")
+
+[node name="Nota2" type="Sprite2D" parent="." unique_id=1089513495]
+position = Vector2(565, -131)
+scale = Vector2(0.22558594, 0.24609375)
+texture = ExtResource("2_xmlf4")
+
+[node name="Nota3" type="Sprite2D" parent="." unique_id=984855351]
+position = Vector2(913, -7.000004)
+scale = Vector2(0.22558594, 0.24609375)
+texture = ExtResource("2_xmlf4")
+
+[node name="Nota4" type="Sprite2D" parent="." unique_id=642025978]
+position = Vector2(1259, -116)
+scale = Vector2(0.22558594, 0.24609375)
+texture = ExtResource("2_xmlf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129853544]
+position = Vector2(252.5, -30.5)
+shape = SubResource("RectangleShape2D_xmlf4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1493939100]
+position = Vector2(558, -134)
+shape = SubResource("RectangleShape2D_xmlf4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2008769399]
+position = Vector2(907, -12)
+shape = SubResource("RectangleShape2D_xmlf4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1859902380]
+position = Vector2(1253, -119)
+shape = SubResource("RectangleShape2D_xmlf4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
