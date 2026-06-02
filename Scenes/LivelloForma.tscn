@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfgjg8jek8tt4"]
 
 [ext_resource type="Texture2D" uid="uid://b3udgjwl2jbc" path="res://assets (2)/minigame/Tile_24.png" id="1_3gnlp"]
+[ext_resource type="Texture2D" uid="uid://soi361qhmfhs" path="res://assets (2)/forma/a6bc4f20-69e5-4bf3-af17-dc6c769c5988.jpg" id="1_e2yr6"]
 [ext_resource type="Texture2D" uid="uid://cmjwofluhbh12" path="res://assets (2)/minigame/Tile_89.png" id="2_p4bnq"]
 [ext_resource type="Texture2D" uid="uid://c817tjyiug8m0" path="res://assets (2)/minigame/Tile_95.png" id="3_g6488"]
 [ext_resource type="Texture2D" uid="uid://c1jdkj4a58y5t" path="res://assets (2)/minigame/Tile_96.png" id="4_uvtmp"]
@@ -16,10 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://dom31ayi8wtiu" path="res://assets (2)/minigame/fusibile.png" id="14_g6488"]
 [ext_resource type="Script" uid="uid://d3o1fes3poret" path="res://Scenes/fusibili.gd" id="14_uvtmp"]
 [ext_resource type="PackedScene" uid="uid://c8v7wk1eevmrn" path="res://Scenes/Collezionabile.tscn" id="16_44kp4"]
+[ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="17_crwks"]
 [ext_resource type="Script" uid="uid://bvwyx8faboeoy" path="res://Scenes/counter.gd" id="17_rfpnt"]
 [ext_resource type="Script" uid="uid://ddf0xsyydoe4k" path="res://Scenes/level_exit.gd" id="18_rfpnt"]
 [ext_resource type="Texture2D" uid="uid://dydsd2cai7sgs" path="res://assets (2)/forma/porta_chiusa.png" id="19_rfpnt"]
 [ext_resource type="Script" uid="uid://brwsbbf7nu45x" path="res://Scenes/level_manager.gd" id="20_rfpnt"]
+[ext_resource type="Texture2D" uid="uid://dwh3gwenstso" path="res://assets (2)/forma/porta_aperta.png" id="20_ultql"]
 [ext_resource type="PackedScene" uid="uid://cysa8tfj2kipv" path="res://Scenes/Game.tscn" id="21_46mi2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2yr6"]
@@ -384,19 +387,25 @@ fill = 1
 fill_from = Vector2(0.49572653, 0.52136755)
 metadata/_snap_count = 23
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_44kp4"]
-size = Vector2(58, 56)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqnbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45w1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82rie"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_e2yr6"]
+font = ExtResource("17_crwks")
+font_size = 42
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u61e"]
-size = Vector2(47, 58)
+size = Vector2(51.353455, 70.318054)
 
 [node name="LivelloForma" type="Node2D" unique_id=832688648]
+
+[node name="4d1709f7Ebd34d4dA18e59Cfdde5d997" type="Sprite2D" parent="." unique_id=1723121397]
+position = Vector2(442, -133.99997)
+scale = Vector2(1.5973376, 1.1054688)
+texture = ExtResource("1_e2yr6")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=307886514]
 tile_set = SubResource("TileSet_p5786")
@@ -422,7 +431,7 @@ shape = SubResource("RectangleShape2D_s6jan")
 zoom = Vector2(2, 2)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player1" unique_id=198144663]
-position = Vector2(26.999998, 11.02)
+position = Vector2(26, 7)
 scale = Vector2(0.79314727, 0.82519037)
 texture = SubResource("GradientTexture2D_g6488")
 
@@ -431,36 +440,6 @@ color = Color(0, 0, 0.22745098, 1)
 
 [node name="Fusibili" type="Area2D" parent="." unique_id=553275995]
 script = ExtResource("14_uvtmp")
-
-[node name="Fusibile2" type="Sprite2D" parent="Fusibili" unique_id=433529835]
-position = Vector2(965.99994, -119.999985)
-scale = Vector2(0.31294963, 0.31081077)
-texture = ExtResource("14_g6488")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fusibili/Fusibile2" unique_id=760800379]
-position = Vector2(-6.390625, 25.739136)
-scale = Vector2(3.1954024, 3.2173915)
-shape = SubResource("RectangleShape2D_44kp4")
-
-[node name="Fusibile3" type="Sprite2D" parent="Fusibili" unique_id=167619599]
-position = Vector2(297, -539)
-scale = Vector2(0.31294963, 0.31081077)
-texture = ExtResource("14_g6488")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fusibili/Fusibile3" unique_id=306741479]
-position = Vector2(-3.1954346, -22.521729)
-scale = Vector2(3.1954024, 3.2173915)
-shape = SubResource("RectangleShape2D_44kp4")
-
-[node name="Fusibile" type="Sprite2D" parent="Fusibili" unique_id=1054771571]
-position = Vector2(-6, -378.00003)
-scale = Vector2(0.31294963, 0.3108108)
-texture = ExtResource("14_g6488")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fusibili/Fusibile" unique_id=232071439]
-position = Vector2(6.390808, -3.217308)
-scale = Vector2(3.1954024, 3.2173913)
-shape = SubResource("RectangleShape2D_44kp4")
 
 [node name="Collezionabile" parent="Fusibili" unique_id=1680869481 instance=ExtResource("16_44kp4")]
 position = Vector2(111, -372)
@@ -528,22 +507,31 @@ text = "Gay Over"
 [node name="Counter" type="Label" parent="HUD" unique_id=238199030]
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_e2yr6")
 script = ExtResource("17_rfpnt")
 
-[node name="LevelExit" type="Area2D" parent="." unique_id=2015148093 node_paths=PackedStringArray("manager")]
+[node name="LevelExit" type="Area2D" parent="." unique_id=2015148093 node_paths=PackedStringArray("sprite_chiusa", "sprite_aperta", "manager")]
 process_mode = 3
 position = Vector2(707, -543)
 script = ExtResource("18_rfpnt")
+sprite_chiusa = NodePath("portachiusa")
+sprite_aperta = NodePath("portaAperta")
 manager = NodePath("../LevelManager")
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelExit" unique_id=1829623782]
+[node name="portachiusa" type="Sprite2D" parent="LevelExit" unique_id=1829623782]
+visible = false
 position = Vector2(-0.64627075, 2.3180542)
 scale = Vector2(0.20448644, 0.22154467)
 texture = ExtResource("19_rfpnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit" unique_id=759322298]
-position = Vector2(-0.14654541, 0.3180542)
+position = Vector2(-2.3232422, -5.8409424)
 shape = SubResource("RectangleShape2D_7u61e")
+
+[node name="portaAperta" type="Sprite2D" parent="LevelExit" unique_id=2055632959]
+position = Vector2(-2.0000236, -8.999981)
+scale = Vector2(0.20535704, 0.21648797)
+texture = ExtResource("20_ultql")
 
 [node name="LevelManager" type="Node" parent="." unique_id=1983204686 node_paths=PackedStringArray("counter_label")]
 script = ExtResource("20_rfpnt")

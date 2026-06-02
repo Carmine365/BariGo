@@ -1,18 +1,21 @@
 extends Area2D
 
-# Tipizzazione forte: ora Godot sa che questo deve essere un LevelManager, non un nodo a caso
+@export var sprite_chiusa: Sprite2D
+@export var sprite_aperta: Sprite2D
 @export var manager: LevelManager
 
+func _ready():
+	# All'avvio, mostra solo quella chiusa
+	sprite_chiusa.visible = true
+	sprite_aperta.visible = false
 
+func _process(_delta):
+	# Se il manager dice che abbiamo raggiunto gli oggetti, scambiamo gli sprite
+	if manager and manager.current_items >= manager.items_to_collect:
+		sprite_chiusa.visible = false
+		sprite_aperta.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
-	# 1. Usa i gruppi per identificare il giocatore, non il nome
 	if body.is_in_group("Player"):
-		
-		# 2. Controllo robusto del riferimento
-		if manager == null:
-			printerr("ERRORE CRITICO: LevelManager non assegnato nell'Area di uscita.")
-			return
-			
-		# 3. Delega la logica al manager. Niente stringhe magiche.
-		manager.check_level_completion()
+		if manager != null:
+			manager.check_level_completion()
