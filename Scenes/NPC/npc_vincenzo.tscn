@@ -1,5 +1,29 @@
 [gd_scene format=3 uid="uid://yw3k6hlacmtm"]
 
 [ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_nws3b"]
+[ext_resource type="Texture2D" uid="uid://c544d4hw1f1uj" path="res://pg/NPC/vincenzo.png" id="2_8rc6g"]
+[ext_resource type="Resource" uid="uid://crnyde2ri50e8" path="res://Scenes/NPC/dialogue/vincenzo.dialogue" id="3_5oa2y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oa2y"]
+atlas = ExtResource("2_8rc6g")
+region = Rect2(0, 0, 290, 861)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrxll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oa2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Npc" unique_id=259017654 instance=ExtResource("1_nws3b")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
+scale = Vector2(0.07047414, 0.065086216)
+sprite_frames = SubResource("SpriteFrames_nrxll")
+
+[node name="Actionable" parent="." index="2" unique_id=443781918]
+dialogue_resource = ExtResource("3_5oa2y")

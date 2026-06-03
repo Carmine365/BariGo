@@ -42,6 +42,7 @@ func _trigger_victory() -> void:
 	get_tree().paused = false
 	
 	if next_level != null:
+		global.quest_states["forma"] = "completed"
 		get_tree().change_scene_to_packed(next_level)
 	else:
 		printerr("ERRORE: Nessuna scena successiva configurata.")

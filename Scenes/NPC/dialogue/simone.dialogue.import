@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3gmti53iyqfc"
+path="res://.godot/imported/simone.dialogue-76c3531a873781e219183288cc79dab7.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/simone.dialogue"
+dest_files=["res://.godot/imported/simone.dialogue-76c3531a873781e219183288cc79dab7.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://4hkxasi0x1w3"
+path="res://.godot/imported/armando.dialogue-104331b2dc420ef871b35663632e144a.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/armando.dialogue"
+dest_files=["res://.godot/imported/armando.dialogue-104331b2dc420ef871b35663632e144a.tres"]
+
+[params]
+
+defaults=true

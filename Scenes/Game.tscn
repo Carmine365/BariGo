@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dewuw3c8eulpe" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree1.png" id="27_7edvx"]
 [ext_resource type="Texture2D" uid="uid://gxcl0q64167o" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Back red chair.png" id="31_w61tf"]
 [ext_resource type="Texture2D" uid="uid://cllq14swl8n1i" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Beige Vending Machine.png" id="32_a8bb1"]
+[ext_resource type="PackedScene" uid="uid://d2k10ka2tyf6b" path="res://Scenes/NPC/npc_peppe.tscn" id="38_2i8gw"]
 [ext_resource type="Texture2D" uid="uid://b6cvsvf0dqv8c" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree2.png" id="44_5eiyn"]
 [ext_resource type="Texture2D" uid="uid://d3jbirsue3mud" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree3.png" id="45_m15vq"]
 [ext_resource type="Texture2D" uid="uid://dylb2h2edxxlq" path="res://assets (2)/city assets/City Assets Pack - Basic/deco_10.png" id="48_n24vg"]
@@ -174,6 +175,9 @@
 [ext_resource type="Texture2D" uid="uid://di5mq1ded8u0k" path="res://assets (2)/city assets/City Assets Pack - Basic/bidone.png" id="172_ij123"]
 [ext_resource type="PackedScene" uid="uid://bywy7bol854o3" path="res://Scenes/NPC/npc_kekko.tscn" id="173_mcuw2"]
 [ext_resource type="PackedScene" uid="uid://ennc3c5au3a" path="res://Scenes/NPC/npc_paolo.tscn" id="174_ffck8"]
+[ext_resource type="PackedScene" uid="uid://yw3k6hlacmtm" path="res://Scenes/NPC/npc_vincenzo.tscn" id="175_ij123"]
+[ext_resource type="PackedScene" uid="uid://dnvisvj43mcr0" path="res://Scenes/NPC/npc_armando.tscn" id="176_dwt01"]
+[ext_resource type="PackedScene" uid="uid://b38nlnq4yq4s0" path="res://Scenes/NPC/npc_simone.tscn" id="178_4y2o5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("1_kfjtm")
@@ -17821,8 +17825,20 @@ position = Vector2(-609, 1217)
 scale = Vector2(0.3913574, 0.4122925)
 texture = ExtResource("172_ffck8")
 
-[node name="Npc_kekko" parent="." unique_id=259017654 instance=ExtResource("173_mcuw2")]
+[node name="Npc_kekko" parent="." unique_id=1613921904 instance=ExtResource("173_mcuw2")]
 position = Vector2(-849, -700)
 
 [node name="Npc" parent="." unique_id=1644557600 instance=ExtResource("174_ffck8")]
 position = Vector2(-3825, 1092)
+
+[node name="Npc2" parent="." unique_id=2144334403 instance=ExtResource("175_ij123")]
+position = Vector2(351, -1790)
+
+[node name="Npc3" parent="." unique_id=1900739031 instance=ExtResource("176_dwt01")]
+position = Vector2(-1036, 1132)
+
+[node name="Npc4" parent="." unique_id=1515668938 instance=ExtResource("38_2i8gw")]
+position = Vector2(-2269, 899)
+
+[node name="Npc5" parent="." unique_id=259017654 instance=ExtResource("178_4y2o5")]
+position = Vector2(-3665, -1403)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dnvisvj43mcr0"]
+
+[ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_hkgub"]
+[ext_resource type="Texture2D" uid="uid://c4m58g63q3e5r" path="res://pg/NPC/armando.png" id="2_met4b"]
+[ext_resource type="Resource" uid="uid://4hkxasi0x1w3" path="res://Scenes/NPC/dialogue/armando.dialogue" id="3_met4b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycgkf"]
+atlas = ExtResource("2_met4b")
+region = Rect2(0, 0, 464, 538)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8t3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycgkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Npc" unique_id=259017654 instance=ExtResource("1_hkgub")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
+scale = Vector2(0.10641164, 0.10641162)
+sprite_frames = SubResource("SpriteFrames_x8t3k")
+
+[node name="Actionable" parent="." index="2" unique_id=443781918]
+dialogue_resource = ExtResource("3_met4b")

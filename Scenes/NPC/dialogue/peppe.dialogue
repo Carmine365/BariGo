@@ -1,0 +1,28 @@
+~ start
+
+# 1. Controllo Vittoria
+if global.quest_states["forma"] == "completed":
+	Educatore Salesiano: Eccoti! La luce è tornata a scaldare il legno del palco.
+	Educatore Salesiano: Questo teatro è più di una sala; è il cuore della nostra attività educativa e sociale.
+	Educatore Salesiano: Grazie a te, possiamo tornare a ospitare artisti che cercano quel contatto diretto e intimo che solo il Forma sa offrire.
+	=> END
+
+# 2. Controllo Progresso
+if global.quest_states["forma"] == "started":
+	Educatore Salesiano: Il buio è totale laggiù. Muoviti con cautela e trovami quei 3 fusibili per ripristinare il quadro elettrico!
+	=> END
+
+# 3. Assegnazione Iniziale
+Educatore Salesiano: Benvenuto al Teatro Forma. Ti sembrerà strano scendere così in basso, ma è proprio qui, nel cuore dell'Istituto Salesiano, che abbiamo ricavato il nostro spazio.
+Educatore Salesiano: Essendo incastrati nel quartiere Carrassi, abbiamo costruito questo tempio della musica e della prosa proprio sotto i nostri piedi, come un segreto ipogeo.
+Educatore Salesiano: La luce è saltata e senza i 3 fusibili dell'impianto, il teatro resta inaccessibile. 
+Educatore Salesiano: Recuperali nel labirinto sotterraneo. Abbiamo bisogno di tornare a illuminare il palco per i nostri laboratori di musica d'autore e i concerti jazz. Senza luce, la cultura si ferma.
+
+- Player: Scendo nel buio e trovo i fusibili!
+	set global.quest_states["forma"] = "started"
+	set global.next_minigame_scene = "res://Scenes/LivelloForma.tscn"
+	Educatore Salesiano: Fai attenzione ai vecchi corridoi sotterranei!
+	=> END
+- Player: Non ho tempo di esplorare labirinti al momento.
+	Educatore Salesiano: La cultura qui rimarrà al buio finché non deciderai di aiutarci.
+	=> END

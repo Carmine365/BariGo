@@ -1,0 +1,30 @@
+~ start
+
+# 1. Controllo Vittoria: Se la missione è completata
+if global.quest_states["team"] == "completed":
+	Direttore di Produzione: Spettacolare! Hai un timing perfetto.
+	Direttore di Produzione: È proprio questa energia che ha reso il Team il punto di riferimento del Sud Italia negli ultimi trent'anni. 
+	Direttore di Produzione: Ricordo ancora quando Lino Banfi nel '96 fece il tutto esaurito per 21 giorni... ora con questi strumenti, siamo pronti a infrangere un altro record!
+	=> END
+
+# 2. Controllo Progresso: Se è già in corso
+if global.quest_states["team"] == "started":
+	Direttore di Produzione: Siamo in ritardo! Il pubblico sta arrivando. Vai sul palco, sincronizzati con il ritmo e fammi apparire quei 4 strumenti!
+	=> END
+
+# 3. Assegnazione Iniziale (Se lo stato è "not_started")
+Direttore di Produzione: Siamo in ritardo! Bartolomeo Pinto vuole che tutto sia perfetto per stasera.
+Direttore di Produzione: Il Team è il tempio dei grandi musical, da Cats a Billy Elliot, ma qui il palco è vuoto e la musica è tutta fuori tempo.
+Direttore di Produzione: Il pubblico di Bari, Basilicata e Calabria sta arrivando e non abbiamo nemmeno una batteria o un violino in posizione!
+Direttore di Produzione: Devi aiutarmi a sincronizzarti con il ritmo. Vedi quelle note che scorrono? Quando passano nel cerchio, colpiscile col tempo giusto.
+Direttore di Produzione: Ogni due note perfette, farò apparire uno strumento sul palco. Ne servono 4 per completare l'orchestra e salvare lo spettacolo!
+
+- Player: Dammi il tempo, ci penso io!
+	set global.quest_states["team"] = "started"
+	# Imposta il percorso corretto verso il tuo minigioco ritmico
+	set global.next_minigame_scene = "res://Scenes/Team/LivelloTeam.tscn"
+	Direttore di Produzione: In posizione, si alza il sipario!
+	=> END
+- Player: Non ho molto senso del ritmo al momento...
+	Direttore di Produzione: Trovalo in fretta, o stasera faremo una figuraccia davanti a tutto il Sud Italia!
+	=> END

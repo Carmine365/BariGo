@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b38nlnq4yq4s0"]
+
+[ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_w8qu7"]
+[ext_resource type="Texture2D" uid="uid://dhtrlwwyewtuv" path="res://pg/NPC/simone.png" id="2_c3rgw"]
+[ext_resource type="Resource" uid="uid://d3gmti53iyqfc" path="res://Scenes/NPC/dialogue/simone.dialogue" id="3_03atg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh726"]
+atlas = ExtResource("2_c3rgw")
+region = Rect2(206, 0, 206, 403)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp8xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh726")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Npc" unique_id=259017654 instance=ExtResource("1_w8qu7")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
+scale = Vector2(0.15169902, 0.13713591)
+sprite_frames = SubResource("SpriteFrames_sp8xt")
+
+[node name="Actionable" parent="." index="2" unique_id=443781918]
+dialogue_resource = ExtResource("3_03atg")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drsu4ctdjsypv"
-path="res://.godot/imported/simone.jpeg-4ce8326b02cd65488d2010df763da063.ctex"
+uid="uid://ck5c1b0jlrwp4"
+path="res://.godot/imported/custode.png-303a62691219b1abd87d43c171fc633f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/portraits/simone.jpeg"
-dest_files=["res://.godot/imported/simone.jpeg-4ce8326b02cd65488d2010df763da063.ctex"]
+source_file="res://assets (2)/portraits/custode.png"
+dest_files=["res://.godot/imported/custode.png-303a62691219b1abd87d43c171fc633f.ctex"]
 
 [params]
 

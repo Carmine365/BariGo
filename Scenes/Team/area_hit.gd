@@ -56,5 +56,12 @@ func mostra_vittoria():
 	# Aspetta 3 secondi, poi ripristina e cambia scena
 	await get_tree().create_timer(3.0, true, false, true).timeout
 	
+	# Aggiorniamo lo stato della missione nel Singleton
+	global.quest_states["team"] = "completed"
+	var scene_to_load: String = global.next_minigame_scene
+		
+	# Puliamo immediatamente il Singleton per i dialoghi futuri
+	global.next_minigame_scene = ""	
+		
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

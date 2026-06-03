@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d2k10ka2tyf6b"]
+
+[ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_nm16u"]
+[ext_resource type="Texture2D" uid="uid://dhpvrqvb2w87" path="res://pg/NPC/peppe.png" id="2_q3a8g"]
+[ext_resource type="Resource" uid="uid://rqlvrb4bb31e" path="res://Scenes/NPC/dialogue/peppe.dialogue" id="3_d0p6l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0p6l"]
+atlas = ExtResource("2_q3a8g")
+region = Rect2(0, 0, 443, 563)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra2cm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0p6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Npc" unique_id=259017654 instance=ExtResource("1_nm16u")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
+scale = Vector2(0.1139955, 0.09945286)
+sprite_frames = SubResource("SpriteFrames_ra2cm")
+
+[node name="Actionable" parent="." index="2" unique_id=443781918]
+dialogue_resource = ExtResource("3_d0p6l")

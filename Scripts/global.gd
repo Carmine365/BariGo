@@ -15,7 +15,7 @@ var quest_states: Dictionary = {
 	"kismet": "not_started",
 	"forma": "not_started", # Può essere: "not_started", "started", "completed"
 	"piccinni": "not_started",
-	"nonmiricordo": "not_started"
+	"team": "not_started"
 }
 
 # --- VARIABILI DI SPAWN ---

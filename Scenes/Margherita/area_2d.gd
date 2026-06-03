@@ -26,9 +26,18 @@ func _on_body_entered(body: Node2D) -> void:
 		# 5. Aspettiamo i 3 secondi di gloria
 		await get_tree().create_timer(3.0).timeout
 		
+		global.quest_states["margherita"] = "completed"
+		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+		
 		# 6. Cambiamo scena
-		var percorso_scena = "res://Scenes/Game.tscn"
-		if ResourceLoader.exists(percorso_scena):
-			get_tree().change_scene_to_file(percorso_scena)
-		else:
-			push_error("ERRORE: Scena non trovata in: " + percorso_scena)
+		if global.next_minigame_scene != "":
+			var scene_to_load: String = global.next_minigame_scene
+			
+			# Puliamo immediatamente il Singleton per evitare loop
+			global.next_minigame_scene = ""	
+			
+			# Verifichiamo il percorso dinamico, NON uno statico inventato
+			if ResourceLoader.exists(scene_to_load):
+				get_tree().change_scene_to_file(scene_to_load)
+			else:
+				printerr("ERRORE DI CARICAMENTO: La scena richiesta non esiste al percorso: ", scene_to_load)

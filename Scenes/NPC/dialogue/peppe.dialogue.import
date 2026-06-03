@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://rqlvrb4bb31e"
+path="res://.godot/imported/peppe.dialogue-98ed191707fdc9521959dad6608028ba.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/peppe.dialogue"
+dest_files=["res://.godot/imported/peppe.dialogue-98ed191707fdc9521959dad6608028ba.tres"]
+
+[params]
+
+defaults=true

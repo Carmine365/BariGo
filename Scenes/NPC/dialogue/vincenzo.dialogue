@@ -1,0 +1,28 @@
+~ start
+
+# 1. Controllo Vittoria: Se la missione è completata, mostra il finale storico
+if global.quest_states["margherita"] == "completed":
+	Pescatore del Porto: Incredibile. Hai protetto quel capolavoro Liberty.
+	Pescatore del Porto: Dalle operette di inizio secolo al restauro che lo ha reso un tempio dell'arte contemporanea, questo posto resta un ponte sospeso tra la terra e l'Adriatico. Grazie per aver messo al sicuro il nostro Margherita.
+	=> END
+
+# 2. Controllo Progresso: Se è già in corso, sollecita il giocatore
+if global.quest_states["margherita"] == "started":
+	Pescatore del Porto: Fai in fretta! L'acqua sta salendo rapidamente, salta su quelle palafitte e metti al sicuro le opere d'arte!
+	=> END
+
+# 3. Assegnazione Iniziale (Se lo stato è "not_started")
+Pescatore del Porto: Vedi il Margherita? Non è nato lì per caso. Quando volevano costruirlo nel 1914, c'era un divieto che impediva di edificare teatri in muratura sul suolo barese, per non far concorrenza al Petruzzelli.
+Pescatore del Porto: Ma la famiglia Messeni Nemagna non si arrese: costruirono il teatro letteralmente sul mare, su palafitte in cemento, aggirando la legge.
+Pescatore del Porto: Ma oggi è il mare a reclamare il suo spazio. L'acqua sta salendo e minaccia di sommergere le opere d'arte contemporanea esposte nel museo.
+Pescatore del Porto: Devi saltare da una palafitta all'altra, tenendo i piedi all'asciutto, e raggiungere la bandierina in cima prima che la marea ti raggiunga!
+
+- Player: Salverò le opere d'arte, vado subito!
+	set global.quest_states["margherita"] = "started"
+	# Prepariamo la transizione per il minigioco platformer delle palafitte
+	set global.next_minigame_scene = "res://Scenes/Margherita/LivelloMargherita.tscn"
+	Pescatore del Porto: Attento a non scivolare, l'Adriatico non perdona!
+	=> END
+- Player: Devo prima sbrigare altre commissioni...
+	Pescatore del Porto: Torna presto, la marea non aspetta i tuoi comodi.
+	=> END

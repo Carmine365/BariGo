@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ptrfyq14l0jg"
-path="res://.godot/imported/peppe.jpeg-3985cd8862a297100ba0881ce31ac0e5.ctex"
+uid="uid://c4m58g63q3e5r"
+path="res://.godot/imported/armando.png-ba46787b12ea67c89edda6edfc065f89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/portraits/peppe.jpeg"
-dest_files=["res://.godot/imported/peppe.jpeg-3985cd8862a297100ba0881ce31ac0e5.ctex"]
+source_file="res://pg/NPC/armando.png"
+dest_files=["res://.godot/imported/armando.png-ba46787b12ea67c89edda6edfc065f89.ctex"]
 
 [params]
 

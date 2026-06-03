@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://donddw0e6am1p"
-path="res://.godot/imported/vincenzo.jpeg-f4fd251db4e3118c16a1a0586f24b92a.ctex"
+uid="uid://clx5c3phq4snx"
+path="res://.godot/imported/pescatore del porto.png-f17bb42448a1f278218afd33ebea48c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/portraits/vincenzo.jpeg"
-dest_files=["res://.godot/imported/vincenzo.jpeg-f4fd251db4e3118c16a1a0586f24b92a.ctex"]
+source_file="res://assets (2)/portraits/pescatore del porto.png"
+dest_files=["res://.godot/imported/pescatore del porto.png-f17bb42448a1f278218afd33ebea48c9.ctex"]
 
 [params]
 
