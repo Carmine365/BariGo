@@ -1,0 +1,35 @@
+~ start
+
+# Verifichiamo se la missione del Kismet è già stata completata
+if global.quest_states["kismet"] == "completed":
+	Operaio: Grazie a te, il Kismet ha finalmente smesso di essere una fabbrica e ha iniziato a raccontare storie. Il pubblico ti ringrazierà sempre.
+	=> END
+
+# Verifichiamo se il giocatore ha già completato il minigioco delle lettere ma deve ancora validare la quest
+if global.quest_states["kismet"] == "letters_collected":
+	=> dopo_minigioco
+
+# Dialogo di introduzione e assegnazione missione
+Operaio: Che fatica trasformare questa vecchia fabbrica in qualcosa di vivo. Era un opificio, senti ancora l'odore di olio e metallo? Il tempo è stato duro con questa struttura, ma sento che sotto tutto questo grigio batte un cuore d'artista.
+Operaio: È tutto troppo rigido. Vedi quelle lettere che fluttuano nell'aria? Sono l'anima stessa del Kismet. Se le raccogli tutte, la magia del teatro prenderà il sopravvento sulla ruggine. K-I-S-M-E-T. Portamele, e vedrai questo posto cambiare forma.
+
+- Player: Raccolgo io le lettere, trasformiamo questo posto!
+	# Aggiorniamo lo stato nel dizionario globale
+	set global.quest_states["kismet"] = "started"
+	# Iniettiamo il percorso del minigioco nella variabile universale
+	set global.next_minigame_scene = "res://Scenes/kismet/livello_kismet.tscn"
+	Operaio: Buona fortuna, cerca le sei lettere nell'ordine giusto!
+	=> END
+- Player: Ci penserò più tardi...
+	Operaio: Va bene, ma non lasciare che la ruggine vinca. Io sono qui.
+	=> END
+
+
+~ dopo_minigioco
+
+Operaio: È... è incredibile. Hai trasformato le travi industriali in quinte e il cemento in palcoscenico.
+Operaio: È esattamente così che è successo: anno dopo anno, abbiamo spogliato la fabbrica della sua freddezza per vestirci di copioni e sipari. Grazie a te, il Kismet ha finalmente smesso di essere una fabbrica e ha iniziato a raccontare storie. Il pubblico ti ringrazierà.
+
+# Chiudiamo formalmente la quest
+set global.quest_states["kismet"] = "completed"
+=> END

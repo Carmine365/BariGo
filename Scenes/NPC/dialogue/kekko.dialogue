@@ -1,12 +1,38 @@
 ~ start
-Kekko: [[We|Ciao|Carissimo]], sai chi è passato prima?.
-Kekko: Rispondi stronzo.
-- Chi?
-	Kekko: STOCAZZOOO.
-	Kekko: Ahahahaha, coglione.
-- Stocazzo
-	Kekko: Mi hai fregato.
-- Gay che non sei altro, ripeti. => start
-- Fanculo. => END
-Kekko: Alla prossima!
+
+# Verifichiamo se il giocatore ha già completato la missione
+if global.petruzzelli_quest_completed == true:
+	Kekko: Grazie ancora per quello che hai fatto per il Petruzzelli. Questo posto è tornato a splendere grazie a te!
+	=> END
+
+# Verifichiamo se il giocatore ha già i frammenti ma non ha ancora parlato con il pompiere per chiudere la quest
+# 1. Controllo Vittoria: Se è completata, mostra subito il finale storico
+if global.quest_states["petruzzelli"] == "completed":
+	=> dopo_minigioco
+
+# Se non ha completato la quest e non ha i frammenti, parte l'assegnazione
+Kekko: È un incubo! Devi sapere che questo teatro ha già sofferto l'inferno: era il 1991 quando un incendio devastante lo ridusse in cenere, portando via anni di storia e bellezza.
+Kekko: È una tragedia per tutta la città! Ma guarda... tra le ceneri, brilla qualcosa. Sono frammenti dorati dello spirito del teatro.
+Kekko: Se riuscissi a recuperarli, forse potremmo ricostruire la sua essenza perduta. Me ne servono tre, ti prego, fai in fretta!
+
+- Player: Ci penso io, vado a cercarli!
+	set global.quest_states["petruzzelli"] = "started"
+	set global.next_minigame_scene = "res://Scenes/Liv_Petruzzelli.tscn"
+	Kekko: Attento là dentro, la stabilità della struttura è a rischio!
+	=> END
+- Player: Al momento ho altro da fare...
+	Kekko: Ti prego, non tardare troppo. Il tempo stringe.
+	=> END
+
+
+~ dopo_minigioco
+
+Kekko: Incredibile... ce l'hai fatta! Hai ridato speranza a queste mura.
+Kekko: Sai, dopo quel maledetto 1991, la città non si è mai arresa. Il teatro è rimasto ferito per anni, ma grazie a un lungo e meticoloso lavoro di restauro, nel 2009 è finalmente tornato a splendere più forte di prima, riaprendo le sue porte al mondo.
+Kekko: Grazie per quello che hai fatto, non lo dimenticherò.
+
+# Aggiorniamo gli stati globali di gioco
+set global.petruzzelli_quest_completed = true
+# Sottraiamo i frammenti dall'inventario
+# set global.petruzzelli_fragments_collected -= 3 
 => END

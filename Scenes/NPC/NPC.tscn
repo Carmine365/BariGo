@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://7xlcj56v2jk" path="res://Scenes/NPC/dialogue/Actionable.tscn" id="2_u75bn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ri8vb"]
-size = Vector2(14, 14)
+size = Vector2(21, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u75bn"]
+size = Vector2(60, 76)
 
 [node name="Npc" type="Area2D" unique_id=259017654]
 script = ExtResource("1_ri8vb")
@@ -18,3 +21,6 @@ z_index = 1
 shape = SubResource("RectangleShape2D_ri8vb")
 
 [node name="Actionable" parent="." unique_id=443781918 instance=ExtResource("2_u75bn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1998809967]
+shape = SubResource("RectangleShape2D_u75bn")

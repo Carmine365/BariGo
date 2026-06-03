@@ -14,6 +14,14 @@ var is_in_dialogue: bool = false
 func _ready():
 	global.player = self
 	
+	if global.has_saved_position:
+		# Spostiamo il player sulle vecchie coordinate
+		global_position = global.map_return_position
+		
+		# Resettiamo subito il flag per i prossimi spostamenti standard
+		global.has_saved_position = false
+		print("ARCHITETTURA: Rientro completato. Player riposizionato a: ", global_position)
+	
 	# Manteniamo l'ascolto sul segnale di chiusura
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
@@ -84,3 +92,20 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	# Liberiamo il giocatore
 	is_in_dialogue = false
+
+	# Se la stringa non è vuota, significa che un dialogo ha richiesto un minigioco
+	if global.next_minigame_scene != "":
+		# --- SALVATAGGIO COORDINATE DI RIENTRO ---
+		global.map_return_position = global_position
+		global.has_saved_position = true
+		# -----------------------------------------
+		
+		# Copiamo il percorso in una variabile locale temporanea
+		var scene_to_load: String = global.next_minigame_scene
+		
+		# Puliamo immediatamente il Singleton per i dialoghi futuri
+		global.next_minigame_scene = ""
+		
+		# Carichiamo la scena in modo dinamico
+		print("ARCHITETTURA: Avvio scalabile del minigioco -> ", scene_to_load)
+		get_tree().change_scene_to_file(scene_to_load)

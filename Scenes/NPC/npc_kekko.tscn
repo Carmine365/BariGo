@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bywy7bol854o3"]
 
 [ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_ajrp2"]
-[ext_resource type="Texture2D" uid="uid://bapc8fli22tpa" path="res://pg/NPC/kekko.png" id="2_7i5fc"]
+[ext_resource type="Texture2D" uid="uid://c5v7v2snp3una" path="res://pg/NPC/kekko.png" id="2_7i5fc"]
 [ext_resource type="Resource" uid="uid://b2j1quqnwfmah" path="res://Scenes/NPC/dialogue/kekko.dialogue" id="3_iohle"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmqa7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iohle"]
 atlas = ExtResource("2_7i5fc")
-region = Rect2(0, 0, 251, 255)
+region = Rect2(0, 0, 489, 510)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pj8bm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmqa7")
+"texture": SubResource("AtlasTexture_iohle")
 }],
 "loop": true,
 "name": &"default",
@@ -22,14 +22,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8guhr"]
 size = Vector2(21, 52)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtqeg"]
-size = Vector2(60, 76)
-
 [node name="Npc" unique_id=259017654 instance=ExtResource("1_ajrp2")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
-position = Vector2(2.6226044e-06, -0.9999968)
-scale = Vector2(0.22310759, 0.21960784)
+scale = Vector2(0.11508159, 0.113276385)
 sprite_frames = SubResource("SpriteFrames_pj8bm")
 
 [node name="CollisionShape2D" parent="StaticBody2D" parent_id_path=PackedInt32Array(1958155273) index="0" unique_id=55711590]
@@ -38,7 +34,3 @@ shape = SubResource("RectangleShape2D_8guhr")
 
 [node name="Actionable" parent="." index="2" unique_id=443781918]
 dialogue_resource = ExtResource("3_iohle")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" index="0" unique_id=1779273276]
-position = Vector2(-1, -2)
-shape = SubResource("RectangleShape2D_gtqeg")

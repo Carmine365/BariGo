@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dss3ihf1707r1"
+path="res://.godot/imported/paolo.dialogue-54495af8c908cf7c40f7a80810f193a3.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/paolo.dialogue"
+dest_files=["res://.godot/imported/paolo.dialogue-54495af8c908cf7c40f7a80810f193a3.tres"]
+
+[params]
+
+defaults=true

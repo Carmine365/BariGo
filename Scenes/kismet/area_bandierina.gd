@@ -14,6 +14,8 @@ func _on_body_entered(body):
 			# Nota: Abbiamo bisogno di un timer "non stoppato" dal gioco
 			await get_tree().create_timer(2.0, true, false, true).timeout
 			
+			global.quest_states["kismet"] = "completed"
+			
 			# 3. Importante: togliamo la pausa prima di cambiare scena
 			get_tree().paused = false
 			get_tree().change_scene_to_file("res://Scenes/Game.tscn")

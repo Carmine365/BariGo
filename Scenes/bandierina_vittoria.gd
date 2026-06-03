@@ -33,6 +33,9 @@ func _on_body_entered(body: Node2D) -> void:
 				
 				# 3. SBLOCCHIAMO IL GIOCO. (Fondamentale, sennò la mappa Game.tscn nasce bloccata)
 				get_tree().paused = false
+				# Scriviamo i dati nel Singleton per sbloccare il dialogo di Kekko
+				
+				global.quest_states["petruzzelli"] = "completed"
 				
 				# 4. Carichiamo la mappa iniziale
 				get_tree().change_scene_to_file("res://Scenes/Game.tscn")

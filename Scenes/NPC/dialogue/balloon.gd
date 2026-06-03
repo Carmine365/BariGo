@@ -139,7 +139,7 @@ func apply_dialogue_line() -> void:
 	if dialogue_line.character != "":
 		# Normalizziamo la stringa per evitare errori di case-sensitivity sui file
 		var char_name: String = dialogue_line.character.to_lower().strip_edges()
-		var portrait_path: String = "res://assets (2)/portraits/" + char_name + ".jpeg"
+		var portrait_path: String = "res://assets (2)/portraits/" + char_name + ".png"
 		
 		# Controllo I/O difensivo: carichiamo solo se il file esiste
 		if ResourceLoader.exists(portrait_path):

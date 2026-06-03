@@ -173,6 +173,7 @@
 [ext_resource type="Texture2D" uid="uid://bj22deov332vu" path="res://assets (2)/city assets/City Assets Pack - Basic/stadio san nicola.png" id="172_ffck8"]
 [ext_resource type="Texture2D" uid="uid://di5mq1ded8u0k" path="res://assets (2)/city assets/City Assets Pack - Basic/bidone.png" id="172_ij123"]
 [ext_resource type="PackedScene" uid="uid://bywy7bol854o3" path="res://Scenes/NPC/npc_kekko.tscn" id="173_mcuw2"]
+[ext_resource type="PackedScene" uid="uid://ennc3c5au3a" path="res://Scenes/NPC/npc_paolo.tscn" id="174_ffck8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("1_kfjtm")
@@ -17821,4 +17822,7 @@ scale = Vector2(0.3913574, 0.4122925)
 texture = ExtResource("172_ffck8")
 
 [node name="Npc_kekko" parent="." unique_id=259017654 instance=ExtResource("173_mcuw2")]
-position = Vector2(-2680, 156)
+position = Vector2(-849, -700)
+
+[node name="Npc" parent="." unique_id=1644557600 instance=ExtResource("174_ffck8")]
+position = Vector2(-3825, 1092)

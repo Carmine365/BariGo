@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g4l2b4n8wiky"
-path="res://.godot/imported/paolo.jpeg-cd6f91b603d671c94365b1398fc7b3b2.ctex"
+uid="uid://bbtq8utwavr1o"
+path="res://.godot/imported/paolo.png-271f2b3f7547a9e05fd6aac59e679ff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/portraits/paolo.jpeg"
-dest_files=["res://.godot/imported/paolo.jpeg-cd6f91b603d671c94365b1398fc7b3b2.ctex"]
+source_file="res://pg/NPC/paolo.png"
+dest_files=["res://.godot/imported/paolo.png-271f2b3f7547a9e05fd6aac59e679ff7.ctex"]
 
 [params]
 
