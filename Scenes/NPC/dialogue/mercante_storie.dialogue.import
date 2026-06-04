@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c34k33gmd4o7v"
+path="res://.godot/imported/mercante_storie.dialogue-afbd297be3c0372c2e04df164ba29f41.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/mercante_storie.dialogue"
+dest_files=["res://.godot/imported/mercante_storie.dialogue-afbd297be3c0372c2e04df164ba29f41.tres"]
+
+[params]
+
+defaults=true

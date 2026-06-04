@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bjjn33bu3c2na"]
+
+[ext_resource type="PackedScene" uid="uid://d1qiqgxdwch4c" path="res://Scenes/NPC/NPC.tscn" id="1_cq8hj"]
+[ext_resource type="Texture2D" uid="uid://cfopjb42t4q6c" path="res://pg/NPC/signora.png" id="2_rgs51"]
+[ext_resource type="Resource" uid="uid://c34k33gmd4o7v" path="res://Scenes/NPC/dialogue/mercante_storie.dialogue" id="3_sk1lv"]
+[ext_resource type="Texture2D" uid="uid://b6xnk54vfknew" path="res://pg/NPC/carretto.png" id="4_ldu12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmsgc"]
+atlas = ExtResource("2_rgs51")
+region = Rect2(6, 146, 110, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjde"]
+atlas = ExtResource("2_rgs51")
+region = Rect2(116, 146, 110, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbhgt"]
+atlas = ExtResource("2_rgs51")
+region = Rect2(226, 146, 110, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhyi8"]
+atlas = ExtResource("2_rgs51")
+region = Rect2(336, 146, 110, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovvlt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmsgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbhgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhyi8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oixi"]
+size = Vector2(108, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8w3o"]
+size = Vector2(145, 101)
+
+[node name="Npc" unique_id=259017654 instance=ExtResource("1_cq8hj")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
+scale = Vector2(0.3227273, 0.3227273)
+sprite_frames = SubResource("SpriteFrames_ovvlt")
+autoplay = "default"
+frame_progress = 0.81423354
+
+[node name="CollisionShape2D" parent="StaticBody2D" parent_id_path=PackedInt32Array(1958155273) index="0" unique_id=55711590]
+position = Vector2(-38, 1)
+shape = SubResource("RectangleShape2D_8oixi")
+
+[node name="Actionable" parent="." index="2" unique_id=443781918]
+dialogue_resource = ExtResource("3_sk1lv")
+
+[node name="CollisionShape2D" parent="Actionable" index="0" unique_id=1998809967]
+position = Vector2(-39.5, -0.5)
+shape = SubResource("RectangleShape2D_e8w3o")
+
+[node name="Label" parent="." index="3" unique_id=166943472]
+offset_left = -7.0
+offset_top = -53.0
+offset_right = 0.0
+offset_bottom = -18.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4" unique_id=1799464206]
+position = Vector2(-56.999996, 1)
+scale = Vector2(0.4571429, 0.4571429)
+texture = ExtResource("4_ldu12")

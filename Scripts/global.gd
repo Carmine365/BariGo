@@ -4,6 +4,8 @@ var player: Node = null
 var coin: int = 0
 var xp: int = 0
 
+var storie_raccontate: int = 0 # Contatore per sapere quale pillola didattica sbloccare
+
 # La variabile magica: conterrà il percorso del minigioco da avviare
 var next_minigame_scene: String = ""
 

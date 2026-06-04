@@ -1,0 +1,46 @@
+~ start
+
+Signora delle Sgagliozze: Uagliò, l'olio sfrigola e la farina costa! 
+Signora delle Sgagliozze: Portami 3 monete. Ti do un cartoccio di sgagliozze bollenti e, mentre mangi, ti racconto un segreto su questi teatri che sui libri dell'università non trovi.
+
+- Player: Tenga le monete, signora!
+	=> controllo_monete
+- Player: Non ho ancora abbastanza spiccioli, ripasso dopo.
+	Signora delle Sgagliozze: Muoviti, che qua la fila si allunga e l'olio si fredda!
+	=> END
+
+~ controllo_monete
+
+# Controllo matematico sull'inventario
+if global.coin >= 3:
+	# Transazione: sottraiamo le 3 monete
+	set global.coin = global.coin - 3
+	
+	if global.storie_raccontate == 0:
+		Signora delle Sgagliozze: Tieni il cartoccio, attento che scotta. Mo ascolta a me: lo sapevi che il Teatro Margherita è l'unico in Europa costruito interamente su palafitte in mezzo al mare? 
+		Signora delle Sgagliozze: Se lo inventarono nel 1914 per aggirare una legge che vietava di fare concorrenza al Petruzzelli sulla terraferma. Furti e ingegno, uagliò!
+		set global.storie_raccontate = 1
+		=> END
+		
+	if global.storie_raccontate == 1:
+		Signora delle Sgagliozze: Altre sgagliozze per te. Senti questa: ti ricordi Lino Banfi? Nel '96, al Teatro Team, fece 21 giorni di fila di tutto esaurito. 
+		Signora delle Sgagliozze: Un record assoluto per tutto il Sud Italia. Non si trovava un biglietto manco a pagarlo oro!
+		set global.storie_raccontate = 2
+		=> END
+		
+	if global.storie_raccontate == 2:
+		Signora delle Sgagliozze: L'ultimo cartoccio, mangia che devi crescere. Devi sapere che dopo l'incendio maledetto del '91, il Petruzzelli è rimasto un cantiere bruciato per quasi vent'anni.
+		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Una ferita per tutta Bari, ma alla fine ce l'abbiamo fatta a ricostruirlo.
+		set global.storie_raccontate = 3
+		=> END
+		
+	if global.storie_raccontate >= 3:
+		# Rimborso di sicurezza
+		set global.coin = global.coin + 3
+		Signora delle Sgagliozze: Uagliò, ho finito la polenta e ho finito pure le storie! Mi hai fatto svuotare la memoria. Tieniti le monete e vai a farti un giro che devi salvare la città!
+		=> END
+
+else:
+	# Fallimento transazione: stampa il numero esatto
+	Signora delle Sgagliozze: Che ci faccio con {{global.coin}} monete? Non ci pago manco la carta del cartoccio. Ne servono 3, torna quando hai gli spiccioli giusti.
+	=> END
