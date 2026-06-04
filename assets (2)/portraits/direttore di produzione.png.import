@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnechlqmnj8yl"
-path="res://.godot/imported/armando.jpeg-17a1bb58f6923c4f227813e401490b0c.ctex"
+uid="uid://cnk8aeuug4lws"
+path="res://.godot/imported/direttore di produzione.png-0512958ad1802eb5539081c372c25295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets (2)/portraits/armando.jpeg"
-dest_files=["res://.godot/imported/armando.jpeg-17a1bb58f6923c4f227813e401490b0c.ctex"]
+source_file="res://assets (2)/portraits/direttore di produzione.png"
+dest_files=["res://.godot/imported/direttore di produzione.png-0512958ad1802eb5539081c372c25295.ctex"]
 
 [params]
 
