@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://byvur4qum6lxq"]
 
-[ext_resource type="Script" uid="uid://dvywlr4f8t4b0" path="res://Scenes/kismet/livello_kismet.gd" id="1_js38d"]
 [ext_resource type="Texture2D" uid="uid://cigjbq2ydgrgv" path="res://Scenes/kismet/fabbrica.png" id="2_8x408"]
 [ext_resource type="Texture2D" uid="uid://buuw8yetfcb5p" path="res://Scenes/kismet/sprite-letter-E.png" id="3_5wk1d"]
 [ext_resource type="Texture2D" uid="uid://o2h6f1t3o1vl" path="res://Scenes/kismet/sprite-letter-M.png" id="4_gufui"]
@@ -291,7 +290,6 @@ font_size = 25
 font_size = 25
 
 [node name="livello kismet" type="Node2D" unique_id=303832567]
-script = ExtResource("1_js38d")
 
 [node name="kismetmanager" type="Node2D" parent="." unique_id=749069264 node_paths=PackedStringArray("nodo_teatro", "scritta_vittoria", "lettere_ui")]
 script = ExtResource("19_wh761")

@@ -51,6 +51,7 @@ func missione_completata() -> void:
 	if has_time_limit:
 		quest_timer.stop()
 	print("Missione completata con successo!")
+	GameManager.guadagna_esperienza()
 	# Qui invierete il segnale al Singleton globale per salvare i progressi
 	# es: GlobalData.mark_quest_complete("petruzzelli")
 

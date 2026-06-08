@@ -8,13 +8,11 @@ extends Node
 var lettere_raccolte: int = 0
 
 func registra_lettera(nome_lettera: String) -> void:
-	# 1. Accendi la lettera corrispondente (es. se nome_lettera è "1", accendi lettere_ui[0])
+	# 1. Accendi la lettera corrispondente
 	var indice = int(nome_lettera) - 1
 	if indice >= 0 and indice < lettere_ui.size():
 		# Cambiamo colore da grigio a GIALLO acceso per "accenderla"
 		lettere_ui[indice].modulate = Color.YELLOW 
-	
-	# ... (il resto del codice che fa apparire il teatro rimane uguale) ...
 	
 	# 2. Controllo teatro e scritta finale
 	if nodo_teatro and nodo_teatro.has_node("Teatro" + nome_lettera):
@@ -28,3 +26,7 @@ func registra_lettera(nome_lettera: String) -> void:
 		if scritta_vittoria:
 			var tween_scritta = create_tween()
 			tween_scritta.tween_property(scritta_vittoria, "modulate:a", 1.0, 2.0)
+		
+		# --- AGGIUNTA: Invio progresso al GameManager ---
+		GameManager.guadagna_esperienza()
+		print("KISMET completato! XP inviata al GameManager.")

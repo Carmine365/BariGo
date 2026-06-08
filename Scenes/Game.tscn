@@ -43,7 +43,9 @@
 [ext_resource type="Texture2D" uid="uid://dewuw3c8eulpe" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree1.png" id="27_7edvx"]
 [ext_resource type="Texture2D" uid="uid://gxcl0q64167o" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Back red chair.png" id="31_w61tf"]
 [ext_resource type="Texture2D" uid="uid://cllq14swl8n1i" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Beige Vending Machine.png" id="32_a8bb1"]
+[ext_resource type="Script" uid="uid://cgkm2yxltxi2m" path="res://Scenes/coin_counter.gd" id="36_bdnt5"]
 [ext_resource type="PackedScene" uid="uid://d2k10ka2tyf6b" path="res://Scenes/NPC/npc_peppe.tscn" id="38_2i8gw"]
+[ext_resource type="Script" uid="uid://c25ober1k1aja" path="res://Scenes/barra_xp.gd" id="38_ucn7y"]
 [ext_resource type="Texture2D" uid="uid://b6cvsvf0dqv8c" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree2.png" id="44_5eiyn"]
 [ext_resource type="Texture2D" uid="uid://d3jbirsue3mud" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree3.png" id="45_m15vq"]
 [ext_resource type="Texture2D" uid="uid://dylb2h2edxxlq" path="res://assets (2)/city assets/City Assets Pack - Basic/deco_10.png" id="48_n24vg"]
@@ -180,6 +182,7 @@
 [ext_resource type="PackedScene" uid="uid://b38nlnq4yq4s0" path="res://Scenes/NPC/npc_simone.tscn" id="178_4y2o5"]
 [ext_resource type="PackedScene" uid="uid://bjjn33bu3c2na" path="res://Scenes/NPC/npc_signora.tscn" id="179_7tj8d"]
 [ext_resource type="PackedScene" uid="uid://beap4yqpk7xt2" path="res://Scenes/taccuino_ui.tscn" id="180_oaw2t"]
+[ext_resource type="Script" uid="uid://c3ophria50n54" path="res://Scenes/gestore_esperienza.gd" id="181_0dvtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("1_kfjtm")
@@ -7809,7 +7812,7 @@ sources/32 = SubResource("TileSetAtlasSource_bxgab")
 sources/35 = SubResource("TileSetAtlasSource_5wgas")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxm5w"]
-size = Vector2(46.327377, 145.00009)
+size = Vector2(46.327377, 101.2452)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdnt5"]
 size = Vector2(423.0747, 432.57764)
@@ -8198,6 +8201,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("10_mw7jm")
 theme_override_font_sizes/font_size = 32
 text = "Monete: 0"
+script = ExtResource("36_bdnt5")
 
 [node name="BarraXP" type="TextureProgressBar" parent="Player/HUD/UI_Manager/VBoxContainer" unique_id=1832048442]
 custom_minimum_size = Vector2(300, 80)
@@ -8206,6 +8210,7 @@ value = 50.0
 nine_patch_stretch = true
 texture_under = ExtResource("11_1mx4w")
 texture_progress = ExtResource("12_65ldo")
+script = ExtResource("38_ucn7y")
 
 [node name="Coin" parent="." unique_id=882900200 instance=ExtResource("13_0yiub")]
 position = Vector2(-1688, 561)
@@ -9028,7 +9033,7 @@ texture = ExtResource("44_5eiyn")
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree2" unique_id=906037492]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2/StaticBody2D" unique_id=1189035949]
-position = Vector2(-2.8199463, 9.622559)
+position = Vector2(-2.81958, 31.499985)
 scale = Vector2(0.99999964, 0.99999946)
 shape = SubResource("RectangleShape2D_uxm5w")
 
@@ -22467,3 +22472,7 @@ position = Vector2(258, 857)
 position = Vector2(-2597, -1702)
 
 [node name="TaccuinoUI" parent="." unique_id=1941040772 instance=ExtResource("180_oaw2t")]
+
+[node name="Gestore esperienza" type="Node" parent="." unique_id=1216555402 node_paths=PackedStringArray("barra_xp")]
+script = ExtResource("181_0dvtn")
+barra_xp = NodePath("../Player/HUD/UI_Manager/VBoxContainer/BarraXP")

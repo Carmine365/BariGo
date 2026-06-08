@@ -33,6 +33,10 @@ func check_level_completion() -> bool:
 
 func _trigger_victory() -> void:
 	print("VITTORIA INNESCATA!")
+	
+	# XP diretto, senza nomi o complicazioni
+	GameManager.guadagna_esperienza()
+	
 	if game_over_label != null:
 		game_over_label.text = "Vittoria, livello completato!"
 		game_over_label.show()
@@ -44,5 +48,3 @@ func _trigger_victory() -> void:
 	if next_level != null:
 		global.quest_states["forma"] = "completed"
 		get_tree().change_scene_to_packed(next_level)
-	else:
-		printerr("ERRORE: Nessuna scena successiva configurata.")

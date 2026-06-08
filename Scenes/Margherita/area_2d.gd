@@ -25,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		# 5. Aspettiamo i 3 secondi di gloria
 		await get_tree().create_timer(3.0).timeout
-		
+		GameManager.guadagna_esperienza()
 		global.quest_states["margherita"] = "completed"
 		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 		

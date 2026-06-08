@@ -21,6 +21,7 @@ global="*uid://dh54li51ywneh"
 EventBus="*uid://0ar6060s5nu"
 DialogueUI="*uid://b7ssw63pwlg0f"
 DialogueManager="*uid://c3rodes2l3gxb"
+GameManager="*uid://dywp7nsq8voyu"
 
 [dialogue_manager]
 

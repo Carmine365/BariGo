@@ -50,6 +50,10 @@ func mostra_vittoria():
 		if label:
 			label.visible = true
 		
+	# --- AGGIUNTA: Invio progresso al GameManager ---
+	GameManager.guadagna_esperienza()
+	print("Concerto terminato! XP inviata al GameManager.")
+
 	# Congela il gioco
 	get_tree().paused = true
 	
