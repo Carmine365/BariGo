@@ -6,5 +6,5 @@ extends Control
 
 func _process(_delta):
 	# Ora che le hai aggiunte in global.gd, queste righe funzioneranno!
-	label_monete.text = "Focacce: " + str(global.coin)
+	label_monete.text = "Monete: " + str(global.coin)
 	barra_xp.value = global.xp
