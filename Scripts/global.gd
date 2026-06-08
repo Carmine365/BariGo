@@ -5,7 +5,12 @@ var coin: int = 0
 var xp: int = 0
 
 var storie_raccontate: int = 0 # Contatore per sapere quale pillola didattica sbloccare
+var diario_storico: String = "[center][b]--- APPUNTI SUI TEATRI DI BARI ---[/b][/center]\n\n"
 
+func aggiungi_appunto(teatro: String, descrizione: String) -> void:
+	# Qui \n funziona perfettamente perché siamo in GDScript puro
+	diario_storico += "[b]" + teatro + ":[/b] " + descrizione + "\n\n"
+	
 # La variabile magica: conterrà il percorso del minigioco da avviare
 var next_minigame_scene: String = ""
 

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://beap4yqpk7xt2"]
+
+[ext_resource type="Script" uid="uid://cd5ft7tfy8b68" path="res://taccuino_ui.gd" id="1_k2ivr"]
+
+[node name="TaccuinoUI" type="CanvasLayer" unique_id=1941040772]
+process_mode = 3
+script = ExtResource("1_k2ivr")
+
+[node name="Sfondo" type="ColorRect" parent="." unique_id=19674603]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.10980392, 0.02745098, 0, 0.78431374)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sfondo" unique_id=143158920]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 26.0
+offset_right = 1123.0
+offset_bottom = 613.0
+bbcode_enabled = true

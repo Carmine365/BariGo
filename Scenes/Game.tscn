@@ -179,6 +179,7 @@
 [ext_resource type="PackedScene" uid="uid://dnvisvj43mcr0" path="res://Scenes/NPC/npc_armando.tscn" id="176_dwt01"]
 [ext_resource type="PackedScene" uid="uid://b38nlnq4yq4s0" path="res://Scenes/NPC/npc_simone.tscn" id="178_4y2o5"]
 [ext_resource type="PackedScene" uid="uid://bjjn33bu3c2na" path="res://Scenes/NPC/npc_signora.tscn" id="179_7tj8d"]
+[ext_resource type="PackedScene" uid="uid://beap4yqpk7xt2" path="res://Scenes/taccuino_ui.tscn" id="180_oaw2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("1_kfjtm")
@@ -8226,7 +8227,7 @@ motion_scale = Vector2(0, 0)
 position = Vector2(45.20002, 31.5)
 texture = ExtResource("15_vmjmr")
 
-[node name="Label" type="Label" parent="." unique_id=727814782]
+[node name="LabelNPC" type="Label" parent="." unique_id=727814782]
 z_index = 1
 offset_left = -2706.0
 offset_top = 107.0
@@ -8235,6 +8236,17 @@ offset_bottom = 214.0
 theme_override_fonts/font = ExtResource("10_mw7jm")
 theme_override_font_sizes/font_size = 18
 text = "Premi F per interagire con gli NPC."
+autowrap_mode = 3
+
+[node name="LabelT" type="Label" parent="." unique_id=337350469]
+z_index = 1
+offset_left = -2731.0
+offset_top = -229.0
+offset_right = -2526.0
+offset_bottom = -132.0
+theme_override_fonts/font = ExtResource("10_mw7jm")
+theme_override_font_sizes/font_size = 12
+text = "Premi T per aprire il taccuino. Una volta imparate le storie, potrai rileggerle da li."
 autowrap_mode = 3
 
 [node name="QuestItem" parent="." unique_id=99830309 instance=ExtResource("16_yl8rb")]
@@ -22464,3 +22476,5 @@ position = Vector2(258, 857)
 
 [node name="Coin12" parent="." unique_id=1190673765 instance=ExtResource("13_0yiub")]
 position = Vector2(-2597, -1702)
+
+[node name="TaccuinoUI" parent="." unique_id=1941040772 instance=ExtResource("180_oaw2t")]
