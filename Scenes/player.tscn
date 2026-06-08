@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vv36og15gx8" path="res://pg/RUN/run_down.png" id="3_p6qlh"]
 [ext_resource type="Texture2D" uid="uid://ce2whu11asscs" path="res://pg/RUN/run_up.png" id="4_2sw5t"]
 [ext_resource type="Texture2D" uid="uid://bxrgiblbdfudb" path="res://pg/RUN/run_left.png" id="5_ij4jb"]
-[ext_resource type="AudioStream" uid="uid://buq45i1c2lrrg" path="res://assets (2)/audio/footstep00.ogg" id="7_3smsa"]
+[ext_resource type="AudioStream" uid="uid://dg6lvipcigx03" path="res://assets (2)/audio/footstep05.ogg" id="7_3smsa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c68nv"]
 atlas = ExtResource("2_r6jsd")
@@ -357,6 +357,7 @@ shape = SubResource("RectangleShape2D_3smsa")
 
 [node name="SuonoPassi" type="AudioStreamPlayer" parent="." unique_id=258706722]
 stream = ExtResource("7_3smsa")
+volume_db = -10.0
 
 [node name="TimerPassi" type="Timer" parent="." unique_id=195790737]
 wait_time = 0.7

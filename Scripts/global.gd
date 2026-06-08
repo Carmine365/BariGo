@@ -30,6 +30,10 @@ func _ready() -> void:
 	_player_successo.stream = load("res://assets (2)/audio/transaction_success.ogg")
 	_player_fallimento.stream = load("res://assets (2)/audio/error_buzz.ogg")
 
+	#_player_successo.volume_db = 
+	_player_fallimento.volume_db = -20
+	_player_moneta.volume_db = -10
+
 # Funzioni pubbliche per attivare i suoni da qualsiasi punto del gioco
 func play_suono_moneta() -> void:
 	print("maonte")

@@ -203,11 +203,13 @@ text = "Response example"
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("4_yvj0w")
+volume_db = -20.0
 
 [node name="SuonoLettera" type="AudioStreamPlayer" parent="." unique_id=1856672827]
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("5_f02qj")
+volume_db = -30.0
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
