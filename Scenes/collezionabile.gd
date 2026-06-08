@@ -23,6 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 			print("Questo giocatore non ha la funzione aumenta_raggio_luce, salto il comando.")
 		# --------------------
 		
+		global.play_suono_moneta()
+		
 		EventBus.item_collected.emit(item_name)
 		item_collected.emit()
 		queue_free()

@@ -8238,17 +8238,6 @@ theme_override_font_sizes/font_size = 18
 text = "Premi F per interagire con gli NPC."
 autowrap_mode = 3
 
-[node name="LabelT" type="Label" parent="." unique_id=337350469]
-z_index = 1
-offset_left = -2731.0
-offset_top = -229.0
-offset_right = -2526.0
-offset_bottom = -132.0
-theme_override_fonts/font = ExtResource("10_mw7jm")
-theme_override_font_sizes/font_size = 12
-text = "Premi T per aprire il taccuino. Una volta imparate le storie, potrai rileggerle da li."
-autowrap_mode = 3
-
 [node name="QuestItem" parent="." unique_id=99830309 instance=ExtResource("16_yl8rb")]
 position = Vector2(83, 121)
 item_icon = ExtResource("17_fm120")

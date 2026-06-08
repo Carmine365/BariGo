@@ -7,6 +7,8 @@ func _on_body_entered(body):
 		# 1. Aggiungiamo la moneta al totale globale
 		global.coin += 1
 		
+		global.play_suono_moneta()
+		
 		# 2. Facciamo sparire la moneta dalla mappa
 		queue_free()
 		

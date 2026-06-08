@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://beap4yqpk7xt2"]
 
 [ext_resource type="Script" uid="uid://cd5ft7tfy8b68" path="res://taccuino_ui.gd" id="1_k2ivr"]
+[ext_resource type="AudioStream" uid="uid://bohy0sa3qd35m" path="res://assets (2)/audio/card-place-2.ogg" id="2_5tyrn"]
+[ext_resource type="AudioStream" uid="uid://bhwsf5oqme8u7" path="res://assets (2)/audio/card-slide-1.ogg" id="3_4knvs"]
+[ext_resource type="AudioStream" uid="uid://c16u7j2s1ri2l" path="res://assets (2)/audio/confirmation_001.ogg" id="4_4knvs"]
 
 [node name="TaccuinoUI" type="CanvasLayer" unique_id=1941040772]
 process_mode = 3
@@ -21,3 +24,26 @@ offset_top = 26.0
 offset_right = 1123.0
 offset_bottom = 613.0
 bbcode_enabled = true
+
+[node name="NotificaToast" type="PanelContainer" parent="." unique_id=439451311]
+modulate = Color(1, 1, 1, 0)
+offset_left = 820.0
+offset_top = 31.0
+offset_right = 1121.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="NotificaToast" unique_id=556643645]
+layout_mode = 2
+text = "Appunto salvato. Premi [T] per leggere."
+
+[node name="SuonoApertura" type="AudioStreamPlayer" parent="." unique_id=1213603949]
+process_mode = 3
+stream = ExtResource("2_5tyrn")
+
+[node name="SuonoChiusura" type="AudioStreamPlayer" parent="." unique_id=707657156]
+process_mode = 3
+stream = ExtResource("3_4knvs")
+
+[node name="SuonoNotifica" type="AudioStreamPlayer" parent="." unique_id=709595606]
+process_mode = 3
+stream = ExtResource("4_4knvs")

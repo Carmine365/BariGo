@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cyubjbm3e3vkg" path="res://Scenes/NPC/dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://doken28145pes" path="res://assets (2)/audio/switch20.ogg" id="4_yvj0w"]
+[ext_resource type="AudioStream" uid="uid://b6gsnjjn5k806" path="res://assets (2)/audio/click1.ogg" id="5_f02qj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -197,8 +199,15 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
+[node name="SuonoScelta" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("4_yvj0w")
+
+[node name="SuonoLettera" type="AudioStreamPlayer" parent="." unique_id=1856672827]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("5_f02qj")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

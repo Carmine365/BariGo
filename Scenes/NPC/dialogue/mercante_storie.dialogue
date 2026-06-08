@@ -16,6 +16,9 @@ if global.coin >= 2:
 	# Transazione: sottraiamo le 2 monete
 	set global.coin = global.coin - 2
 	
+	# FEEDBACK DI TRANSAZIONE RIUSCITA
+	do global.play_suono_successo()
+	
 	if global.storie_raccontate == 0:
 		Signora delle Sgagliozze: Tieni il cartoccio, attento che scotta. Mo ascolta a me: lo sapevi che il Teatro Margherita è l'unico in Europa costruito interamente su palafitte in mezzo al mare? 
 		Signora delle Sgagliozze: Se lo inventarono nel 1914 per aggirare una legge che vietava di fare concorrenza al Petruzzelli sulla terraferma. Furti e ingegno, uagliò!
@@ -71,6 +74,9 @@ if global.coin >= 2:
 		=> END
 
 else:
+	# FEEDBACK DI TRANSAZIONE FALLITA (Spiccioli insufficienti)
+	do global.play_suono_fallimento()
+	
 	# Fallimento transazione: stampa il numero esatto
 	Signora delle Sgagliozze: Che ci faccio con {{global.coin}} monete? Non ci pago manco la carta del cartoccio. Ne servono 2, torna quando hai gli spiccioli giusti.
 	=> END

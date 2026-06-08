@@ -88,6 +88,9 @@ func _ready() -> void:
 		if not is_instance_valid(dialogue_resource):
 			assert(false, DMConstants.get_error_message(DMConstants.ERR_MISSING_RESOURCE_FOR_AUTOSTART))
 		start()
+		
+	# Connessione dinamica: quando la label "parla", esegui la nostra funzione
+	%DialogueLabel.spoke.connect(_on_dialogue_label_spoke)
 
 
 func _process(delta: float) -> void:
@@ -230,7 +233,25 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	# Riproduciamo il click di conferma
+	$SuonoScelta.play()
+	
 	next(response.next_id)
 
+
+func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
+	# Controllo 1: Non riprodurre il suono se la lettera è uno spazio vuoto o un invio
+	if letter != " " and letter != "\n":
+		
+		# TRUCCO DI UX: Randomizziamo l'altezza del suono tra il 90% e il 110%
+		# randf_range genera un float casuale nell'intervallo specificato
+		$SuonoLettera.pitch_scale = randf_range(0.9, 1.1)
+		
+		# Controllo 2: Se la lettera precedente sta ancora suonando, stoppala immediatamente
+		if $SuonoLettera.playing:
+			$SuonoLettera.stop()
+			
+		# Avvia il blip per la lettera corrente
+		$SuonoLettera.play()
 
 #endregion

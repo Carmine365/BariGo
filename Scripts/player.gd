@@ -3,6 +3,8 @@ extends CharacterBody2D
 const LUNGHEZZA_RAGGIO = 50.0 
 const SPEED = 200.0
 
+@onready var suono_passi = $SuonoPassi
+@onready var timer_passi = $TimerPassi
 @onready var raggio = $RayCast2D
 @onready var anim = $AnimatedSprite2D 
 @onready var direction_pivot: Marker2D = $Direction
@@ -59,6 +61,23 @@ func _physics_process(_delta: float) -> void:
 		anim.play("fermo")
 
 	move_and_slide()
+	
+	# LOGICA AUDIO DEI PASSI
+	# Controlliamo se il personaggio si sta muovendo fisicamente sulla mappa
+	if velocity.length() > 0:
+		# Se si muove e il timer ha finito il cooldown, è il momento di fare un passo
+		if timer_passi.is_stopped():
+			#print("IL CODICE FUNZIONA: STO RIPRODUCENDO L'AUDIO") # <-- AGGIUNGI QUESTO
+			
+			# UX Fondamentale: randomizziamo il pitch per non far impazzire il giocatore
+			suono_passi.pitch_scale = randf_range(0.85, 1.15)
+			suono_passi.play()
+			
+			# Facciamo ripartire il cooldown del timer
+			timer_passi.start()
+	else:
+		# Se il giocatore si ferma di colpo, stoppiamo immediatamente l'audio residuo
+		suono_passi.stop()
 
 func raccogli_moneta():
 	global.coin += 1
