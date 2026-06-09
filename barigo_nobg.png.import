@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bocd5xbio1e15"
-path="res://.godot/imported/logo.png-cca8726399059c8d4f806e28e356b14d.ctex"
+uid="uid://dtx16xu0amm7y"
+path="res://.godot/imported/barigo_nobg.png-a650c28d1db25b6af0a256c3fced6590.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://logo.png"
-dest_files=["res://.godot/imported/logo.png-cca8726399059c8d4f806e28e356b14d.ctex"]
+source_file="res://barigo_nobg.png"
+dest_files=["res://.godot/imported/barigo_nobg.png-a650c28d1db25b6af0a256c3fced6590.ctex"]
 
 [params]
 
