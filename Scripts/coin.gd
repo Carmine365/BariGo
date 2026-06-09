@@ -22,7 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 		# Aggiungo le coordinate di QUESTA specifica moneta alla lista dei salvataggi
 		global.monete_raccolte.append(global_position)
 		
-		print("DEBUG: Segnale EMESSO")
+		#print("DEBUG: Segnale EMESSO")
 		
 		#global.coin = global.coin + 1
 		queue_free() # Fa sparire la moneta dalla mappa

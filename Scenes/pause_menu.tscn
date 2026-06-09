@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://31d0lwpao1lt"]
+
+[ext_resource type="Script" uid="uid://byofs3xw8w4rb" path="res://Scenes/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="AudioStream" uid="uid://b6gsnjjn5k806" path="res://assets (2)/audio/click1.ogg" id="2_k0w1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emv3i"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmyb1"]
+bg_color = Color(0.32156864, 0.019607844, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpi0q"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8tnp"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myy0f"]
+bg_color = Color(0.32156864, 0.019607844, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1och7"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjs17"]
+bg_color = Color(0.49803922, 0.019607844, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.84313726, 0, 1)
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=804059601 node_paths=PackedStringArray("btn_riprendi")]
+process_mode = 3
+layer = 100
+script = ExtResource("1_emv3i")
+btn_riprendi = NodePath("ColorRect/VBoxContainer/BtnRiprendi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=331431241]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=947932761]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 190.0
+offset_right = 756.0
+offset_bottom = 572.0
+
+[node name="BtnRiprendi" type="Button" parent="ColorRect/VBoxContainer" unique_id=461810154]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vmyb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bpi0q")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u8tnp")
+text = "Riprendi"
+
+[node name="BtnEsci" type="Button" parent="ColorRect/VBoxContainer" unique_id=2095437203]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0w1u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_myy0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1och7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sjs17")
+text = "Esci"
+
+[node name="SfxClick" type="AudioStreamPlayer" parent="." unique_id=1599500109]
+process_mode = 3
+stream = ExtResource("2_k0w1u")
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/BtnRiprendi" to="." method="_on_btn_riprendi_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/BtnEsci" to="." method="_on_btn_esci_pressed"]
