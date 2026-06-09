@@ -67,7 +67,7 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_xim88")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
-text = "Start"
+text = "inizia"
 script = ExtResource("2_df05h")
 
 [node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=55717069]
@@ -76,7 +76,7 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_xim88")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
-text = "Settings"
+text = "opzioni"
 script = ExtResource("3_8um5k")
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1116354456]
@@ -85,7 +85,7 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_xim88")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
-text = "Exit"
+text = "esci"
 script = ExtResource("4_xim88")
 
 [node name="Logo" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=2004567007]
