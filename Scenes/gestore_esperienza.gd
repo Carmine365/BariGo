@@ -3,7 +3,7 @@ extends Node
 # Variabili di stato
 var exp_attuale = 0
 var exp_max = 3
-var monete = 0
+var monete = global.coin
 
 # Riferimento alla barra (che collegheremo subito)
 @export var barra_xp: TextureProgressBar

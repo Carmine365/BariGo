@@ -79,8 +79,14 @@ func _physics_process(_delta: float) -> void:
 		# Se il giocatore si ferma di colpo, stoppiamo immediatamente l'audio residuo
 		suono_passi.stop()
 
+@onready var testo_monete = $HUD/UI_Manager/VBoxContainer/CoinCounter
 func raccogli_moneta():
 	global.coin += 1
+	
+	# Comunichiamo alla UI che il valore è cambiato
+	global.monete_aggiornate.emit()
+	testo_monete.text = "MONETE: " + str(global.coin)
+	
 	print("Focaccia raccolta! Totale: ", global.coin)
 
 func _unhandled_input(event: InputEvent) -> void:

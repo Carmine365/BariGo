@@ -1,6 +1,7 @@
 extends Node
 
 signal appunto_aggiunto
+signal monete_aggiornate
 
 # Riferimenti ai player audio
 var _player_moneta: AudioStreamPlayer
@@ -13,6 +14,9 @@ var xp: int = 0
 
 var storie_raccontate: int = 0 # Contatore per sapere quale pillola didattica sbloccare
 var diario_storico: String = "[center][b]--- APPUNTI SUI TEATRI DI BARI ---[/b][/center]\n\n"
+
+# Memorizza le posizioni delle monete già prese
+var monete_raccolte: Array = []
 
 func _ready() -> void:
 	# Istanziamo i nodi audio direttamente in RAM
@@ -36,7 +40,7 @@ func _ready() -> void:
 
 # Funzioni pubbliche per attivare i suoni da qualsiasi punto del gioco
 func play_suono_moneta() -> void:
-	print("maonte")
+	#print("maonte")
 	_player_moneta.play()
 
 func play_suono_successo() -> void:

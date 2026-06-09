@@ -13,4 +13,4 @@ func _on_body_entered(body):
 		queue_free()
 		
 		# 3. Opzionale: stampa un messaggio in console per debug
-		print("Focaccia raccolta! Totale: ", global.coin)
+		print("Focaccia raccoltaaa! Totale: ", global.coin)

@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://1akjlbtkix5b" path="res://BarraPiena.tres" id="12_65ldo"]
 [ext_resource type="Texture2D" uid="uid://b0mt0tsbnphd4" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Light Pole.png" id="12_lklsk"]
 [ext_resource type="PackedScene" uid="uid://dcelp5kk760ln" path="res://Scenes/coin.tscn" id="13_0yiub"]
-[ext_resource type="Script" uid="uid://d1pe5ltsflaal" path="res://Scenes/coin.gd" id="14_10r1t"]
 [ext_resource type="Texture2D" uid="uid://dbojruj12njf1" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Opened Cardboard box.png" id="14_34hf4"]
 [ext_resource type="Texture2D" uid="uid://cwssym66gd62v" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Opened Trashbin.png" id="15_jamva"]
 [ext_resource type="Texture2D" uid="uid://dnjyv5kvtcj4t" path="res://assets (2)/assets/pngs/background.png" id="15_vmjmr"]
@@ -8140,7 +8139,7 @@ size = Vector2(365.43307, 291.7287)
 size = Vector2(1001.6424, 516.62427)
 
 [node name="Game" type="Node2D" unique_id=227676766]
-position = Vector2(31, 4)
+position = Vector2(32, 4)
 metadata/_edit_horizontal_guides_ = [-607.0, 224.0, 499.0, 320.0]
 metadata/_edit_vertical_guides_ = [-4039.0]
 
@@ -8200,7 +8199,6 @@ offset_bottom = 40.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("10_mw7jm")
 theme_override_font_sizes/font_size = 32
-text = "Monete: 0"
 script = ExtResource("36_bdnt5")
 
 [node name="BarraXP" type="TextureProgressBar" parent="Player/HUD/UI_Manager/VBoxContainer" unique_id=1832048442]
@@ -8214,7 +8212,6 @@ script = ExtResource("38_ucn7y")
 
 [node name="Coin" parent="." unique_id=882900200 instance=ExtResource("13_0yiub")]
 position = Vector2(-1688, 561)
-script = ExtResource("14_10r1t")
 
 [node name="Coin2" parent="." unique_id=1534970164 instance=ExtResource("13_0yiub")]
 position = Vector2(-619, 312)
