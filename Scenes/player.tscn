@@ -317,7 +317,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
-size = Vector2(20, 16.818188)
+size = Vector2(20, 25.000006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3smsa"]
 size = Vector2(60, 20)
@@ -334,7 +334,7 @@ animation = &"CamminataSU"
 autoplay = "fermo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36782290]
-position = Vector2(0, -4.749996)
+position = Vector2(0, -9.249996)
 scale = Vector2(1.0833334, 1.1)
 shape = SubResource("RectangleShape2D_x3wgy")
 
