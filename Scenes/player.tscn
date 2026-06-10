@@ -358,6 +358,7 @@ shape = SubResource("RectangleShape2D_3smsa")
 [node name="SuonoPassi" type="AudioStreamPlayer" parent="." unique_id=258706722]
 stream = ExtResource("7_3smsa")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="TimerPassi" type="Timer" parent="." unique_id=195790737]
 wait_time = 0.7

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://g3cem7wi6eru"
+path="res://.godot/imported/The-Good-Old-Days-One-piece-Ambiance-Soundtrack.ogg-b938cdcc53d0ae1f17b997097c462387.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets (2)/audio/The-Good-Old-Days-One-piece-Ambiance-Soundtrack.ogg"
+dest_files=["res://.godot/imported/The-Good-Old-Days-One-piece-Ambiance-Soundtrack.ogg-b938cdcc53d0ae1f17b997097c462387.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

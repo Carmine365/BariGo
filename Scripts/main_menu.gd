@@ -1,44 +1,71 @@
 extends Control
 
-const GAME_SCENE_PATH = "res://Scenes/Game.tscn"
-const SETTINGS_SCENE_PATH = "res://Scenes/MainMenu.tscn"
+@onready var pannello_opzioni = $PannelloOpzioni
+@onready var main_menu_ui = $MarginContainer
+@onready var slider_musica = $PannelloOpzioni/SliderMusica
+@onready var slider_effetti = $PannelloOpzioni/SliderEffetti
+@onready var label_musica = $PannelloOpzioni/labelMusica
+@onready var label_effetti = $PannelloOpzioni/LabelEffetti
 
-# I percorsi ($...) DEVONO corrispondere esattamente ai nomi dei tuoi nodi.
-# Se hai chiamato un nodo "bottone1" invece di "StartButton", il gioco andrà in crash.
-@onready var start_button: Button = $MarginContainer/VBoxContainer/ButtonContainer/StartButton
-@onready var settings_button: Button = $MarginContainer/VBoxContainer/ButtonContainer/SettingsButton
-@onready var exit_button: Button = $MarginContainer/VBoxContainer/ButtonContainer/ExitButton
-
-func _ready() -> void:
-	# 1. Verifiche di integrità. Se hai sbagliato a rinominare i nodi nell'albero,
-	# l'assert blocca il gioco istantaneamente in debug e ti avvisa. 
-	# Meglio un crash controllato subito che un bug silenzioso dopo.
-	assert(start_button != null, "Architettura: StartButton non trovato all'avvio.")
-	assert(settings_button != null, "Architettura: SettingsButton non trovato all'avvio.")
-	assert(exit_button != null, "Architettura: ExitButton non trovato all'avvio.")
+func _ready():
+	# Nascondi pannello opzioni all'avvio
+	pannello_opzioni.visible = false
+	main_menu_ui.visible = true
 	
-	# 2. Collegamento dei segnali via codice. 
-	# Stiamo dicendo: "Quando il pulsante emette 'pressed', esegui la mia funzione".
-	start_button.pressed.connect(_on_start_pressed)
-	settings_button.pressed.connect(_on_settings_pressed)
-	exit_button.pressed.connect(_on_exit_pressed)
+	# Collega i pulsanti
+	$MarginContainer/VBoxContainer/ButtonContainer/StartButton.pressed.connect(_on_start_pressed)
+	$MarginContainer/VBoxContainer/ButtonContainer/SettingsButton.pressed.connect(_on_settings_pressed)
+	$MarginContainer/VBoxContainer/ButtonContainer/ExitButton.pressed.connect(_on_exit_pressed)
+	$PannelloOpzioni/ExitButton.pressed.connect(_on_options_exit_pressed)
 	
-	# 3. Focus iniziale per navigazione da tastiera/gamepad.
-	start_button.grab_focus()
+	# Collega gli slider
+	slider_musica.value_changed.connect(_on_music_slider_changed)
+	slider_effetti.value_changed.connect(_on_sfx_slider_changed)
+	
+	# Configura gli slider
+	slider_musica.min_value = 0.0
+	slider_musica.max_value = 1.0
+	slider_musica.step = 0.01
+	
+	slider_effetti.min_value = 0.0
+	slider_effetti.max_value = 1.0
+	slider_effetti.step = 0.01
+	
+	# Carica i valori correnti
+	load_slider_values()
 
-# --- DEFINIZIONE DELLE FUNZIONI RICEVENTI ---
+func load_slider_values():
+	var audio_manager = get_node("/root/AudioManager")
+	slider_musica.value = audio_manager.get_music_volume_linear()
+	slider_effetti.value = audio_manager.get_sfx_volume_linear()
+	update_volume_labels()
 
-func _on_start_pressed() -> void:
-	if ResourceLoader.exists(GAME_SCENE_PATH):
-		get_tree().change_scene_to_file(GAME_SCENE_PATH)
-	else:
-		push_error("Errore critico: File Game.tscn mancante in " + GAME_SCENE_PATH)
+func update_volume_labels():
+	label_musica.text = "Musica: " + str(int(slider_musica.value * 100)) + "%"
+	label_effetti.text = "Effetti: " + str(int(slider_effetti.value * 100)) + "%"
 
-func _on_settings_pressed() -> void:
-	if ResourceLoader.exists(SETTINGS_SCENE_PATH):
-		get_tree().change_scene_to_file(SETTINGS_SCENE_PATH)
-	else:
-		push_error("Errore critico: File Settings.tscn mancante in " + SETTINGS_SCENE_PATH)
+func _on_start_pressed():
+	print("Avvio gioco...")
+	# Sostituisci con la tua scena di gioco
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
-func _on_exit_pressed() -> void:
+func _on_settings_pressed():
+	main_menu_ui.visible = false
+	pannello_opzioni.visible = true
+
+func _on_options_exit_pressed():
+	main_menu_ui.visible = true
+	pannello_opzioni.visible = false
+
+func _on_exit_pressed():
 	get_tree().quit()
+
+func _on_music_slider_changed(value: float):
+	var audio_manager = get_node("/root/AudioManager")
+	audio_manager.set_music_volume_linear(value)
+	update_volume_labels()
+
+func _on_sfx_slider_changed(value: float):
+	var audio_manager = get_node("/root/AudioManager")
+	audio_manager.set_sfx_volume_linear(value)
+	update_volume_labels()
