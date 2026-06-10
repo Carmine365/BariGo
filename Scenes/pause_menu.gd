@@ -23,8 +23,8 @@ func _toggle_pause() -> void:
 	visible = nuovo_stato_pausa
 	
 	# Seleziona automaticamente il primo bottone quando si apre la pausa
-	if visible:
-		btn_riprendi.grab_focus()
+	#if visible:
+		#btn_riprendi.grab_focus()
 
 func _on_btn_riprendi_pressed() -> void:
 	sfx_click.play()
