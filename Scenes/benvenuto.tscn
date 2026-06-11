@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://lb2xelc7yud5"]
+
+[ext_resource type="Script" uid="uid://dy1ulhokenwr1" path="res://Scenes/benvenuto.gd" id="1_30d0f"]
+
+[sub_resource type="Theme" id="Theme_0s5po"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30d0f"]
+bg_color = Color(0.44705883, 0.078431375, 0.13333334, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdxra"]
+bg_color = Color(0.6039216, 0.105882354, 0.18039216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8980392, 0.75686276, 0.34509805, 1)
+
+[node name="OverlayBenvenuto" type="CanvasLayer" unique_id=13384861]
+process_mode = 3
+script = ExtResource("1_30d0f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1972397745]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1331999634]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=622829331]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="LabelTitolo" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=281645172]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Benvenuto nella Bari Sotto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelIstruzioni" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1751990504]
+layout_mode = 2
+text = "Utilizza i tasti WASD o le Frecce Direzionali per esplorare la mappa.
+Premi F per interagire con gli NPC.
+Raccogli le monete lungo il percorso e interagisci con i custodi della città per svelare i segreti e la storia dei Teatri di Bari."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=473104740]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="Button" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/MarginContainer" unique_id=1997369439]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_0s5po")
+theme_override_colors/font_color = Color(0.9529412, 0.9411765, 0.8745098, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_30d0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xdxra")
+text = "Inizia Esplorazione"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
