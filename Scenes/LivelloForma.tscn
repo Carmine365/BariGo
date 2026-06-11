@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://brwsbbf7nu45x" path="res://Scenes/level_manager.gd" id="20_rfpnt"]
 [ext_resource type="Texture2D" uid="uid://dwh3gwenstso" path="res://assets (2)/forma/porta_aperta.png" id="20_ultql"]
 [ext_resource type="PackedScene" uid="uid://cysa8tfj2kipv" path="res://Scenes/Game.tscn" id="21_46mi2"]
+[ext_resource type="AudioStream" uid="uid://c3w7ucomqi6nw" path="res://assets (2)/forma/MusicaForma.ogg" id="25_dhwxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2yr6"]
 texture = ExtResource("1_3gnlp")
@@ -403,8 +404,8 @@ size = Vector2(51.353455, 70.318054)
 [node name="LivelloForma" type="Node2D" unique_id=832688648]
 
 [node name="4d1709f7Ebd34d4dA18e59Cfdde5d997" type="Sprite2D" parent="." unique_id=1723121397]
-position = Vector2(442, -133.99997)
-scale = Vector2(1.5973376, 1.1054688)
+position = Vector2(454.00003, -133.99997)
+scale = Vector2(1.7404326, 1.1054688)
 texture = ExtResource("1_e2yr6")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=307886514]
@@ -537,6 +538,11 @@ texture = ExtResource("20_ultql")
 script = ExtResource("20_rfpnt")
 counter_label = NodePath("../HUD/Counter")
 next_level = ExtResource("21_46mi2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1838039684]
+stream = ExtResource("25_dhwxl")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Fusibili" to="Fusibili" method="_on_body_entered"]
 [connection signal="body_entered" from="LevelExit" to="LevelExit" method="_on_body_entered"]

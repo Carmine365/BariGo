@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://bpyfs0viajmyw" path="res://Scenes/kismet/area_t.gd" id="24_ujwkn"]
 [ext_resource type="Script" uid="uid://b4l3nm5svl0yu" path="res://Scenes/kismet/area_bandierina.gd" id="30_hm1iq"]
 [ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="32_bfigr"]
+[ext_resource type="AudioStream" uid="uid://cl3x5k0v64pwb" path="res://Scenes/kismet/MusicaKismet.ogg" id="32_voxjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkvuh"]
 texture = ExtResource("14_hm1iq")
@@ -514,6 +515,12 @@ label_settings = SubResource("LabelSettings_5mlrk")
 layout_mode = 2
 text = "T"
 label_settings = SubResource("LabelSettings_esqu4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1546486905]
+stream = ExtResource("32_voxjo")
+volume_db = -4.837
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Lettere/AreaK" to="Lettere/AreaK" method="_on_body_entered"]
 [connection signal="body_entered" from="Lettere/AreaI" to="Lettere/AreaI" method="_on_body_entered"]

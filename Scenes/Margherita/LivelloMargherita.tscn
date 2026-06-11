@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://jrwvp6gr6lkg" path="res://Scenes/Margherita/cadein_acqua.gd" id="11_ulnon"]
 [ext_resource type="Texture2D" uid="uid://pwa2sxj3hr8" path="res://assets (2)/margherita/sfondoMargherita.png" id="12_0baol"]
 [ext_resource type="Script" uid="uid://dwpuffpcj8rrn" path="res://Scenes/Margherita/messaggio.gd" id="13_q7tam"]
+[ext_resource type="AudioStream" uid="uid://d2uls8gbwpf1o" path="res://Scenes/Margherita/MusicaMargherita.ogg" id="14_e3pb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lith7"]
 size = Vector2(1152, 79)
@@ -369,6 +370,11 @@ text = "Ciao"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_q7tam")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1445363592]
+stream = ExtResource("14_e3pb2")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="RisingWater/CadeinAcqua" to="RisingWater/CadeinAcqua" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

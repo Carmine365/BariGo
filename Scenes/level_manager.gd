@@ -42,7 +42,7 @@ func _trigger_victory() -> void:
 		game_over_label.show()
 	
 	get_tree().paused = true
-	await get_tree().create_timer(3.0, true).timeout
+	await get_tree().create_timer(0.5, true).timeout
 	get_tree().paused = false
 	
 	if next_level != null:

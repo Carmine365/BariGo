@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1ip42st6mdmt"
+path="res://.godot/imported/musica-petruzzelli.ogg-f3ac165103d4a206945dbb1754cde20f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets (2)/petruzzelli/musica-petruzzelli.ogg"
+dest_files=["res://.godot/imported/musica-petruzzelli.ogg-f3ac165103d4a206945dbb1754cde20f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

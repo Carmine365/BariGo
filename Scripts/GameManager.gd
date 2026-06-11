@@ -1,8 +1,12 @@
 extends Node
 
+# --- Variabili di stato gioco ---
 var exp_attuale: int = 0
 var exp_max: int = 3
 var monete: int = 0
+
+# --- Nuova variabile per gestire l'intro ---
+var intro_vista: bool = false
 
 signal exp_aggiornata(valore_percentuale)
 

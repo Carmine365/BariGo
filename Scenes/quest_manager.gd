@@ -53,7 +53,6 @@ func missione_completata() -> void:
 	print("Missione completata con successo!")
 	GameManager.guadagna_esperienza()
 	# Qui invierete il segnale al Singleton globale per salvare i progressi
-	# es: GlobalData.mark_quest_complete("petruzzelli")
 
 func missione_fallita(motivo: String) -> void:
 	# Ferma il timer per sicurezza
@@ -64,11 +63,10 @@ func missione_fallita(motivo: String) -> void:
 	game_over_label.text = motivo
 	game_over_label.show() # Rende visibile la Label
 	
-	# 2. Mette in pausa una funzione per 2.5 secondi (per far leggere il testo)
-	# L'uso di 'await' è cruciale per non bloccare l'intero gioco
-	await get_tree().create_timer(2.5).timeout
+	# 2. Mette in pausa una funzione per 2 secondi (per far leggere il testo)
+	await get_tree().create_timer(2.0).timeout
 	
-	# 3. Riavvia completamente la scena corrente (ripristina player, fuoco e timer)
+	# 3. Riavvia completamente la scena corrente
 	get_tree().reload_current_scene()
 
 func _on_player_burned() -> void:
