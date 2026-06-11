@@ -22,8 +22,13 @@ animations = [{
 [node name="Npc" unique_id=259017654 instance=ExtResource("1_nws3b")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=427694430]
-scale = Vector2(0.07047414, 0.065086216)
+position = Vector2(0, 2.009807)
+scale = Vector2(0.07047414, 0.060417674)
 sprite_frames = SubResource("SpriteFrames_nrxll")
 
 [node name="Actionable" parent="." index="2" unique_id=443781918]
 dialogue_resource = ExtResource("3_5oa2y")
+
+[node name="Label" parent="." index="3" unique_id=166943472]
+offset_top = -54.0
+offset_bottom = -19.0
