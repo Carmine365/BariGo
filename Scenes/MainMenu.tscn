@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="3_xim88"]
 [ext_resource type="Script" uid="uid://dg5vxaxgkorek" path="res://Scripts/exit_button.gd" id="4_xim88"]
 [ext_resource type="Texture2D" uid="uid://drwvcfedem4wn" path="res://assets (2)/Main Menu/logo.png" id="7_xim88"]
+[ext_resource type="Script" uid="uid://1ydlklbjrux5" path="res://Scenes/slider_musica.gd" id="8_koqhg"]
+[ext_resource type="Script" uid="uid://d0dmiajmhygt7" path="res://Scenes/slider_effetti.gd" id="9_cmrfp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqhg"]
 bg_color = Color(0.8509804, 0.019607844, 0, 1)
@@ -121,6 +123,7 @@ layout_mode = 2
 max_value = 1.0
 step = 0.05
 value = 0.8
+script = ExtResource("8_koqhg")
 
 [node name="LabelEffetti" type="Label" parent="PannelloOpzioni" unique_id=1800352906]
 layout_mode = 2
@@ -133,6 +136,7 @@ layout_mode = 2
 max_value = 1.0
 step = 0.05
 value = 0.8
+script = ExtResource("9_cmrfp")
 
 [node name="ExitButton" type="Button" parent="PannelloOpzioni" unique_id=1708725478]
 layout_mode = 2

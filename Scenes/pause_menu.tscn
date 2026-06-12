@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://31d0lwpao1lt"]
 
 [ext_resource type="Script" uid="uid://byofs3xw8w4rb" path="res://Scenes/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="2_1och7"]
 [ext_resource type="AudioStream" uid="uid://b6gsnjjn5k806" path="res://assets (2)/audio/click1.ogg" id="2_k0w1u"]
+[ext_resource type="Script" uid="uid://1ydlklbjrux5" path="res://Scenes/slider_musica.gd" id="3_bpi0q"]
+[ext_resource type="Script" uid="uid://d0dmiajmhygt7" path="res://Scenes/slider_effetti.gd" id="4_vmyb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emv3i"]
 bg_color = Color(0.49803922, 0.019607844, 0, 1)
@@ -64,13 +67,22 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color(1, 0.84313726, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bpi0q"]
+font = ExtResource("2_1och7")
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmyb1"]
+font = ExtResource("2_1och7")
+font_size = 38
+
 [node name="PauseMenu" type="CanvasLayer" unique_id=804059601 node_paths=PackedStringArray("btn_riprendi")]
 process_mode = 3
 layer = 100
 script = ExtResource("1_emv3i")
-btn_riprendi = NodePath("ColorRect/MarginContainer/VBoxContainer/BtnRiprendi")
+btn_riprendi = NodePath("ColorRect/MarginContainer/Menupausa/BtnRiprendi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=331431241]
+process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -82,9 +94,11 @@ offset_right = 209.0
 offset_bottom = 212.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.63529414)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1123740186]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,15 +110,17 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=947932761]
+[node name="Menupausa" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=947932761]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Control" type="Control" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=215305763]
+[node name="Control" type="Control" parent="ColorRect/MarginContainer/Menupausa" unique_id=215305763]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BtnRiprendi" type="Button" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=461810154]
+[node name="BtnRiprendi" type="Button" parent="ColorRect/MarginContainer/Menupausa" unique_id=461810154]
+process_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
@@ -113,7 +129,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bpi0q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u8tnp")
 text = "Riprendi"
 
-[node name="BtnEsci" type="Button" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2095437203]
+[node name="BtnOpzioni" type="Button" parent="ColorRect/MarginContainer/Menupausa" unique_id=2919097]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vmyb1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bpi0q")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u8tnp")
+text = "Opzioni"
+
+[node name="BtnEsci" type="Button" parent="ColorRect/MarginContainer/Menupausa" unique_id=2095437203]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_k0w1u")
@@ -122,13 +148,61 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1och7")
 theme_override_styles/focus = SubResource("StyleBoxFlat_sjs17")
 text = "Esci"
 
-[node name="Control2" type="Control" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1686852314]
+[node name="Control2" type="Control" parent="ColorRect/MarginContainer/Menupausa" unique_id=1686852314]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="PannelloOpzioni2" type="VBoxContainer" parent="ColorRect" unique_id=1811323190]
+visible = false
+layout_mode = 0
+offset_left = 65.0
+offset_top = 116.5
+offset_right = 373.0
+offset_bottom = 309.5
+alignment = 1
+
+[node name="labelMusica" type="Label" parent="ColorRect/PannelloOpzioni2" unique_id=1103977954]
+layout_mode = 2
+text = "Volume Musica"
+label_settings = SubResource("LabelSettings_bpi0q")
+horizontal_alignment = 1
+
+[node name="SliderMusica" type="HSlider" parent="ColorRect/PannelloOpzioni2" unique_id=1408623184]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.8
+script = ExtResource("3_bpi0q")
+
+[node name="LabelEffetti" type="Label" parent="ColorRect/PannelloOpzioni2" unique_id=2029805202]
+layout_mode = 2
+text = "Volume Effetti"
+label_settings = SubResource("LabelSettings_vmyb1")
+horizontal_alignment = 1
+
+[node name="SliderEffetti" type="HSlider" parent="ColorRect/PannelloOpzioni2" unique_id=1564017966]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.8
+script = ExtResource("4_vmyb1")
+
+[node name="BtnIndietro" type="Button" parent="ColorRect/PannelloOpzioni2" unique_id=1840618347]
+process_mode = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0w1u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_myy0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1och7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sjs17")
+text = "Indietro"
 
 [node name="SfxClick" type="AudioStreamPlayer" parent="." unique_id=1599500109]
 process_mode = 3
 stream = ExtResource("2_k0w1u")
+bus = &"SFX"
 
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnRiprendi" to="." method="_on_btn_riprendi_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnEsci" to="." method="_on_btn_esci_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/Menupausa/BtnRiprendi" to="." method="_on_btn_riprendi_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/Menupausa/BtnOpzioni" to="." method="_on_btn_opzioni_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/Menupausa/BtnEsci" to="." method="_on_btn_esci_pressed"]
+[connection signal="pressed" from="ColorRect/PannelloOpzioni2/BtnIndietro" to="." method="_on_btn_indietro_pressed"]

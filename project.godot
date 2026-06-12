@@ -28,6 +28,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 GameManager="*uid://dywp7nsq8voyu"
 PauseMenu="*uid://31d0lwpao1lt"
 AudioManager="*uid://4qujubhtw5av"
+AudioGlobal="*uid://pdsmlxq0s0du"
 
 [dialogue_manager]
 
