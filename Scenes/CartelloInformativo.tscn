@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://j86m6rstdg0e"]
+
+[ext_resource type="PackedScene" uid="uid://7xlcj56v2jk" path="res://Scenes/NPC/dialogue/Actionable.tscn" id="1_trcgb"]
+[ext_resource type="Script" uid="uid://b7s2fboanyao" path="res://Scenes/cartello_informativo.gd" id="1_wwto3"]
+[ext_resource type="Texture2D" uid="uid://dbenlmipwa51r" path="res://assets (2)/Cartello2-1.png.png" id="2_wwto3"]
+[ext_resource type="Resource" uid="uid://b2de4f5w1v3e8" path="res://Scenes/NPC/dialogue/segnaletica.dialogue" id="3_wwto3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78f54"]
+size = Vector2(32, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyphp"]
+size = Vector2(60, 76)
+
+[node name="CartelloInformativo" type="StaticBody2D" unique_id=2020823641]
+script = ExtResource("1_wwto3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=146289998]
+texture = ExtResource("2_wwto3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384961970]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_78f54")
+
+[node name="Actionable" parent="." unique_id=443781918 instance=ExtResource("1_trcgb")]
+dialogue_resource = ExtResource("3_wwto3")
+dialogue_start = "bivio_margherita"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=886242668]
+shape = SubResource("RectangleShape2D_pyphp")

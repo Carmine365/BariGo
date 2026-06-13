@@ -66,6 +66,7 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Utilizza le Frecce Direzionali per esplorare la mappa.
 Premi F per interagire con gli NPC.
+Premi T per aprire il taccuino. Terrà traccia delle storie scoperte.
 Raccogli le monete lungo il percorso e interagisci con i custodi della città per svelare i segreti e la storia dei Teatri di Bari."
 label_settings = SubResource("LabelSettings_xdxra")
 horizontal_alignment = 1

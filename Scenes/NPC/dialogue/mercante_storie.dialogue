@@ -12,9 +12,9 @@ Signora delle Sgagliozze: Portami 2 monete. Ti do un cartoccio di sgagliozze bol
 ~ controllo_monete
 
 # Controllo matematico sull'inventario
-if global.coin >= 2:
+if global.coin >= 4:
 	# Transazione: sottraiamo le 2 monete
-	set global.coin = global.coin - 2
+	set global.coin = global.coin - 4
 	
 	# FEEDBACK DI TRANSAZIONE RIUSCITA
 	do global.play_suono_successo()
@@ -69,7 +69,7 @@ if global.coin >= 2:
 		
 	if global.storie_raccontate >= 6:
 		# Rimborso di sicurezza
-		set global.coin = global.coin + 2
+		set global.coin = global.coin + 4
 		Signora delle Sgagliozze: Uagliò, ho raschiato il fondo, è finita la polenta e sono finite pure le storie! Mi hai fatto svuotare la memoria. Tieniti le monete e vai a farti un giro che devi salvare la città!
 		=> END
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b2de4f5w1v3e8"
+path="res://.godot/imported/segnaletica.dialogue-20593c795656b175bd450d426c4636bd.tres"
+
+[deps]
+
+source_file="res://Scenes/NPC/dialogue/segnaletica.dialogue"
+dest_files=["res://.godot/imported/segnaletica.dialogue-20593c795656b175bd450d426c4636bd.tres"]
+
+[params]
+
+defaults=true

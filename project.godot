@@ -57,7 +57,7 @@ apri_taccuino={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Scenes/NPC/dialogue/kekko.dialogue", "res://Scenes/NPC/dialogue/paolo.dialogue", "res://Scenes/NPC/dialogue/vincenzo.dialogue", "res://Scenes/NPC/dialogue/armando.dialogue", "res://Scenes/NPC/dialogue/peppe.dialogue", "res://Scenes/NPC/dialogue/simone.dialogue", "res://Scenes/NPC/dialogue/mercante_storie.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Scenes/NPC/dialogue/kekko.dialogue", "res://Scenes/NPC/dialogue/paolo.dialogue", "res://Scenes/NPC/dialogue/vincenzo.dialogue", "res://Scenes/NPC/dialogue/armando.dialogue", "res://Scenes/NPC/dialogue/peppe.dialogue", "res://Scenes/NPC/dialogue/simone.dialogue", "res://Scenes/NPC/dialogue/mercante_storie.dialogue", "res://Scenes/NPC/dialogue/segnaletica.dialogue")
 
 [layer_names]
 

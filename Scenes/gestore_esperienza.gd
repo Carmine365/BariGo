@@ -13,7 +13,7 @@ func guadagna_esperienza():
 	aggiorna_barra()
 	
 	if exp_attuale >= exp_max:
-		monete += 2
+		# monete += 2
 		exp_attuale = 0
 		print("Bonus monete! Totale: ", monete)
 		# Qui potresti aggiungere un suono o un effetto particellare!
