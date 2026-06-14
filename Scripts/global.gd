@@ -15,6 +15,13 @@ var xp: int = 0
 var storie_raccontate: int = 0 # Contatore per sapere quale pillola didattica sbloccare
 var diario_storico: String = "[center][b]--- APPUNTI SUI TEATRI DI BARI ---[/b][/center]\n\n"
 
+var info_margherita: bool = false
+var info_team: bool = false
+var info_petruzzelli: bool = false
+var info_kismet: bool = false
+var info_forma: bool = false
+var info_piccinni: bool = false
+
 # Memorizza le posizioni delle monete già prese
 var monete_raccolte: Array = []
 

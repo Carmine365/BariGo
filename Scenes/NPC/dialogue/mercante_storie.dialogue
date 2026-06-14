@@ -1,7 +1,12 @@
 ~ start
 
+# CONTROLLO PREVENTIVO: Se l'albero dei flag è interamente vero, usciamo subito
+if global.info_margherita and global.info_team and global.info_petruzzelli and global.info_kismet and global.info_forma and global.info_piccinni:
+	Signora delle Sgagliozze: Uagliò, ho raschiato il fondo, è finita la polenta e sono finite pure le storie! Inutile che mi guardi, vai a farti un giro in città!
+	=> END
+
 Signora delle Sgagliozze: Uagliò, l'olio sfrigola e la farina costa! 
-Signora delle Sgagliozze: Portami 2 monete. Ti do un cartoccio di sgagliozze bollenti e, mentre mangi, ti racconto un segreto su questi teatri che sui libri dell'università non trovi.
+Signora delle Sgagliozze: Portami 4 monete. Ti do un cartoccio di sgagliozze bollenti e, mentre mangi, ti racconto un segreto su questi teatri che sui libri dell'università non trovi.
 
 - Player: Tenga le monete, signora!
 	=> controllo_monete
@@ -13,70 +18,69 @@ Signora delle Sgagliozze: Portami 2 monete. Ti do un cartoccio di sgagliozze bol
 
 # Controllo matematico sull'inventario
 if global.coin >= 4:
-	# Transazione: sottraiamo le 2 monete
-	set global.coin = global.coin - 4
+	Signora delle Sgagliozze: Le monete ci sono. Di quale teatro vuoi conoscere il segreto?
 	
-	# FEEDBACK DI TRANSAZIONE RIUSCITA
-	do global.play_suono_successo()
-	
-	if global.storie_raccontate == 0:
+	# Il menu mostra solo le opzioni con flag "false"
+	- Teatro Margherita [if global.info_margherita == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
 		Signora delle Sgagliozze: Tieni il cartoccio, attento che scotta. Mo ascolta a me: lo sapevi che il Teatro Margherita è l'unico in Europa costruito interamente su palafitte in mezzo al mare? 
 		Signora delle Sgagliozze: Se lo inventarono nel 1914 per aggirare una legge che vietava di fare concorrenza al Petruzzelli sulla terraferma. Furti e ingegno, uagliò!
-		set global.storie_raccontate = 1
-		# AGGIUNTA AL TACCUINO
+		set global.info_margherita = true
 		do global.aggiungi_appunto("Teatro Margherita", "Costruito nel 1914 su palafitte in mare per aggirare le leggi a tutela del Petruzzelli.")
 		=> END
-		
-	if global.storie_raccontate == 1:
-		Signora delle Sgagliozze: Altre sgagliozze per te. Senti questa: ti ricordi Lino Banfi? Nel '96, al Teatro Team, fece 21 giorni di fila di tutto esaurito. 
+	
+	- Teatro Team [if global.info_team == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
+		Signora delle Sgagliozze: Sgagliozze per te. Senti questa: ti ricordi Lino Banfi? Nel '96, al Teatro Team, fece 21 giorni di fila di tutto esaurito. 
 		Signora delle Sgagliozze: Un record assoluto per tutto il Sud Italia. Non si trovava un biglietto manco a pagarlo oro!
-		set global.storie_raccontate = 2
-		# AGGIUNTA AL TACCUINO
+		set global.info_team = true
 		do global.aggiungi_appunto("Teatro Team", "Nel 1996 registrò 21 giorni di tutto esaurito consecutivi per lo spettacolo di Lino Banfi.")
 		=> END
 		
-	if global.storie_raccontate == 2:
+	- Teatro Petruzzelli [if global.info_petruzzelli == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
 		Signora delle Sgagliozze: Prendi sto cartoccio, mangia che devi crescere. Devi sapere che dopo l'incendio maledetto del '91, il Petruzzelli è rimasto un cantiere bruciato per quasi vent'anni.
 		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Una ferita per tutta Bari, ma alla fine ce l'abbiamo fatta a ricostruirlo.
-		set global.storie_raccontate = 3
-		
-		set global.aggiungi_appunto("Teatro Petruzzelli", "Distrutto da un grave incendio nel 1991, è rimasto un cantiere aperto per anni fino alla sua rinascita nel 2009.")
+		set global.info_petruzzelli = true
+		do global.aggiungi_appunto("Teatro Petruzzelli", "Distrutto da un grave incendio nel 1991, è rimasto un cantiere aperto per anni fino alla sua rinascita nel 2009.")
 		=> END
-
-	if global.storie_raccontate == 3:
-		Signora delle Sgagliozze: Pensavi avessi finito l'impasto, eh? Tieni, altre sgagliozze calde. Devi sapere che il Kismet è nato nel 1981 in un capannone industriale.
+		
+	- Teatro Kismet [if global.info_kismet == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
+		Signora delle Sgagliozze: Tieni, sgagliozze calde. Devi sapere che il Kismet è nato nel 1981 in un capannone industriale.
 		Signora delle Sgagliozze: Dal cemento all'arte. Prima ci facevano i lavori pesanti, mo è la casa del teatro contemporaneo. Una bella rivoluzione.
-		set global.storie_raccontate = 4
-		
-		set global.aggiungi_appunto("Teatro Kismet", "Fondato nel 1981 all'interno di un ex capannone industriale, è diventato il punto di riferimento per il teatro contemporaneo barese.")
+		set global.info_kismet = true
+		do global.aggiungi_appunto("Teatro Kismet", "Fondato nel 1981 all'interno di un ex capannone industriale, è diventato il punto di riferimento per il teatro contemporaneo barese.")
 		=> END
 
-	if global.storie_raccontate == 4:
+	- Teatro Forma [if global.info_forma == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
 		Signora delle Sgagliozze: Brucia, eh? Soffia e ascolta. Il Teatro Forma invece è un ragazzino, ha aperto nel 2010. 
 		Signora delle Sgagliozze: È stato costruito con dei legni speciali per avere un'acustica perfetta. È il teatro più moderno in mezzo a tutta la nostra storia vecchia.
-		set global.storie_raccontate = 5
+		set global.info_forma = true
+		do global.aggiungi_appunto("Teatro Forma", "Inaugurato nel 2010. È la struttura più moderna del percorso, progettata con legni speciali per massimizzare la resa acustica.")
+		=> END
 		
-		set global.aggiungi_appunto("Teatro Forma", "Inaugurato nel 2010. È la struttura più moderna del percorso, progettata con legni speciali per massimizzare la resa acustica.")
+	- Teatro Piccinni [if global.info_piccinni == false]
+		set global.coin = global.coin - 4
+		do global.play_suono_successo()
+		Signora delle Sgagliozze: Ascolta il nonno di tutti: il Teatro Piccinni. È il più antico di Bari, aperto nel 1854!
+		Signora delle Sgagliozze: Ha ospitato le opere prima ancora che l'Italia fosse unita. Grazie al cielo nel 2019 lo hanno restaurato e salvato.
+		set global.info_piccinni = true
+		do global.aggiungi_appunto("Teatro Piccinni", "Il più antico di Bari (1854), antecedente all'Unità d'Italia. Ha subito un importante lavoro di restauro completato nel 2019.")
 		=> END
 
-	if global.storie_raccontate == 5:
-		Signora delle Sgagliozze: Adesso sì che ho grattato il fondo della padella. Ascolta il nonno di tutti: il Teatro Piccinni. È il più antico di Bari, aperto nel 1854!
-		Signora delle Sgagliozze: Ha ospitato le opere prima ancora che l'Italia fosse unita. Grazie al cielo nel 2019 lo hanno restaurato e salvato.
-		set global.storie_raccontate = 6
-		
-		set global.aggiungi_appunto("Teatro Piccinni", "Il più antico di Bari (1854), antecedente all'Unità d'Italia. Ha subito un importante lavoro di restauro completato nel 2019.")
+	- Ho cambiato idea, tengo le mie monete.
+		Signora delle Sgagliozze: E allora non mi far perdere tempo, l'olio si brucia!
 		=> END
 		
-	if global.storie_raccontate >= 6:
-		# Rimborso di sicurezza
-		set global.coin = global.coin + 4
-		Signora delle Sgagliozze: Uagliò, ho raschiato il fondo, è finita la polenta e sono finite pure le storie! Mi hai fatto svuotare la memoria. Tieniti le monete e vai a farti un giro che devi salvare la città!
-		=> END
 
 else:
-	# FEEDBACK DI TRANSAZIONE FALLITA (Spiccioli insufficienti)
 	do global.play_suono_fallimento()
-	
-	# Fallimento transazione: stampa il numero esatto
-	Signora delle Sgagliozze: Che ci faccio con {{global.coin}} monete? Non ci pago manco la carta del cartoccio. Ne servono 2, torna quando hai gli spiccioli giusti.
+	Signora delle Sgagliozze: Che ci faccio con {{global.coin}} monete? Non ci pago manco la carta del cartoccio. Ne servono 4, torna quando hai gli spiccioli giusti.
 	=> END
