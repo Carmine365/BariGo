@@ -2,7 +2,7 @@
 
 # Verifichiamo se il giocatore ha già completato la missione
 if global.petruzzelli_quest_completed == true:
-	Pompiere: Grazie ancora per quello che hai fatto per il Petruzzelli. Questo posto è tornato a splendere grazie a te!
+	Pompiere: L'anima di questo teatro è salva, grazie a te. Il fuoco non ha vinto.
 	=> END
 
 # Verifichiamo se il giocatore ha già i frammenti ma non ha ancora parlato con il pompiere per chiudere la quest
@@ -11,25 +11,24 @@ if global.quest_states["petruzzelli"] == "completed":
 	=> dopo_minigioco
 
 # Se non ha completato la quest e non ha i frammenti, parte l'assegnazione
-Pompiere: È un incubo! Devi sapere che questo teatro ha già sofferto l'inferno: era il 1991 quando un incendio devastante lo ridusse in cenere, portando via anni di storia e bellezza.
-Pompiere: È una tragedia per tutta la città! Ma guarda... tra le ceneri, brilla qualcosa. Sono frammenti dorati dello spirito del teatro.
-Pompiere: Se riuscissi a recuperarli, forse potremmo ricostruire la sua essenza perduta. Me ne servono tre, ti prego, fai in fretta!
+Pompiere: Ragazzo, fermati! Non puoi entrare, le fiamme stanno divorando tutto, la cupola sta per cedere!
+Pompiere: È un incubo... Stiamo perdendo il teatro. Ma guarda lì... tra la cenere. Riesci a vederli? Sono frammenti dorati. L'anima del Petruzzelli sta cercando di resistere.
+Pompiere: Io devo contenere l'incendio, ma se tu sei abbastanza veloce, forse puoi recuperarli. Me ne servono tre, ma ti prego, fai in fretta!
 
-- Player: Ci penso io, vado a cercarli!
+- Player: Entro, non c'è tempo da perdere!
 	set global.quest_states["petruzzelli"] = "started"
 	set global.next_minigame_scene = "res://Scenes/Liv_Petruzzelli.tscn"
 	Pompiere: Attento là dentro, la stabilità della struttura è a rischio!
 	=> END
-- Player: Al momento ho altro da fare...
-	Pompiere: Ti prego, non tardare troppo. Il tempo stringe.
+- Player: Non sono pronto...
+	Pompiere: Non c'è molto tempo prima che tutto diventi cenere!
 	=> END
 
 
 ~ dopo_minigioco
 
-Pompiere: Incredibile... ce l'hai fatta! Hai ridato speranza a queste mura.
-Pompiere: Sai, dopo quel maledetto 1991, la città non si è mai arresa. Il teatro è rimasto ferito per anni, ma grazie a un lungo e meticoloso lavoro di restauro, nel 2009 è finalmente tornato a splendere più forte di prima, riaprendo le sue porte al mondo.
-Pompiere: Grazie per quello che hai fatto, non lo dimenticherò.
+Pompiere: Ce l'hai fatta... incredibile. Hai salvato lo spirito di queste mura dalle fiamme. 
+Pompiere: Questo posto porta addosso delle ferite profonde, ma finché ci sarà qualcuno pronto a difenderne la memoria, non crollerà mai davvero.
 
 # Aggiorniamo gli stati globali di gioco
 set global.petruzzelli_quest_completed = true

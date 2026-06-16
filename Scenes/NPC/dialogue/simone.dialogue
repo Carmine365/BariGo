@@ -2,26 +2,26 @@
 
 # 1. Controllo Vittoria
 if global.quest_states["piccinni"] == "completed":
-	Custode: Meraviglioso. Hai messo ordine nel disordine. Il Piccinni è tornato il cuore della prosa barese.
-	Custode: Dopo il restauro del 2019, questo teatro non è mai stato così lucente, e grazie a te, è di nuovo pronto ad accogliere il pubblico e i grandi eventi.
-	Custode: Antonio Niccolini ne sarebbe fiero. Grazie di cuore, ragazzo.
+	Custode: Meraviglioso. Hai domato la cacofonia e messo ordine nel caos.
+	Custode: Il palcoscenico è pulito e finalmente pronto per la prosa. Il sipario si può alzare, grazie di cuore, ragazzo.
 	=> END
 
 # 2. Controllo Progresso
 if global.quest_states["piccinni"] == "started":
-	Custode: Il caos è assordante! Schiva quelle note e recupera i 4 oggetti di scena dietro le quinte prima che sia troppo tardi!
+	Custode: Il caos è assordante! Schiva quelle note impazzite e recupera i 4 oggetti di scena o stasera non andiamo in onda!
 	=> END
 
 # 3. Assegnazione Iniziale
-Custode: Il Piccinni è un gioiello di acustica, ma ora è nel caos. Vedi quelle note che volano ovunque? Sono frammenti di spartiti impazziti che impediscono alla prosa di avere la giusta atmosfera.
-Custode: Per far tornare il teatro in scena, devi recuperare i 4 oggetti di scena originali che sono finiti dietro le quinte.
-Custode: Fai attenzione a non farti colpire dalle note, sono assordanti. Appena avrai recuperato i 4 pezzi, la calma tornerà e il sipario sarà pronto per la prima di stasera.
+Custode: Un disastro! L'anima musicale di questo vecchio teatro si è risvegliata e sta boicottando lo spettacolo di prosa di stasera!
+Custode: È un baccano infernale. Ci sono frammenti di spartiti e note musicali che volano letteralmente ovunque sul palco, come proiettili.
+Custode: Devi infiltrarti in quel caos per recuperare i 4 oggetti di scena che sono rimasti bloccati dietro le quinte. 
+Custode: Tieni gli occhi aperti e schiva le note a tutti i costi. Appena avrai recuperato i 4 pezzi, l'incantesimo si spezzerà.
 
-- Player: Entro in scena e recupero gli oggetti!
+- Player: Entro in scena e schivo tutto!
 	set global.quest_states["piccinni"] = "started"
 	set global.next_minigame_scene = "res://Scenes/Piccinni/livello_piccinni.tscn"
-	Custode: Buona fortuna, attento alla cacofonia!
+	Custode: Buona fortuna, attento a non farti colpire!
 	=> END
-- Player: Troppo baccano per me, ripasso dopo.
-	Custode: Non possiamo aprire il sipario in queste condizioni. Il tempo stringe.
+- Player: Troppo baccano per me, ripasso dopo...
+	Custode: Non possiamo aprire il sipario in queste condizioni. Torna appena hai fegato!
 	=> END

@@ -2,27 +2,25 @@
 
 # 1. Controllo Vittoria
 if global.quest_states["forma"] == "completed":
-	Educatore Salesiano: Eccoti! La luce è tornata a scaldare il legno del palco.
-	Educatore Salesiano: Questo teatro è più di una sala; è il cuore della nostra attività educativa e sociale.
-	Educatore Salesiano: Grazie a te, possiamo tornare a ospitare artisti che cercano quel contatto diretto e intimo che solo il Forma sa offrire.
+	Educatore Salesiano: Fantastico! La luce è tornata. Guarda come brilla il legno del palco.
+	Educatore Salesiano: Questo teatro sotterraneo è il cuore delle nostre attività per i ragazzi del quartiere. Ora i musicisti possono finalmente accordare gli strumenti per il concerto jazz di stasera!
 	=> END
 
 # 2. Controllo Progresso
 if global.quest_states["forma"] == "started":
-	Educatore Salesiano: Il buio è totale laggiù. Muoviti con cautela e trovami quei 3 fusibili per ripristinare il quadro elettrico!
+	Educatore Salesiano: Il buio è totale laggiù nei sotterranei dell'istituto. Trova quei 3 fusibili o stasera salta tutto!
 	=> END
 
 # 3. Assegnazione Iniziale
-Educatore Salesiano: Benvenuto al Teatro Forma. Ti sembrerà strano scendere così in basso, ma è proprio qui, nel cuore dell'Istituto Salesiano, che abbiamo ricavato il nostro spazio.
-Educatore Salesiano: Essendo incastrati nel quartiere Carrassi, abbiamo costruito questo tempio della musica e della prosa proprio sotto i nostri piedi, come un segreto ipogeo.
-Educatore Salesiano: La luce è saltata e senza i 3 fusibili dell'impianto, il teatro resta inaccessibile. 
-Educatore Salesiano: Recuperali nel labirinto sotterraneo. Abbiamo bisogno di tornare a illuminare il palco per i nostri laboratori di musica d'autore e i concerti jazz. Senza luce, la cultura si ferma.
+Educatore Salesiano: Maledizione, un blackout totale! Proprio stasera che abbiamo la sala piena per i laboratori e i concerti!
+Educatore Salesiano: Il nostro teatro è interamente sotterraneo, ricavato sotto i piedi dell'istituto. Lassù non si vede un palmo dal naso ed è un labirinto di corridoi.
+Educatore Salesiano: Per riattivare il quadro elettrico servono 3 fusibili sparsi nei sotterranei. Dovrai muoverti al buio, ma cerca di fare in fretta!
 
-- Player: Scendo nel buio e trovo i fusibili!
+- Player: Scendo nel labirinto, trovo i fusibili!
 	set global.quest_states["forma"] = "started"
 	set global.next_minigame_scene = "res://Scenes/LivelloForma.tscn"
-	Educatore Salesiano: Fai attenzione ai vecchi corridoi sotterranei!
+	Educatore Salesiano: Attento a non inciampare nel buio!
 	=> END
-- Player: Non ho tempo di esplorare labirinti al momento.
-	Educatore Salesiano: La cultura qui rimarrà al buio finché non deciderai di aiutarci.
+- Player: Non ho i fiammiferi con me, passo dopo.
+	Educatore Salesiano: Sbrigati, prima che il pubblico perda la pazienza.
 	=> END

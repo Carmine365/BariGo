@@ -2,27 +2,25 @@
 
 # 1. Controllo Vittoria: Se la missione è completata, mostra il finale storico
 if global.quest_states["margherita"] == "completed":
-	Pescatore del Porto: Incredibile. Hai protetto quel capolavoro Liberty.
-	Pescatore del Porto: Dalle operette di inizio secolo al restauro che lo ha reso un tempio dell'arte contemporanea, questo posto resta un ponte sospeso tra la terra e l'Adriatico. Grazie per aver messo al sicuro il nostro Margherita.
+	Pescatore del Porto: Incredibile. Hai tenuto quelle opere all'asciutto. Questo teatro è un ponte sospeso tra la terra e l'Adriatico, un miracolo che si ostina a galleggiare. Grazie.
 	=> END
 
 # 2. Controllo Progresso: Se è già in corso, sollecita il giocatore
 if global.quest_states["margherita"] == "started":
-	Pescatore del Porto: Fai in fretta! L'acqua sta salendo rapidamente, salta su quelle palafitte e metti al sicuro le opere d'arte!
+	Pescatore del Porto: L'acqua non aspetta! Salta su quei pilastri e raggiungi il tetto prima che la marea inghiotta tutto!
 	=> END
 
-# 3. Assegnazione Iniziale (Se lo stato è "not_started")
-Pescatore del Porto: Vedi il Margherita? Non è nato lì per caso. Quando volevano costruirlo nel 1914, c'era un divieto che impediva di edificare teatri in muratura sul suolo barese, per non far concorrenza al Petruzzelli.
-Pescatore del Porto: Ma la famiglia Messeni Nemagna non si arrese: costruirono il teatro letteralmente sul mare, su palafitte in cemento, aggirando la legge.
-Pescatore del Porto: Ma oggi è il mare a reclamare il suo spazio. L'acqua sta salendo e minaccia di sommergere le opere d'arte contemporanea esposte nel museo.
-Pescatore del Porto: Devi saltare da una palafitta all'altra, tenendo i piedi all'asciutto, e raggiungere la bandierina in cima prima che la marea ti raggiunga!
+# 3. Assegnazione Iniziale
+Pescatore del Porto: L'Adriatico si sta alzando a vista d'occhio! L'acqua sta per invadere il Margherita e distruggere le mostre d'arte!
+Pescatore del Porto: Questo posto non poggia sulla terra, è costruito direttamente sul mare, retto solo da vecchie palafitte. 
+Pescatore del Porto: Devi arrampicarti saltando da una palafitta all'altra. Non fermarti mai e raggiungi la terrazza più alta prima che l'onda anomala sommerga te e le opere!
 
-- Player: Salverò le opere d'arte, vado subito!
+- Player: Salverò l'arte, vado!
 	set global.quest_states["margherita"] = "started"
 	# Prepariamo la transizione per il minigioco platformer delle palafitte
 	set global.next_minigame_scene = "res://Scenes/Margherita/LivelloMargherita.tscn"
-	Pescatore del Porto: Attento a non scivolare, l'Adriatico non perdona!
+	Pescatore del Porto: Il mare non perdona gli scivoloni. Occhio a dove metti i piedi!
 	=> END
-- Player: Devo prima sbrigare altre commissioni...
-	Pescatore del Porto: Torna presto, la marea non aspetta i tuoi comodi.
+- Player: Non so nuotare, ripasso dopo...
+	Pescatore del Porto: Se aspetti troppo troverai solo pesci là dentro!
 	=> END

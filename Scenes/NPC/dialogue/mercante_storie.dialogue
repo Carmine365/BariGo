@@ -24,28 +24,33 @@ if global.coin >= 4:
 	- Teatro Margherita [if global.info_margherita == false]
 		set global.coin = global.coin - 4
 		do global.play_suono_successo()
-		Signora delle Sgagliozze: Tieni il cartoccio, attento che scotta. Mo ascolta a me: lo sapevi che il Teatro Margherita è l'unico in Europa costruito interamente su palafitte in mezzo al mare? 
-		Signora delle Sgagliozze: Se lo inventarono nel 1914 per aggirare una legge che vietava di fare concorrenza al Petruzzelli sulla terraferma. Furti e ingegno, uagliò!
+		Signora delle Sgagliozze: Tieni il cartoccio, attento che scotta. Hai visto che strano quel teatro piantato in mezzo all'acqua? Non è per romanticismo, uagliò. 
+		Signora delle Sgagliozze: Nel 1914 c'era un patto col Comune: nessuno poteva costruire teatri in muratura sulla terraferma per non fare concorrenza al Petruzzelli. 
+		Signora delle Sgagliozze: E sai la famiglia Messeni Nemagna che s'inventò? Lo costruirono direttamente sul mare, appoggiato sulle palafitte! Aggirata la legge, fregata la concorrenza. 
+		Signora delle Sgagliozze: È l'unico in tutta Europa fatto così. Oggi ci fanno l'arte contemporanea, ma la furbizia barese non passa mai di moda.
 		set global.info_margherita = true
-		do global.aggiungi_appunto("Teatro Margherita", "Costruito nel 1914 su palafitte in mare per aggirare le leggi a tutela del Petruzzelli.")
+		do global.aggiungi_appunto("Teatro Margherita", "Costruito nel 1914 interamente su palafitte in mare per aggirare il divieto di edificare sulla terraferma, eludendo la concorrenza al Petruzzelli. Unico in Europa.")
 		=> END
 	
 	- Teatro Team [if global.info_team == false]
 		set global.coin = global.coin - 4
 		do global.play_suono_successo()
-		Signora delle Sgagliozze: Sgagliozze per te. Senti questa: ti ricordi Lino Banfi? Nel '96, al Teatro Team, fece 21 giorni di fila di tutto esaurito. 
-		Signora delle Sgagliozze: Un record assoluto per tutto il Sud Italia. Non si trovava un biglietto manco a pagarlo oro!
+		Signora delle Sgagliozze: Sgagliozze belle calde per te. Senti questa, che quel direttore là non te la dice. 
+		Signora delle Sgagliozze: Lo sai qual è stato il record vero di questo posto? Anno 1996, Lino Banfi porta il suo spettacolo qua.
+		Signora delle Sgagliozze: Ventuno giorni. Ventuno giorni di fila di tutto esaurito! Un record assoluto per tutto il Sud Italia. Non si trovava un biglietto manco a pagarlo a peso d'oro, una cosa mai vista!
 		set global.info_team = true
-		do global.aggiungi_appunto("Teatro Team", "Nel 1996 registrò 21 giorni di tutto esaurito consecutivi per lo spettacolo di Lino Banfi.")
+		do global.aggiungi_appunto("Teatro Team", "Nel 1996 ha registrato 21 giorni consecutivi di tutto esaurito per lo spettacolo di Lino Banfi, un record assoluto per il Sud Italia.")
 		=> END
 		
 	- Teatro Petruzzelli [if global.info_petruzzelli == false]
 		set global.coin = global.coin - 4
 		do global.play_suono_successo()
-		Signora delle Sgagliozze: Prendi sto cartoccio, mangia che devi crescere. Devi sapere che dopo l'incendio maledetto del '91, il Petruzzelli è rimasto un cantiere bruciato per quasi vent'anni.
-		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Una ferita per tutta Bari, ma alla fine ce l'abbiamo fatta a ricostruirlo.
+		Signora delle Sgagliozze: Prendi 'sto cartoccio, mangia che devi crescere. Hai visto quel pompiere disperato? 
+		Signora delle Sgagliozze: Quella è una ferita che a Bari non si chiude. Era la notte tra il 26 e il 27 ottobre del 1991. Qualcuno ha dato fuoco al teatro di proposito. Un incendio doloso.
+		Signora delle Sgagliozze: Le fiamme erano così alte che illuminavano la città. La cupola bellissima è crollata in pezzi. Per quasi vent'anni, a causa di cause legali e burocrazia, è rimasto un cantiere a cielo aperto.
+		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Ce l'abbiamo fatta a ricostruirlo, ma chi c'era quella notte, le sirene dei pompieri non se le scorda più.		set global.info_petruzzelli = true
 		set global.info_petruzzelli = true
-		do global.aggiungi_appunto("Teatro Petruzzelli", "Distrutto da un grave incendio nel 1991, è rimasto un cantiere aperto per anni fino alla sua rinascita nel 2009.")
+		do global.aggiungi_appunto("Teatro Petruzzelli", "Distrutto da un incendio doloso nell'ottobre 1991. Dopo il crollo della cupola e complesse vicende burocratiche, è stato ricostruito e riaperto solo nel 2009.")
 		=> END
 		
 	- Teatro Kismet [if global.info_kismet == false]
@@ -60,19 +65,21 @@ if global.coin >= 4:
 	- Teatro Forma [if global.info_forma == false]
 		set global.coin = global.coin - 4
 		do global.play_suono_successo()
-		Signora delle Sgagliozze: Brucia, eh? Soffia e ascolta. Il Teatro Forma invece è un ragazzino, ha aperto nel 2010. 
-		Signora delle Sgagliozze: È stato costruito con dei legni speciali per avere un'acustica perfetta. È il teatro più moderno in mezzo a tutta la nostra storia vecchia.
+		Signora delle Sgagliozze: Brucia, eh? Soffia e ascolta. Hai visto quel teatro nascosto sotto terra dai Salesiani? Quello è un ragazzino, ha aperto solo nel 2010. 
+		Signora delle Sgagliozze: È la struttura più moderna che abbiamo, ma la vera magia non si vede: è rivestito con dei legni speciali studiati apposta per curare l'acustica. 
+		Signora delle Sgagliozze: Lì dentro la musica non rimbomba, ti accarezza le orecchie. Ci vanno i grandi artisti jazz proprio per quello. Moderno sì, ma fatto con la testa.
 		set global.info_forma = true
-		do global.aggiungi_appunto("Teatro Forma", "Inaugurato nel 2010. È la struttura più moderna del percorso, progettata con legni speciali per massimizzare la resa acustica.")
+		do global.aggiungi_appunto("Teatro Forma", "Inaugurato nel 2010 sotto l'Istituto Salesiano. È la struttura più moderna del percorso, progettata con legni specifici per isolare e massimizzare la resa acustica, diventando un punto di riferimento per il jazz.")
 		=> END
 		
 	- Teatro Piccinni [if global.info_piccinni == false]
 		set global.coin = global.coin - 4
 		do global.play_suono_successo()
-		Signora delle Sgagliozze: Ascolta il nonno di tutti: il Teatro Piccinni. È il più antico di Bari, aperto nel 1854!
-		Signora delle Sgagliozze: Ha ospitato le opere prima ancora che l'Italia fosse unita. Grazie al cielo nel 2019 lo hanno restaurato e salvato.
+		Signora delle Sgagliozze: Ascolta a me, questo è il nonno di tutti quanti: il Teatro Piccinni. È il più antico di Bari, ha aperto i battenti nel 1854!
+		Signora delle Sgagliozze: Pensa un po', lo ha progettato un architetto famoso, Antonio Niccolini, prima ancora che l'Italia fosse unita. Ci cantavano le opere quando c'erano ancora i Borbone.
+		Signora delle Sgagliozze: Ha rischiato grosso, ma per fortuna si sono decisi e nel 2019 hanno finito un restauro che lo ha salvato. 'Na bomboniera.
 		set global.info_piccinni = true
-		do global.aggiungi_appunto("Teatro Piccinni", "Il più antico di Bari (1854), antecedente all'Unità d'Italia. Ha subito un importante lavoro di restauro completato nel 2019.")
+		do global.aggiungi_appunto("Teatro Piccinni", "Il più antico di Bari (1854), progettato da Antonio Niccolini in epoca pre-unitaria. È tornato al suo antico splendore grazie a un profondo restauro concluso nel 2019.")
 		=> END
 
 	- Ho cambiato idea, tengo le mie monete.
