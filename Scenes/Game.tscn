@@ -41,6 +41,7 @@
 [ext_resource type="Script" uid="uid://cgkm2yxltxi2m" path="res://Scenes/coin_counter.gd" id="36_bdnt5"]
 [ext_resource type="PackedScene" uid="uid://d2k10ka2tyf6b" path="res://Scenes/NPC/npc_peppe.tscn" id="38_2i8gw"]
 [ext_resource type="Script" uid="uid://c25ober1k1aja" path="res://Scenes/barra_xp.gd" id="38_ucn7y"]
+[ext_resource type="Texture2D" uid="uid://b0vmie7f8l688" path="res://assets (2)/assets/icons/Taccuino e Info.png" id="40_g3jfi"]
 [ext_resource type="Texture2D" uid="uid://b6cvsvf0dqv8c" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree2.png" id="44_5eiyn"]
 [ext_resource type="Texture2D" uid="uid://d3jbirsue3mud" path="res://assets (2)/city assets/city block tile set/Ranitaya’s 50+ City Essential Assets Pack/Assets/Tree3.png" id="45_m15vq"]
 [ext_resource type="Texture2D" uid="uid://dylb2h2edxxlq" path="res://assets (2)/city assets/City Assets Pack - Basic/deco_10.png" id="48_n24vg"]
@@ -185,6 +186,7 @@
 [ext_resource type="AudioStream" uid="uid://g3cem7wi6eru" path="res://assets (2)/audio/The-Good-Old-Days-One-piece-Ambiance-Soundtrack.ogg" id="183_bdnt5"]
 [ext_resource type="Texture2D" uid="uid://3lvcqrvk5wg5" path="res://assets (2)/Cartello4-1.png.png" id="184_6x5lk"]
 [ext_resource type="Texture2D" uid="uid://cyn3wmx15gsbd" path="res://assets (2)/Cartello6-1.png.png" id="185_g3jfi"]
+[ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="187_73m62"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3opw3"]
 texture = ExtResource("1_kfjtm")
@@ -7817,6 +7819,10 @@ sources/31 = SubResource("TileSetAtlasSource_wv54p")
 sources/32 = SubResource("TileSetAtlasSource_bxgab")
 sources/35 = SubResource("TileSetAtlasSource_5wgas")
 
+[sub_resource type="LabelSettings" id="LabelSettings_jcmlj"]
+font = ExtResource("187_73m62")
+font_size = 19
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxm5w"]
 size = Vector2(46.327377, 101.2452)
 
@@ -8211,8 +8217,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/HUD/UI_Manager" unique_id=564738887]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 335.0
+offset_bottom = 117.0
 
 [node name="CoinCounter" type="Label" parent="Player/HUD/UI_Manager/VBoxContainer" unique_id=901081286]
 layout_mode = 2
@@ -8228,6 +8234,23 @@ nine_patch_stretch = true
 texture_under = ExtResource("11_1mx4w")
 texture_progress = ExtResource("12_65ldo")
 script = ExtResource("38_ucn7y")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Player/HUD/UI_Manager" unique_id=653034526]
+layout_mode = 0
+offset_left = 848.0
+offset_top = -14.0
+offset_right = 1134.0
+offset_bottom = 102.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/HUD/UI_Manager/VBoxContainer2" unique_id=561754326]
+position = Vector2(146.74995, 69.25)
+scale = Vector2(0.33949706, 0.30216804)
+texture = ExtResource("40_g3jfi")
+
+[node name="Taccuino" type="Label" parent="Player/HUD/UI_Manager/VBoxContainer2" unique_id=2086838228]
+layout_mode = 2
+text = "               Taccuino [T]      Libro Info [I]"
+label_settings = SubResource("LabelSettings_jcmlj")
 
 [node name="Coin2" parent="." unique_id=1534970164 instance=ExtResource("13_0yiub")]
 position = Vector2(-2011, -130)
@@ -14230,7 +14253,7 @@ scale = Vector2(0.42111558, 0.38970622)
 texture = ExtResource("140_wr204")
 
 [node name="Tree1751" type="Sprite2D" parent="." unique_id=2048660796]
-position = Vector2(880.5, 6.249998)
+position = Vector2(881, 12)
 scale = Vector2(0.56122446, 0.5141844)
 texture = ExtResource("139_pmr4g")
 

@@ -5,11 +5,11 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_f6f86"]
 font = ExtResource("2_xdxra")
-font_size = 52
+font_size = 63
 
 [sub_resource type="LabelSettings" id="LabelSettings_xdxra"]
 font = ExtResource("2_xdxra")
-font_size = 23
+font_size = 24
 
 [sub_resource type="Theme" id="Theme_0s5po"]
 
@@ -39,7 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.58431375)
+color = Color(0, 0, 0, 0.75686276)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1331999634]
 layout_mode = 1
@@ -64,10 +64,11 @@ vertical_alignment = 1
 
 [node name="LabelIstruzioni" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1751990504]
 layout_mode = 2
-text = "Utilizza le Frecce Direzionali per esplorare la mappa.
-Avvicinati e premi F per interagire con gli NPC e leggere i cartelli.
-Premi T per aprire il taccuino. Terrà traccia delle storie scoperte.
-Raccogli le monete lungo il percorso e interagisci con i custodi della città per svelare i segreti e la storia dei Teatri di Bari."
+text = "- Esplora la città con le FRECCE DIREZIONALI e raccogli le monete: sono la chiave per sbloccare i segreti della storia barese.
+
+- Avvicinati ai custodi o ai cartelli e premi (F) per interagire. Ogni storia svelata verrà salvata nel tuo Taccuino, che puoi consultare premendo (T).
+
+- Hai dimenticato i comandi? Premi (I) per richiamare questo pannello in qualsiasi momento."
 label_settings = SubResource("LabelSettings_xdxra")
 horizontal_alignment = 1
 autowrap_mode = 2
