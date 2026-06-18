@@ -70,6 +70,7 @@ layout_mode = 2
 
 [node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1038540717]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=217411483]
 layout_mode = 2
@@ -87,6 +88,15 @@ theme_override_fonts/font = ExtResource("3_xim88")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
 text = "opzioni"
+script = ExtResource("3_8um5k")
+
+[node name="CreditButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1781608846]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_xim88")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
+text = "crediti"
 script = ExtResource("3_8um5k")
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1116354456]
@@ -146,3 +156,5 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_koqhg")
 text = "Indietro"
 script = ExtResource("4_xim88")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/CreditButton" to="." method="_on_credit_button_pressed"]

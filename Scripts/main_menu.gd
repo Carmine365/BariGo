@@ -69,3 +69,8 @@ func _on_sfx_slider_changed(value: float):
 	var audio_manager = get_node("/root/AudioManager")
 	audio_manager.set_sfx_volume_linear(value)
 	update_volume_labels()
+
+func _on_credit_button_pressed():
+	# Carica e istanzia la scena dei crediti, distruggendo il menu principale
+	# ATTENZIONE: Devi inserire il percorso esatto in cui hai salvato la scena!
+		get_tree().change_scene_to_file("res://Scenes/MenuCrediti.tscn")
