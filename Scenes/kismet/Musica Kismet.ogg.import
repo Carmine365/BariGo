@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bufac4ll76lki"
+path="res://.godot/imported/Musica Kismet.ogg-148ed8ec8c18e94fdf25359f9a58f0e8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Scenes/kismet/Musica Kismet.ogg"
+dest_files=["res://.godot/imported/Musica Kismet.ogg-148ed8ec8c18e94fdf25359f9a58f0e8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

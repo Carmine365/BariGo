@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://brwsbbf7nu45x" path="res://Scenes/level_manager.gd" id="20_rfpnt"]
 [ext_resource type="Texture2D" uid="uid://dwh3gwenstso" path="res://assets (2)/forma/porta_aperta.png" id="20_ultql"]
 [ext_resource type="PackedScene" uid="uid://cysa8tfj2kipv" path="res://Scenes/Game.tscn" id="21_46mi2"]
-[ext_resource type="AudioStream" uid="uid://c3w7ucomqi6nw" path="res://assets (2)/forma/MusicaForma.ogg" id="25_dhwxl"]
+[ext_resource type="AudioStream" uid="uid://ck8w80rb5i2hb" path="res://assets (2)/forma/MusicaForma (2).ogg" id="25_dhwxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2yr6"]
 texture = ExtResource("1_3gnlp")

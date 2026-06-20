@@ -100,7 +100,7 @@
 [ext_resource type="Script" uid="uid://b8vl1s66sfnh7" path="res://Scenes/death_zone.gd" id="95_wfcb2"]
 [ext_resource type="PackedScene" uid="uid://3df58j4xkl50" path="res://Scenes/fine_livello.tscn" id="97_7u61e"]
 [ext_resource type="Texture2D" uid="uid://bqob8ck80g4je" path="res://Sfondo petruzzell.png" id="99_m2xop"]
-[ext_resource type="AudioStream" uid="uid://c1ip42st6mdmt" path="res://assets (2)/petruzzelli/musica-petruzzelli.ogg" id="101_wkeqf"]
+[ext_resource type="AudioStream" uid="uid://c7x6wpxvcmb3y" path="res://assets (2)/petruzzelli/Musica petruzzelli (audio-extractor.net).ogg" id="101_wkeqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4v1a"]
 size = Vector2(16, 30)

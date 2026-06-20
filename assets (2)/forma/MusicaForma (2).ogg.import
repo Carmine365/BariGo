@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck8w80rb5i2hb"
+path="res://.godot/imported/MusicaForma (2).ogg-eda7c3ad87862fb2bca73a673716436c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets (2)/forma/MusicaForma (2).ogg"
+dest_files=["res://.godot/imported/MusicaForma (2).ogg-eda7c3ad87862fb2bca73a673716436c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

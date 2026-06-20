@@ -31,7 +31,7 @@
 [ext_resource type="Script" uid="uid://bpyfs0viajmyw" path="res://Scenes/kismet/area_t.gd" id="24_ujwkn"]
 [ext_resource type="Script" uid="uid://b4l3nm5svl0yu" path="res://Scenes/kismet/area_bandierina.gd" id="30_hm1iq"]
 [ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="32_bfigr"]
-[ext_resource type="AudioStream" uid="uid://cl3x5k0v64pwb" path="res://Scenes/kismet/MusicaKismet.ogg" id="32_voxjo"]
+[ext_resource type="AudioStream" uid="uid://bufac4ll76lki" path="res://Scenes/kismet/Musica Kismet.ogg" id="32_voxjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkvuh"]
 texture = ExtResource("14_hm1iq")

@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cxdhgfgr2sn0m" path="res://Scenes/Piccinni/bandierina.gd" id="15_osmyx"]
 [ext_resource type="Texture2D" uid="uid://dvcnl4f4win71" path="res://Scenes/Piccinni/bandierina.png" id="15_v5ycw"]
 [ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="18_klvww"]
+[ext_resource type="AudioStream" uid="uid://84c68356io2c" path="res://Scenes/Piccinni/748406__viramiller__inspiring-orchestral-music-with-majestic-and-uplifting-themes.ogg" id="19_v5ycw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufd8l"]
 texture = ExtResource("1_8ycgg")
@@ -1034,6 +1035,11 @@ grow_vertical = 2
 text = "Applauso, Il teatro Piccinni è tuo!"
 label_settings = SubResource("LabelSettings_klvww")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1269454062]
+stream = ExtResource("19_v5ycw")
+volume_db = -22.732
+autoplay = true
 
 [connection signal="body_entered" from="Collectibles/Oggetti" to="Collectibles/Oggetti" method="_on_body_entered"]
 [connection signal="body_entered" from="Collectibles/Oggetti3" to="Collectibles/Oggetti3" method="_on_body_entered"]
