@@ -35,13 +35,17 @@ Cartello: Teatro Petruzzelli ⬆️
 => END
 
 ~ bivio_kismet
-Cartello: Teatro Kismet ⬇️ | Teatro Team ⬇️
+Cartello: Teatro Kismet ⬇️ | Stadio San Nicola ⬇️
 => END
 
 ~ bivio_team
-Cartello: ⬅️ Teatro Kismet | Teatro Team ➡️
+Cartello: ⬅️ Teatro Kismet | Stadio San Nicola ➡️
 => END
 
 ~ bivio_petruzzelli
 Cartello: ⬅️ Teatro Piccinni | Teatro Petruzzelli ➡️
+=> END
+
+~ japigia
+Cartello: Quartiere Japigia ⬆️
 => END
