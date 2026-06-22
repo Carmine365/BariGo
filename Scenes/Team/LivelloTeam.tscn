@@ -5,10 +5,13 @@
 [ext_resource type="Script" uid="uid://d0sbh3qj3l8a2" path="res://Scenes/Team/area_hit.gd" id="2_bs1jh"]
 [ext_resource type="FontFile" uid="uid://cvbbcqv3n3crg" path="res://assets (2)/fonts/Pixel Game.otf" id="2_qlkko"]
 [ext_resource type="Texture2D" uid="uid://y2qlceo2nkay" path="res://Scenes/Team/hitbox.png" id="4_0rv6v"]
-[ext_resource type="Texture2D" uid="uid://hoj1x6uryq6x" path="res://Scenes/Team/Piano.png" id="5_w8u8d"]
+[ext_resource type="Texture2D" uid="uid://b1yyoacdrpdjm" path="res://Scenes/Team/pianola_stage_tall.png" id="6_cpqkc"]
 [ext_resource type="Texture2D" uid="uid://g54igvxcly1e" path="res://Scenes/Team/Batteria.png" id="6_qlkko"]
 [ext_resource type="Texture2D" uid="uid://dpxvkn0yp5534" path="res://Scenes/Team/Chitarra.png" id="7_ax87t"]
 [ext_resource type="Texture2D" uid="uid://c51oymjofsxv2" path="res://Scenes/Team/Microfono.png" id="8_vqaly"]
+[ext_resource type="AudioStream" uid="uid://dvi1t7t5n5rg1" path="res://Scenes/Team/Batteria-chitarra_drums.ogg" id="10_cpqkc"]
+[ext_resource type="AudioStream" uid="uid://dkfkwwx7tun1k" path="res://Scenes/Team/Batteria-chitarra_guitar.ogg" id="11_hirh5"]
+[ext_resource type="AudioStream" uid="uid://cy6t7lalaesk3" path="res://Scenes/Team/Batteria-chitarra.wav" id="12_nwoap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qlkko"]
 font = ExtResource("2_qlkko")
@@ -69,9 +72,9 @@ autostart = true
 
 [node name="Piano" type="Sprite2D" parent="." unique_id=1165579583]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(930, 485.00003)
+position = Vector2(887, 444)
 scale = Vector2(0.2934571, 0.2895508)
-texture = ExtResource("5_w8u8d")
+texture = ExtResource("6_cpqkc")
 
 [node name="Batteria" type="Sprite2D" parent="." unique_id=2035266629]
 modulate = Color(1, 1, 1, 0)
@@ -90,5 +93,17 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(577, 470)
 scale = Vector2(0.2775879, 0.30200195)
 texture = ExtResource("8_vqaly")
+
+[node name="AudioBatteria" type="AudioStreamPlayer" parent="." unique_id=1544287653]
+stream = ExtResource("10_cpqkc")
+bus = &"Music"
+
+[node name="AudioChitarra" type="AudioStreamPlayer" parent="." unique_id=1746504461]
+stream = ExtResource("11_hirh5")
+bus = &"Music"
+
+[node name="AudioTutto" type="AudioStreamPlayer" parent="." unique_id=135625093]
+stream = ExtResource("12_nwoap")
+bus = &"Music"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
