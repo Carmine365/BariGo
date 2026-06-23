@@ -48,7 +48,7 @@ if global.coin >= 4:
 		Signora delle Sgagliozze: Prendi 'sto cartoccio, mangia che devi crescere. Hai visto quel pompiere disperato? 
 		Signora delle Sgagliozze: Quella è una ferita che a Bari non si chiude. Era la notte tra il 26 e il 27 ottobre del 1991. Qualcuno ha dato fuoco al teatro di proposito. Un incendio doloso.
 		Signora delle Sgagliozze: Le fiamme erano così alte che illuminavano la città. La cupola bellissima è crollata in pezzi. Per quasi vent'anni, a causa di cause legali e burocrazia, è rimasto un cantiere a cielo aperto.
-		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Ce l'abbiamo fatta a ricostruirlo, ma chi c'era quella notte, le sirene dei pompieri non se le scorda più.		set global.info_petruzzelli = true
+		Signora delle Sgagliozze: Ha riaperto solo nel 2009. Ce l'abbiamo fatta a ricostruirlo, ma chi c'era quella notte, le sirene dei pompieri non se le scorda più.
 		set global.info_petruzzelli = true
 		do global.aggiungi_appunto("Teatro Petruzzelli", "Distrutto da un incendio doloso nell'ottobre 1991. Dopo il crollo della cupola e complesse vicende burocratiche, è stato ricostruito e riaperto solo nel 2009.")
 		=> END
