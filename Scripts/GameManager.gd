@@ -11,14 +11,17 @@ var intro_vista: bool = false
 signal exp_aggiornata(valore_percentuale)
 
 func guadagna_esperienza():
-	exp_attuale += 1
-	print("Esperienza attuale: ", exp_attuale)
-	# Calcoliamo la percentuale (33%, 66%, 100%)
-	var percentuale = (float(exp_attuale) / exp_max) * 100
-	exp_aggiornata.emit(percentuale)
-	
-	if exp_attuale >= exp_max:
-		monete += 2
-		exp_attuale = 0
-		print("Bonus monete! Totale: ", monete)
-		exp_aggiornata.emit(0) # Resetta la barra visiva
+	# Controlla che non siamo già al massimo prima di dare altra esperienza
+	if exp_attuale < exp_max:
+		exp_attuale += 1
+		print("Esperienza attuale: ", exp_attuale)
+		
+		# Calcola la percentuale
+		var percentuale = (float(exp_attuale) / exp_max) * 100
+		exp_aggiornata.emit(percentuale)
+		
+		# Se con questo punto siamo appena arrivati al massimo (6/6)
+		if exp_attuale == exp_max:
+			monete += 2
+			print("Bonus monete! Hai trovato tutti i teatri! Totale: ", monete)
+			# Abbiamo eliminato l'azzeramento dell'XP, così la barra resta al 100%!
